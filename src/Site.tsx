@@ -525,16 +525,13 @@ function TargetLegacyPage({ route }: { route: TargetRoute }) {
     related: [],
   };
   const pageCopy = productCopy ?? legacyFallback;
-  const regionalLocationData = route.location?.city
-    ? cityServiceAreaFor(route.location.city, route.location.state)
-    : stateServiceAreaFor(route.location?.state || "");
   const regionalLocationDescription = route.location?.city
     ? cityDescription(
-        regionalLocationData,
+        cityServiceAreaFor(route.location.city, route.location.state),
         route.location.city,
         route.location.state,
       )
-    : regionalLocationData?.description;
+    : stateServiceAreaFor(route.location?.state || "")?.description;
   const reviewedStateCities = route.cities?.length
     ? reviewedCityPages.filter((city) => city.state === route.location?.state)
     : [];
