@@ -40,6 +40,11 @@ import { legacyProductPageCopy } from "./portableFoodBankLegacyCopy";
 import { equipmentGalleryCaption } from "./equipmentGalleryCaption";
 import { catalogPhotoCoverage } from "./catalogImageCoverage";
 import { commercialPageHeadline } from "./commercialHeadlines";
+import {
+  cityDescription,
+  cityServiceAreaFor,
+  stateServiceAreaFor,
+} from "./regionalSiteData";
 export type SourcePage = {
   id: number;
   modified?: string;
@@ -520,6 +525,16 @@ function TargetLegacyPage({ route }: { route: TargetRoute }) {
     related: [],
   };
   const pageCopy = productCopy ?? legacyFallback;
+  const regionalLocationData = route.location?.city
+    ? cityServiceAreaFor(route.location.city, route.location.state)
+    : stateServiceAreaFor(route.location?.state || "");
+  const regionalLocationDescription = route.location?.city
+    ? cityDescription(
+        regionalLocationData,
+        route.location.city,
+        route.location.state,
+      )
+    : regionalLocationData?.description;
   const reviewedStateCities = route.cities?.length
     ? reviewedCityPages.filter((city) => city.state === route.location?.state)
     : [];
@@ -537,9 +552,10 @@ function TargetLegacyPage({ route }: { route: TargetRoute }) {
           </span>
           <h1>{route.title}</h1>
           <p data-h1-intro>
-            {label
-              ? `${label}: plan a commercial mobile kitchen trailer rental. Share meal volume, operating schedule, project dates, site access, and utilities so the rental team can review a suitable configuration and delivery plan.`
-              : pageCopy.intro}
+            {regionalLocationDescription ||
+              (label
+                ? `${label}: plan a commercial mobile kitchen trailer rental. Share meal volume, operating schedule, project dates, site access, and utilities so the rental team can review a suitable configuration and delivery plan.`
+                : pageCopy.intro)}
           </p>
           <div className="service-category-actions">
             <Button>Request rental availability</Button>

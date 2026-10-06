@@ -6,6 +6,8 @@ import { regionCities } from "./regionCities";
 import { cityRentalHeadline } from "./rentalHeadlines";
 import { buildRegionSeasonalDemand } from "./seasonalDemand";
 import { LocationImageCarousel } from "./LocationImageCarousel";
+import { RegionalDataModules } from "./RegionalDataModules";
+import { cityDescription, cityServiceAreaFor } from "./regionalSiteData";
 
 const serviceLinks = [
   {
@@ -59,6 +61,7 @@ export function CityDetail({ city }: { city: CityPage }) {
   );
   const headline = cityHeadline(city);
   const location = `${city.name}, ${city.state}`;
+  const regionalData = cityServiceAreaFor(city.name, city.state, city.region);
   return (
     <article className={`city-page city-layout-${Number(city.geoid) % 4}`}>
       <section className="city-hero">
@@ -78,7 +81,9 @@ export function CityDetail({ city }: { city: CityPage }) {
             <span className="eyebrow">CITY RENTAL GUIDE</span>
             <h1>{headline}</h1>
             <p className="city-lead" data-h1-intro>
-              {alignedLocationIntro(headline, location)}
+              {regionalData
+                ? cityDescription(regionalData, city.name, city.state)
+                : alignedLocationIntro(headline, location)}
             </p>
             <div className="city-hero-actions">
               <span className="city-emergency">Emergency 24/7</span>
@@ -92,6 +97,9 @@ export function CityDetail({ city }: { city: CityPage }) {
           </div>
         </div>
       </section>
+      {regionalData ? (
+        <RegionalDataModules data={regionalData} locationLabel={location} />
+      ) : null}
       <section
         className="wrap city-section city-answer"
         aria-labelledby="city-answer-title"

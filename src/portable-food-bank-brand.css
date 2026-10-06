@@ -720,6 +720,30 @@ textarea:focus-visible {
   }
 }
 
+/* The persistent contact rail occupies the left edge of the desktop viewport.
+ * Reserve a quiet gutter for it so page copy and cards never sit underneath
+ * the rail or look clipped at the viewport edge. Full-width section surfaces
+ * remain owned by their parent sections; only the content wrappers narrow. */
+@media (min-width: 1024px) {
+  :root {
+    --shell: min(1180px, calc(100% - 160px));
+  }
+
+  .wrap,
+  .homepage .wrap,
+  .mobile-kitchen-home-header .wrap {
+    width: min(var(--pfb-container, 1200px), calc(100% - 160px));
+    max-width: var(--pfb-container, 1200px);
+    min-width: 0;
+    margin-inline: auto;
+  }
+}
+
+.wrap,
+.shell {
+  min-width: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

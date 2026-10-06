@@ -14,6 +14,12 @@ import {
 } from "./seasonalDemand";
 import { regionLocationLabel, regionRentalHeadline } from "./rentalHeadlines";
 import { LocationImageCarousel } from "./LocationImageCarousel";
+import { RegionalDataModules } from "./RegionalDataModules";
+import {
+  regionDescription,
+  regionalServiceAreaFor,
+  type RegionalServiceArea,
+} from "./regionalSiteData";
 
 export const regionSlug = (value: string) =>
   value
@@ -203,6 +209,7 @@ export type RegionGuide = {
   serviceLinks: ContextualLink[];
   commercialSummary: string;
   seasonal: SeasonalDemand;
+  regionalData?: RegionalServiceArea;
 };
 
 export const regionPages: RegionGuide[] = regionStateEntries.flatMap(
@@ -248,6 +255,7 @@ export const regionPages: RegionGuide[] = regionStateEntries.flatMap(
             globalIndex % commercialIntentTemplates.length
           ],
         seasonal: buildRegionSeasonalDemand(state, region, regionIndex, cities),
+        regionalData: regionalServiceAreaFor(state, region),
       };
     });
   },
@@ -331,7 +339,9 @@ export function RegionDetail({ guide }: { guide: RegionGuide }) {
             <p className="eyebrow">REGIONAL RENTAL GUIDE</p>
             <h1>{headline}</h1>
             <p className="region-intro" data-h1-intro>
-              {alignedLocationIntro(headline, location, guide.cities)}
+              {guide.regionalData
+                ? regionDescription(guide.regionalData, guide.region, guide.state)
+                : alignedLocationIntro(headline, location, guide.cities)}
             </p>
             <p className="region-emergency">Emergency 24/7</p>
             <a className="button" href={`tel:${site.phoneE164}`}>
@@ -343,6 +353,12 @@ export function RegionDetail({ guide }: { guide: RegionGuide }) {
           </div>
         </div>
       </section>
+      {guide.regionalData ? (
+        <RegionalDataModules
+          data={guide.regionalData}
+          locationLabel={location}
+        />
+      ) : null}
       <section className="region-answer" aria-labelledby="region-faq-title">
         <div className="wrap section region-answer-card">
           <div className="region-answer-heading">

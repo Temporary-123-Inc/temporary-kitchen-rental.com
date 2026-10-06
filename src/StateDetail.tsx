@@ -7,6 +7,7 @@ import { serviceCategories } from "./serviceMenu";
 import { stateMapRentalHeadline } from "./rentalHeadlines";
 import { citiesForRegion } from "./cityDirectory";
 import { LocationImageCarousel } from "./LocationImageCarousel";
+import { stateServiceAreaFor } from "./regionalSiteData";
 
 export const statePageByPath = Object.fromEntries(
   Object.keys(stateGuides).map((name) => [statePath(name), name]),
@@ -14,6 +15,7 @@ export const statePageByPath = Object.fromEntries(
 export function StateDetail({ name }: { name: string }) {
   const guide = stateGuides[name];
   const headline = stateMapRentalHeadline(name);
+  const regionalData = stateServiceAreaFor(name);
   const regions = regionPages.filter((region) => region.state === name);
   const priority = [
     "Mobile Kitchens",
@@ -46,7 +48,7 @@ export function StateDetail({ name }: { name: string }) {
             <p className="eyebrow">STATE RENTAL GUIDE</p>
             <h1>{headline}</h1>
             <p className="region-intro" data-h1-intro>
-              {alignedLocationIntro(headline, name)}
+              {regionalData?.description || alignedLocationIntro(headline, name)}
             </p>
             <p className="region-emergency">Emergency 24/7</p>
             <a className="button" href={`tel:${site.phoneE164}`}>

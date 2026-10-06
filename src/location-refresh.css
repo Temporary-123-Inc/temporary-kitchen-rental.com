@@ -1060,3 +1060,261 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* JSON-driven regional planning modules. The existing hero remains unchanged;
+   these cards keep the location pages in the Portable Food Bank visual system. */
+.regional-data-modules {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  border-bottom: 1px solid #d7e3e2;
+}
+
+.regional-data-heading {
+  max-width: 780px;
+}
+
+.regional-data-heading h2 {
+  margin: 0.65rem 0 1rem;
+  font-size: clamp(2rem, 3.6vw, 3.7rem);
+  line-height: 1.04;
+}
+
+.regional-data-heading p,
+.regional-data-panel > p {
+  color: #4b6870;
+  line-height: 1.7;
+}
+
+.regional-data-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.regional-data-summary article {
+  min-width: 0;
+  padding: 1.25rem;
+  border-top: 3px solid #159a9c;
+  border-radius: 0.8rem;
+  background: #edf6f5;
+}
+
+.regional-data-summary span,
+.regional-data-panel > .eyebrow,
+.regional-incident-note > span {
+  display: block;
+  color: #0d7779;
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.regional-data-summary strong {
+  display: block;
+  margin-top: 0.5rem;
+  color: #123047;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  line-height: 1.15;
+}
+
+.regional-data-summary p {
+  margin-top: 0.55rem;
+  color: #4b6870;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.regional-data-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 1rem;
+}
+
+.regional-data-grid-secondary {
+  align-items: start;
+}
+
+.regional-data-panel {
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  border: 1px solid #c7dcda;
+  border-radius: 1.1rem;
+  background: #fff;
+}
+
+.regional-data-panel h3 {
+  margin: 0.65rem 0 0.75rem;
+  color: #123047;
+  font-size: clamp(1.35rem, 2.3vw, 2rem);
+  line-height: 1.12;
+}
+
+.regional-price-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 1.35rem;
+}
+
+.regional-price-list div {
+  padding: 0.85rem 0.6rem;
+  border-radius: 0.65rem;
+  background: #f7faf9;
+  text-align: center;
+}
+
+.regional-price-list span,
+.regional-price-list strong {
+  display: block;
+}
+
+.regional-price-list span {
+  color: #526f77;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.regional-price-list strong {
+  margin-top: 0.25rem;
+  color: #123047;
+  font-size: 0.95rem;
+}
+
+.regional-data-delivery dl {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0 0;
+}
+
+.regional-data-delivery dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid #d7e3e2;
+}
+
+.regional-data-delivery dt,
+.regional-data-delivery dd {
+  margin: 0;
+  color: #4b6870;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.regional-data-delivery dd {
+  color: #123047;
+  font-weight: 800;
+  text-align: right;
+}
+
+.regional-data-delivery > p {
+  margin-top: 1rem;
+  color: #526f77;
+  font-size: 0.83rem;
+  line-height: 1.6;
+}
+
+.regional-data-list {
+  display: grid;
+  gap: 0.7rem;
+  padding-left: 1.1rem;
+  margin: 1rem 0 0;
+  color: #4b6870;
+  line-height: 1.6;
+}
+
+.regional-nearby-list {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.regional-nearby-list a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid #d7e3e2;
+  border-radius: 0.65rem;
+  color: #134f5c;
+  text-decoration: none;
+}
+
+.regional-nearby-list a:hover,
+.regional-nearby-list a:focus-visible {
+  border-color: #159a9c;
+  background: #edf6f5;
+}
+
+.regional-nearby-list span {
+  font-weight: 800;
+}
+
+.regional-nearby-list small {
+  color: #5b6b72;
+  font-size: 0.76rem;
+}
+
+.regional-incident-note {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #d7e3e2;
+}
+
+.regional-incident-note a {
+  color: #134f5c;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.regional-incident-note small {
+  color: #5b6b72;
+}
+
+@media (max-width: 900px) {
+  .regional-data-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .regional-data-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .regional-data-summary,
+  .regional-price-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .regional-price-list div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    text-align: left;
+  }
+}
+
+/* Keep long regional and city-page descriptions readable beside a centered
+   equipment carousel. The containing hero still limits the sticky travel. */
+@media (min-width: 901px) {
+  .region-page .region-hero-carousel,
+  .city-page .city-equipment-carousel {
+    position: sticky;
+    top: 50%;
+    align-self: start;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+}
+
+@media (max-width: 900px) {
+  .region-page .region-hero-carousel,
+  .city-page .city-equipment-carousel {
+    position: static;
+    transform: none;
+  }
+}
