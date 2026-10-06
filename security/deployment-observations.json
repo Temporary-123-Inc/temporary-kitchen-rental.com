@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-09-11T16:49:57.473Z",
+  "firebase": {
+    "project": "portable-food-bank-87345",
+    "database": "portable-food-bank-87345-default-rtdb",
+    "rulesDeployed": true,
+    "unauthenticatedInquiryRead": 401
+  },
+  "vercel": {
+    "team": "portable-food-bank-team",
+    "project": "portable-food-bank",
+    "created": false,
+    "reason": "Account lacks permission to create a project in this team; UI Create Project/Deploy disabled"
+  },
+  "wordpress": {
+    "origin": "https://portable-food-bank.com",
+    "adminStatus": "Error establishing a database connection",
+    "recoveredPages": 625,
+    "expectedPages": 98253
+  },
+  "liveDomainChanged": false,
+  "onlineInquiriesEnabled": false
+}

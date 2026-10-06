@@ -1,0 +1,8 @@
+URL,Date,Method,Result,Meaning
+https://portable-food-bank.com/,2026-09-11,Web public retrieval,Body available; extensive navigation and empty news/blog state,Not a raw HTTP status or Google indexing result
+https://portable-food-bank.com/,2026-09-11,Terminal HTTP request,Timed out,Environment access limitation; no site status inferred
+https://portable-food-bank.com/robots.txt,2026-09-11,Web retrieval,Tool error,Content and HTTP status unknown
+https://portable-food-bank.com/sitemap_index.xml,2026-09-11,Web retrieval,Tool error,Sitemap coverage unknown
+https://portable-food-bank.com/houston-texas-mobile-kitchen-rental/,2026-09-11,Web retrieval,Tool error,Content equivalence not established
+https://portable-food-bank.com/equipment-rental/restroom-trailers/portable-restroom-trailers-in-california/,2026-09-11,Web retrieval,Tool error,Content equivalence not established
+https://portable-food-bank.com/temporary-workforce-housing-facilities/,2026-09-11,Web retrieval,Tool error,Content equivalence not established
