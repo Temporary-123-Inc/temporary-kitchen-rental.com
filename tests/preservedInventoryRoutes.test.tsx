@@ -13,15 +13,15 @@ const productRoutes = [
   "/services/shower-trailers/22ft-10-stall/",
   "/services/shower-restroom-combination-trailers/30ft-8-stall/",
 ];
-const portableFoodBankSitemap = readFileSync(
+const temporaryKitchenRentalSitemap = readFileSync(
   "public/sitemap-review.xml",
   "utf8",
 );
 
-describe("preserved PortableFoodBank inventory slugs", () => {
+describe("preserved TemporaryKitchenRental inventory slugs", () => {
   it.each(productRoutes)("renders a complete page structure for %s", (path) => {
-    expect(portableFoodBankSitemap).toContain(
-      `https://portable-food-bank.com${path}`,
+    expect(temporaryKitchenRentalSitemap).toContain(
+      `https://temporary-kitchen-rental.com${path}`,
     );
     const $ = load(renderToStaticMarkup(createElement(Site, { path })));
     expect($("main h1")).toHaveLength(1);

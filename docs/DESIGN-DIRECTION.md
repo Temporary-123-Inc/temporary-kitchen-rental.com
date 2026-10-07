@@ -1,6 +1,6 @@
-# Portable Food Bank upgrade
+# Temporary Kitchen Rental upgrade
 
-The existing Portable Food Bank business, phone number, public page text and original URL inventory are the source. April is not the brand or migration scope. User confirmed all public WordPress pages on September 12, 2026.
+The existing Temporary Kitchen Rental business, phone number, public page text and original URL inventory are the source. April is not the brand or migration scope. User confirmed all public WordPress pages on September 12, 2026.
 
 Direction: established industrial facilities company, clear equipment catalog and direct contact. Existing blue/cyan identity, navy type, white space, condensed headings and actual source media. Preserve source watermarks. No synthetic photo presented as actual equipment.
 

@@ -10,7 +10,7 @@ import { getDatabase } from "firebase-admin/database";
 import { rateLimit, saveLead } from "../server/store";
 import { processDelivery } from "../server/delivery";
 let env: RulesTestEnvironment;
-const projectId = "demo-portable-food-bank",
+const projectId = "demo-temporary-kitchen-rental",
   url = `https://${projectId}-default-rtdb.firebaseio.com`;
 const app = initializeApp({ projectId, databaseURL: url }, "test-rtdb"),
   db = getDatabase(app);

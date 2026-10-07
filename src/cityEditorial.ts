@@ -19,7 +19,7 @@ export const cityEditorial: Record<string, CityEditorial> = {
   "5355365": {
     heading: "Port Angeles, Washington Mobile Kitchen Trailer Rental",
     intro:
-      "Portable Food Bank supports commercial and institutional base camps in Port Angeles with mobile kitchen trailer rentals for industrial projects, military operations, hospital or nursing-home renovations, hospitality facilities, correctional facilities and emergency-response sites. Final equipment and delivery planning depend on the operating period, crew size, utility connections and exact installation address.",
+      "Temporary Kitchen Rental supports commercial and institutional base camps in Port Angeles with mobile kitchen trailer rentals for industrial projects, military operations, hospital or nursing-home renovations, hospitality facilities, correctional facilities and emergency-response sites. Final equipment and delivery planning depend on the operating period, crew size, utility connections and exact installation address.",
     answer:
       "A Port Angeles base camp can pair a mobile commercial kitchen with the 22 ft shower trailer, shower and restroom combination trailers, sleeper or bunkbed units, refrigeration, dishwashing and laundry. Plan the equipment package around the number of people, meal volume, shift schedule and available utilities; confirm the actual configuration and availability with the rental team.",
     local:
@@ -38,7 +38,7 @@ export const cityEditorial: Record<string, CityEditorial> = {
       image: "/images/catalog/mobile-kitchen-trailers-960.webp",
       alt: "Commercial mobile kitchen trailer interior for a Port Angeles base camp rental",
       caption: "Commercial mobile kitchen trailer for base camp food service",
-      sourceUrl: "https://portable-food-bank.com/",
+      sourceUrl: "https://temporary-kitchen-rental.com/",
     },
   },
   "5363385": {
@@ -69,7 +69,7 @@ export const cityEditorial: Record<string, CityEditorial> = {
   "5363000": {
     heading: "Seattle, Washington Temporary Facilities Rental",
     intro:
-      "Seattle rental planning often turns on the last part of the delivery route and the amount of room available on an active property. Portable Food Bank can discuss a mobile commercial kitchen, showers, combination restrooms and sleeper support for a renovation, construction crew or base camp once site access and occupancy are specified.",
+      "Seattle rental planning often turns on the last part of the delivery route and the amount of room available on an active property. Temporary Kitchen Rental can discuss a mobile commercial kitchen, showers, combination restrooms and sleeper support for a renovation, construction crew or base camp once site access and occupancy are specified.",
     answer:
       "A Seattle facility plan can start with a mobile commercial kitchen, shower and restroom combination trailers, a 22 ft shower-only trailer with 10 stalls, and sleeper or bunkbed accommodation. A dishwashing trailer, refrigeration or laundry can keep a temporary food operation and crew base camp functioning. Rent or lease options depend on the site and term.",
     local:
@@ -95,7 +95,7 @@ export const cityEditorial: Record<string, CityEditorial> = {
   "5370000": {
     heading: "Tacoma, Washington Sleeper Bunkbed Trailer Rental",
     intro:
-      "Tacoma combines residential, institutional and industrial work areas, so a temporary facility plan should start with the specific site rather than the city name alone. For a crew base camp or occupied-facility renovation, Portable Food Bank can review kitchen, shower, restroom and sleeper trailer rental options alongside servicing needs.",
+      "Tacoma combines residential, institutional and industrial work areas, so a temporary facility plan should start with the specific site rather than the city name alone. For a crew base camp or occupied-facility renovation, Temporary Kitchen Rental can review kitchen, shower, restroom and sleeper trailer rental options alongside servicing needs.",
     answer:
       "Tacoma crews can discuss leasing sleeper and bunk-bed facilities for workforce housing. Review sleeping capacity, shift schedules, privacy, ventilation and access for the chosen unit. Kitchens and shower or shower/restroom combination units are separate supporting rental options. A longer man camp may also need laundry, refrigeration, dishwashing, separate restrooms and handwashing. Choose capacity after confirming shift size and available utility connections.",
     local:
@@ -114,13 +114,13 @@ export const cityEditorial: Record<string, CityEditorial> = {
       image: "/media/4b67ae2ec507c379fdf9a7e3.png",
       alt: "Bunkbed sleeping accommodation inside a crew trailer",
       caption: "Bunkbed trailer accommodation",
-      sourceUrl: "https://portable-food-bank.com/",
+      sourceUrl: "https://temporary-kitchen-rental.com/",
     },
   },
   "5351300": {
     heading: "Olympia, Washington Shower and Restroom Trailer Rental",
     intro:
-      "An Olympia project can range from an occupied campus or government property to a separate work compound. Portable Food Bank can discuss kitchens, shower and restroom trailers, and sleeper accommodation for construction, renovation or emergency planning when the project team defines the site boundary and who must keep using it.",
+      "An Olympia project can range from an occupied campus or government property to a separate work compound. Temporary Kitchen Rental can discuss kitchens, shower and restroom trailers, and sleeper accommodation for construction, renovation or emergency planning when the project team defines the site boundary and who must keep using it.",
     answer:
       "Olympia project teams can discuss shower and restroom combination trailer rental for an institutional facility. Plan shower and toilet access together, including the stall layout, water supply, hot water, wastewater servicing and site access. Mobile kitchens, shower-only trailers and sleeper facilities are separate rental options. For a temporary base camp or a building renovation, refrigeration, laundry, dishwashing and handwashing may complete the setup. Lease length and final equipment are confirmed with the team.",
     local:
@@ -138,7 +138,7 @@ export const cityEditorial: Record<string, CityEditorial> = {
       image: "/media/e90d8c3a5518fa97ef4dd69c.png",
       alt: "Interior of a shower and restroom combination trailer",
       caption: "Shower and restroom combination interior",
-      sourceUrl: "https://portable-food-bank.com/",
+      sourceUrl: "https://temporary-kitchen-rental.com/",
     },
   },
 };

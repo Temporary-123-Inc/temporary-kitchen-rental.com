@@ -1,8 +1,8 @@
-# PortableFoodBank developer prompt pack
+# TemporaryKitchenRental developer prompt pack
 
 These are ready-to-paste briefs for a Codex or ChatGPT development task. Supply the target repository, domain, family, credentials through approved secret handling, and assigned file/page scope before running one. Read `AGENTS.md`, `PROJECT_STATUS.md`, `docs/BOSS_REQUIREMENTS.md`, `docs/PAGE_ASSIGNMENTS.md`, and `docs/DECISIONS.md` first. Coordinate shared files; never overwrite another task's uncommitted work.
 
-1. [Website template maker](01_WEBSITE_TEMPLATE.md) — reuse PortableFoodBank's tested visual system and components across four site families without copying unrelated content.
+1. [Website template maker](01_WEBSITE_TEMPLATE.md) — reuse TemporaryKitchenRental's tested visual system and components across four site families without copying unrelated content.
 2. [Nationwide calculator](02_CALCULATOR.md) — reusable, crawlable starting-estimate experience with secure quote workflow.
 3. [SEO dashboard](03_SEO_DASHBOARD.md) — current owner-facing requirements, uncluttered tabs, seven headline vitals, real diagnostics and trends.
 4. [Kermit landing pages and H1 playbook](04_KERMIT_LANDING_PAGES_H1.md) — family selection, mixed-H1 formula, content, imagery, QA, protected URLs, and rollout.

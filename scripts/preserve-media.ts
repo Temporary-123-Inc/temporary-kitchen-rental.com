@@ -21,7 +21,7 @@ export async function preserveMedia(media: Record<string, { local?: string }>) {
     if (!record.local) continue;
     const url = new URL(source);
     if (
-      !["portable-food-bank.com", "www.portable-food-bank.com"].includes(url.hostname) ||
+      !["temporary-kitchen-rental.com", "www.temporary-kitchen-rental.com"].includes(url.hostname) ||
       !url.pathname.startsWith("/wp-content/uploads/")
     )
       continue;

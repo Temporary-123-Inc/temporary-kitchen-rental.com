@@ -1,4 +1,4 @@
-// Equipment photographs from portable-food-bank.com, visually reviewed. No diagrams or location scenery.
+// Equipment photographs from temporary-kitchen-rental.com, visually reviewed. No diagrams or location scenery.
 export const equipmentPhotos = [
   {
     image: "/media/37575655390d18f0ca9e357d.png",

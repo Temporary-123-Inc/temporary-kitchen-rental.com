@@ -125,7 +125,7 @@ const reviewed: Record<
   "refrigerated-containers": {
     alt: "Illustrated refrigerated shipping container with an end-mounted cooling unit, labelled Reefer Container 8 ft x 40 ft",
     caption:
-      "Refrigerated containers Rental or Lease for temporary cold storage for commercial operations. Discuss weekly rental, monthly rental, or yearly rental and lease options. This equipment illustration is labelled 8 ft x 40 ft; it is a category reference, not confirmation of the exact Portable Food Bank unit or its availability. Confirm dimensions, cooling configuration and power requirements for your project. Call Portable Food Bank now for 24/7 live-agent support: +1 (888) 563-6507.",
+      "Refrigerated containers Rental or Lease for temporary cold storage for commercial operations. Discuss weekly rental, monthly rental, or yearly rental and lease options. This equipment illustration is labelled 8 ft x 40 ft; it is a category reference, not confirmation of the exact Temporary Kitchen Rental unit or its availability. Confirm dimensions, cooling configuration and power requirements for your project. Call Temporary Kitchen Rental now for 24/7 live-agent support: +1 (888) 563-6507.",
     view: "exterior",
   },
   "generator-trailers": {
@@ -160,7 +160,7 @@ const reviewed: Record<
       smallWidth: 480,
       largeWidth: 960,
       source:
-        "https://portable-food-bank.com/wp-content/uploads/2021/11/SLIDER-1.jpg",
+        "https://temporary-kitchen-rental.com/wp-content/uploads/2021/11/SLIDER-1.jpg",
     },
   },
 };

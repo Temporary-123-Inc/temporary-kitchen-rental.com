@@ -1,6 +1,6 @@
 # Phase 2 preview implementation
 
-Approved September 12, 2026. Final public origin: https://portable-food-bank.com.
+Approved September 12, 2026. Final public origin: https://temporary-kitchen-rental.com.
 Branch: `seo/phase2-preview`. Production launch has not been approved.
 
 Implemented:
@@ -22,7 +22,7 @@ Remaining work requires evidence/access:
 - Review 34 remaining redirect rules, including location-to-national-hub mappings, the food-service image redirect and old planning/shop workflows. They have not been claimed to be semantically equivalent.
 - Restore unavailable full-size assets; the eight remaining linked destinations in the static check comprise seven pages and one image. The original Phase 1 inventory remains the preservation baseline even where links were repaired.
 - Vercel lists inquiry environment names, but their downloaded preview values are empty. Obtain valid isolated preview configuration, an approved test recipient and current delivery/consent requirements. Keep online inquiries disabled until a controlled end-to-end check succeeds.
-- The live site exposes Google tags GT-WVC6L47W and G-GBZ1ET4GFH. Confirm property ownership, consent and existing conversion configuration before restoring tracking; preview traffic must be excluded. No PortableFoodBank Search Console property is available in the connected account.
+- The live site exposes Google tags GT-WVC6L47W and G-GBZ1ET4GFH. Confirm property ownership, consent and existing conversion configuration before restoring tracking; preview traffic must be excluded. No TemporaryKitchenRental Search Console property is available in the connected account.
 - Validate current GSA/procurement claims, source-location claims and the five editorial-noindex pages. Preserve their content and restrictions pending review.
 
 ## Launch checklist

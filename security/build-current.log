@@ -1,5 +1,5 @@
 
-> portable-food-bank@0.1.0 build
+> temporary-kitchen-rental@0.1.0 build
 > tsc --noEmit && vite build && node --import tsx scripts/prerender.tsx
 
 vite v7.3.6 building client environment for production...

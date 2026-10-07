@@ -1,8 +1,8 @@
 # Deployment setup for the reviewed project
 
-GitHub: https://github.com/markravencanete50-source/Portable Food Bank (main).
-Vercel team: Portable Food Bank, scope `portable-food-bank-team`; desired project `portable-food-bank`. Project creation currently returns 403. An administrator must create it or provide the necessary permission before import/deployment.
-Firebase: `portable-food-bank-87345`. Web app `1:66308204140:web:ec828a478691818e3e1a49` is registered, but default database creation returns 403. Have the administrator create/permit that database; US region selection is proposed for the US-oriented business and needs operational confirmation.
+GitHub: https://github.com/markravencanete50-source/Temporary Kitchen Rental (main).
+Vercel team: Temporary Kitchen Rental, scope `temporary-kitchen-rental-team`; desired project `temporary-kitchen-rental`. Project creation currently returns 403. An administrator must create it or provide the necessary permission before import/deployment.
+Firebase: `temporary-kitchen-rental-87345`. Web app `1:66308204140:web:ec828a478691818e3e1a49` is registered, but default database creation returns 403. Have the administrator create/permit that database; US region selection is proposed for the US-oriented business and needs operational confirmation.
 
 Use Node 24, Vite, build `npm run build`, output `dist`. Configure separate preview and production Firebase projects. Never point an untrusted preview at production credentials. Deploy repository Firestore rules/indexes explicitly to the verified target after emulator tests. Storage rules are provided but no upload feature or bucket exists.
 

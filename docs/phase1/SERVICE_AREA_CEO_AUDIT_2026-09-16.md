@@ -1,4 +1,4 @@
-# PortableFoodBank — Independent Service Areas Image and SEO Audit
+# TemporaryKitchenRental — Independent Service Areas Image and SEO Audit
 
 Audit completed: 2026-09-16T06:43:54.917Z
 
@@ -113,7 +113,7 @@ The 289 unspecified pages comprise 246 city directories, 1 nationwide hub, and 4
 
 ## Live/canonical distinction
 
-The Vercel preview at https://portable-food-bank-nine.vercel.app already serves the corrected title-driven gallery during this audit. This is newly observed live evidence; the earlier local-only report is no longer the complete deployment picture. This audit did not deploy it and has not established the deployment ID or who published it.
+The Vercel preview at https://temporary-kitchen-rental-nine.vercel.app already serves the corrected title-driven gallery during this audit. This is newly observed live evidence; the earlier local-only report is no longer the complete deployment picture. This audit did not deploy it and has not established the deployment ID or who published it.
 
 | Canonical-domain sample | Observed HTTP |
 |---|---:|
@@ -124,7 +124,7 @@ The Vercel preview at https://portable-food-bank-nine.vercel.app already serves 
 | /service-areas/washington/olympic-peninsula/port-angeles/ | 404 |
 | /service-areas/washington/puget-sound/tacoma/ | 404 |
 
-These are six canonical-domain samples, not a crawl of every canonical URL. Do not equate a working Vercel preview with successful migration of portable-food-bank.com. The noindex preview controls were left unchanged.
+These are six canonical-domain samples, not a crawl of every canonical URL. Do not equate a working Vercel preview with successful migration of temporary-kitchen-rental.com. The noindex preview controls were left unchanged.
 
 ## Browser acceptance
 

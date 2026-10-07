@@ -8,7 +8,7 @@ export type ServiceCategory = {
   links: ServiceLink[];
 };
 
-// Each product family below is linked to a verified original Portable Food Bank
+// Each product family below is linked to a verified original Temporary Kitchen Rental
 // URL. Keep exact historical slugs visible rather than replacing them with a
 // legacy source path or a generic category redirect.
 export const serviceCategories: ServiceCategory[] = [
@@ -200,7 +200,7 @@ export const serviceOptions = serviceCategories.flatMap((category) =>
     categoryDescription: category.description,
     description:
       modelDetails[link.href as keyof typeof modelDetails]?.intro ||
-      `${link.name} rental planning from Portable Food Bank.`,
+      `${link.name} rental planning from Temporary Kitchen Rental.`,
   })),
 );
 

@@ -42,11 +42,11 @@ for (const path of htmlPages) {
     if (/^(?:mailto:|tel:|javascript:|#)/i.test(rawHref)) return;
     let url;
     try {
-      url = new URL(rawHref, "https://portable-food-bank.com");
+      url = new URL(rawHref, "https://temporary-kitchen-rental.com");
     } catch {
       return;
     }
-    if (!["portable-food-bank.com", "www.portable-food-bank.com"].includes(url.hostname)) return;
+    if (!["temporary-kitchen-rental.com", "www.temporary-kitchen-rental.com"].includes(url.hostname)) return;
     const href = decodeURI(url.pathname);
     const label = $(anchor).text().replace(/\s+/g, " ").trim();
     const firstLetter = label.match(/^([A-Za-z])/)?.[1];

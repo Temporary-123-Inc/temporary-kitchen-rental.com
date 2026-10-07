@@ -1,6 +1,6 @@
 import { readFile, writeFile } from "node:fs/promises";
 
-const productionOrigin = "https://portable-food-bank.com";
+const productionOrigin = "https://temporary-kitchen-rental.com";
 const registryPath = new URL("../audit/build-registry.json", import.meta.url);
 const outputPath = new URL("../public/sitemap-review.xml", import.meta.url);
 

@@ -1,4 +1,4 @@
-# Portable Food Bank access boundaries
+# Temporary Kitchen Rental access boundaries
 
 Visitors may read static pages and use telephone contact. Online submission is disabled until deployment settings are verified. When enabled, `POST /api/contact` validates exact origin, App Check app identity, schema, body limits, idempotency and shared atomic quotas before storing an inquiry. Admin SDK callers bypass rules, so these are server responsibilities.
 

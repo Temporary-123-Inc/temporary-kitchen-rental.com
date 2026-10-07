@@ -25,7 +25,7 @@ export const legacyProductPageCopy: Record<string, LegacyProductGuide> = {
     ],
   },
   "/12ft-restroom/": {
-    intro: "The 12 ft restroom trailer is the shortest named option in Portable Food Bank's restroom-only listing group. Use this page to evaluate that model's site fit; the approved restroom reference photos do not establish its specific floor plan, fixture count, or capacity.",
+    intro: "The 12 ft restroom trailer is the shortest named option in Temporary Kitchen Rental's restroom-only listing group. Use this page to evaluate that model's site fit; the approved restroom reference photos do not establish its specific floor plan, fixture count, or capacity.",
     sectionTitle: "Check the 12 ft restroom model against your site",
     summary: "For a compact-site review, start with the exact transport drawing for this 12 ft model rather than estimating its usable dimensions from photographs. Confirm the layout and service connections before comparing it with the 14 ft restroom listing.",
     checks: [
@@ -61,7 +61,7 @@ export const legacyProductPageCopy: Record<string, LegacyProductGuide> = {
     related: [{ label: "14 ft Restroom and Shower Combination Trailer", href: "/14ft-restroom-shower-combo-trailer/" }],
   },
   "/14ft-restroom-shower-combo-trailer/": {
-    intro: "This preserved 14 ft combination-trailer listing names both restroom and shower service. A second 14 ft combination URL uses “facility” in its title; Portable Food Bank is verifying whether that path represents another model or a legacy duplicate.",
+    intro: "This preserved 14 ft combination-trailer listing names both restroom and shower service. A second 14 ft combination URL uses “facility” in its title; Temporary Kitchen Rental is verifying whether that path represents another model or a legacy duplicate.",
     sectionTitle: "Confirm the 14 ft trailer configuration",
     summary: "Use the identified equipment sheet—not the difference between two URL names—to establish whether the 14 ft combination entries describe one product or two. No capacity or interior distinction is claimed here until the source schedule confirms it.",
     checks: [
@@ -218,7 +218,7 @@ export const legacyProductPageCopy: Record<string, LegacyProductGuide> = {
       "Verify the container dimensions and how the unit will be delivered and set in place.",
       "Confirm applicable site utilities, access, and project dates with the rental team.",
     ],
-    related: [{ label: "View the complete Portable Food Bank inventory", href: "/equipment-rental/" }],
+    related: [{ label: "View the complete Temporary Kitchen Rental inventory", href: "/equipment-rental/" }],
   },
   "/refrigeration-container-40ft-rental-5/": {
     intro: "This is the 40 ft refrigeration-container listing, not the separately listed 20 ft refrigeration trailer. Request the identified container's verified cooling specifications and handling details; the title alone does not establish temperature range, capacity, or electrical configuration.",

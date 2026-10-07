@@ -147,7 +147,7 @@ export function Home() {
             </h1>
             <p data-h1-intro>
               <span data-intro-primary>
-                Portable Food Bank provides temporary commercial mobile kitchen
+                Temporary Kitchen Rental provides temporary commercial mobile kitchen
                 trailer and modular facility rentals nationwide for hospitals,
                 schools, military and government sites, industrial facilities,
                 and other commercial operations. These facilities help teams
@@ -259,7 +259,7 @@ export function Home() {
 
       <section
         className="mk-trust-bar"
-        aria-label="Portable Food Bank service benefits"
+        aria-label="Temporary Kitchen Rental service benefits"
       >
         <div className="wrap">
           {[

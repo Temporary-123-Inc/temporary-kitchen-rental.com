@@ -177,7 +177,7 @@ test("contact form clearly fails closed while inquiries are disabled", async ({
 
   await page
     .getByRole("link", {
-      name: "Contact Portable Food Bank rental support now",
+      name: "Contact Temporary Kitchen Rental rental support now",
     })
     .click();
   const drawer = page.getByRole("dialog", { name: "Request availability" });

@@ -41,7 +41,7 @@ Coverage remains 263 pages with photos/references, 247 intentionally without an 
 
 ## Exact review target and files
 
-- Repository: C:/Users/Charles/Documents/New project/Portable Food Bank
+- Repository: C:/Users/Charles/Documents/New project/Temporary Kitchen Rental
 - Branch: main; base HEAD: 8ad98dba33ef6d9b7b1e64028da3fc639bd7fd9a. These image changes are uncommitted; HEAD alone does not contain them.
 - New frozen build: .temp/laundry-clarity-20260916/dist
 - Local review URL: http://127.0.0.1:4207/service-areas/alabama/central-alabama/

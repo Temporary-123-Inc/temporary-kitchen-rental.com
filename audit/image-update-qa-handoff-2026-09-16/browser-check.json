@@ -2,7 +2,7 @@
   "startedAt": "2026-09-16T08:43:57.982Z",
   "environment": "Local frozen build; not live QA",
   "base": "http://127.0.0.1:4201",
-  "build": "C:\\Users\\Charles\\Documents\\New project\\Portable Food Bank\\.temp\\owner-image-rollout-20260916\\dist",
+  "build": "C:\\Users\\Charles\\Documents\\New project\\Temporary Kitchen Rental\\.temp\\owner-image-rollout-20260916\\dist",
   "manifestSha256": "b2dd5c5c6b5bd2d6194421d9d583a8bdddeac914a512d80eda8dc72331fdcd57",
   "modals": [
     {

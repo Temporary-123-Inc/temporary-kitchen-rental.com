@@ -128,5 +128,5 @@ export function equipmentGalleryCaption({
     : `${equipment} Rental or Lease for ${commercialUse || details.benefit}.`;
   const rentalTerms = `Discuss weekly rental, monthly rental, or yearly rental and lease options${location ? ` for ${product?.benefit || details.benefit}` : ""}.`;
   const photoDetail = additionalDetail?.trim();
-  return `${equipmentPhrase} ${rentalTerms} ${details.detail}${photoDetail ? ` ${photoDetail}` : ""} Call Portable Food Bank now for 24/7 live-agent support: ${site.phoneDisplay}.`;
+  return `${equipmentPhrase} ${rentalTerms} ${details.detail}${photoDetail ? ` ${photoDetail}` : ""} Call Temporary Kitchen Rental now for 24/7 live-agent support: ${site.phoneDisplay}.`;
 }

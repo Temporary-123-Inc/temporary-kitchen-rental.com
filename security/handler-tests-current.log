@@ -1,9 +1,9 @@
 
-> portable-food-bank@0.1.0 test
+> temporary-kitchen-rental@0.1.0 test
 > vitest run tests/contact.test.ts tests/routes.test.ts tests/import.test.mjs
 
 
- RUN  v3.2.7 C:/Users/Lee/Documents/Codex/2026-09-11/https-github-com-markravencanete50-source-portable-food-bank/work/Portable Food Bank
+ RUN  v3.2.7 C:/Users/Lee/Documents/Codex/2026-09-11/https-github-com-markravencanete50-source-temporary-kitchen-rental/work/Temporary Kitchen Rental
 
 stderr | tests/contact.test.ts > contact application boundary > preserves stored success when email fails
 {"event":"delivery_pending","id":"test-id"}

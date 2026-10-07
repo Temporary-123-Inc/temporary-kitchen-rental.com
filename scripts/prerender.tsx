@@ -53,7 +53,7 @@ import {
   targetCoreAliases,
   targetRouteByPath,
   targetRoutes,
-} from "../src/portableFoodBankTarget";
+} from "../src/temporaryKitchenRentalTarget";
 import { authorityTop25 } from "../src/authorityTop25";
 import { commercialPageHeadline } from "../src/commercialHeadlines";
 // Vercel preview builds must never inherit production indexing settings.
@@ -173,7 +173,7 @@ const serviceCategoryByPath = new Map(
   serviceCategories.map((item) => [item.href, item]),
 );
 // Index the eligible public site while excluding utilities, duplicate aliases,
-// empty placeholders, legacy PortableFoodBank claims, and unverified procurement
+// empty placeholders, legacy TemporaryKitchenRental claims, and unverified procurement
 // or testimonial material until those page claims are independently reviewed.
 const editorialNoindex = new Set([
   "/seo-dashboard/",
@@ -236,7 +236,7 @@ const sourceDescription = (page: SourcePage) => {
     (inherited.length >= 155 && !/[.!?]$/.test(inherited));
   if (!unusable) return inherited;
   const subject = compact(page.title.split("|")[0], 65);
-  return `Explore ${subject} from Portable Food Bank. Call ${site.phoneDisplay} to discuss site requirements, equipment availability and delivery.`;
+  return `Explore ${subject} from Temporary Kitchen Rental. Call ${site.phoneDisplay} to discuss site requirements, equipment availability and delivery.`;
 };
 const unresolvedSourceLinks = new Set<string>();
 const dimensions: Record<string, { width: number; height: number }> = {};
@@ -346,14 +346,14 @@ for (const path of [...allRoutes, "/404/"]) {
     ? {
         title: `${targetRoute.title} | ${site.brand}`,
         description: targetRoute.location
-          ? `Plan a commercial mobile kitchen rental for ${targetRoute.location.city ? `${targetRoute.location.city}, ` : ""}${targetRoute.location.state}. Confirm equipment, utilities, dates, site access and delivery with Portable Food Bank.`
-          : `Explore ${targetRoute.title} from Portable Food Bank. Confirm the exact configuration, utilities, delivery requirements and availability for your project.`,
+          ? `Plan a commercial mobile kitchen rental for ${targetRoute.location.city ? `${targetRoute.location.city}, ` : ""}${targetRoute.location.state}. Confirm equipment, utilities, dates, site access and delivery with Temporary Kitchen Rental.`
+          : `Explore ${targetRoute.title} from Temporary Kitchen Rental. Confirm the exact configuration, utilities, delivery requirements and availability for your project.`,
       }
     : path === "/locations/"
       ? {
           title: `Mobile Kitchen Rental Locations | ${site.brand}`,
           description:
-            "Browse Portable Food Bank service areas across the United States and Canada and preserve existing state and city rental URLs.",
+            "Browse Temporary Kitchen Rental service areas across the United States and Canada and preserve existing state and city rental URLs.",
         }
       : industry
         ? {
@@ -416,7 +416,7 @@ for (const path of [...allRoutes, "/404/"]) {
                       ? {
                           title: `Modular Kitchen Facility Rental | ${site.brand}`,
                           description:
-                            "Plan a building-based modular kitchen for commercial or institutional food service. Review workflow, site access, utilities, installation responsibilities and configuration with Portable Food Bank.",
+                            "Plan a building-based modular kitchen for commercial or institutional food service. Review workflow, site access, utilities, installation responsibilities and configuration with Temporary Kitchen Rental.",
                         }
                       : serviceCategory
                         ? {
@@ -439,7 +439,7 @@ for (const path of [...allRoutes, "/404/"]) {
                                 ? {
                                     title: `Mobile Kitchen Rental Inventory | ${site.brand}`,
                                     description:
-                                      "Explore Portable Food Bank commercial kitchens, dishwashing and refrigeration trailers, plus applicable project support equipment.",
+                                      "Explore Temporary Kitchen Rental commercial kitchens, dishwashing and refrigeration trailers, plus applicable project support equipment.",
                                   }
                                 : catalogItem
                                   ? {
@@ -460,7 +460,7 @@ for (const path of [...allRoutes, "/404/"]) {
       ? new URL(path, site.origin).href
       : "");
   if (!info.description.trim()) {
-    info.description = `Explore ${page?.title || "Portable Food Bank rentals"}. Call Portable Food Bank at ${site.phoneDisplay} to discuss your site, rental dates and equipment requirements.`;
+    info.description = `Explore ${page?.title || "Temporary Kitchen Rental rentals"}. Call Temporary Kitchen Rental at ${site.phoneDisplay} to discuss your site, rental dates and equipment requirements.`;
   }
   const head =
     (fontAsset
@@ -578,7 +578,7 @@ for (const path of [...allRoutes, "/404/"]) {
       )
         img.attr(
           "alt",
-          `${h1.text().trim()}: Portable Food Bank equipment reference`,
+          `${h1.text().trim()}: Temporary Kitchen Rental equipment reference`,
         );
     });
     const crumbs = breadcrumb

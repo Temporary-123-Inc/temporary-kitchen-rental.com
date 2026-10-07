@@ -1,4 +1,4 @@
-# Boss Requirements — PortableFoodBank
+# Boss Requirements — TemporaryKitchenRental
 
 This file consolidates current instructions so all tasks work from the same interpretation. Add dated clarifications rather than silently replacing earlier requirements.
 
@@ -8,7 +8,7 @@ This file consolidates current instructions so all tasks work from the same inte
 - The opening copy must name the verified supporting families: mobile showers, shower/restroom combinations, mobile kitchens, man camp/workforce housing, refrigeration/freezer, and dishwashing.
 - Place visible service links or cards immediately below the opening area so those families are directly discoverable without opening navigation.
 - Give the primary mobile-kitchen family approximately 75–85% of the portfolio presentation and all supporting families approximately 15–25% collectively on both desktop and mobile. The primary family must remain the H1/CTA lead and largest individual family card.
-- Do not apply the Ice Fox wording rule to Portable Food Bank; that wording is specific to Ice Fox.
+- Do not apply the Ice Fox wording rule to Temporary Kitchen Rental; that wording is specific to Ice Fox.
 - Keep claims, inventory, service coverage, and urgency language within repository-backed facts; do not invent availability, specifications, locations, pricing, or response guarantees.
 
 ## Location-page subject matter

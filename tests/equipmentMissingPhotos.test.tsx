@@ -91,7 +91,7 @@ describe("owner-approved inventory image coverage", () => {
     expect(image.attr("alt")).toMatch(/illustrated refrigerated shipping container/i);
     expect(result.images[0].fullSrc).toBe("/media/4e54342585946d7f0e0254a2.png");
     expect($("[data-carousel-caption]").text()).toMatch(/labelled 8 ft x 40 ft.*category reference/i);
-    expect($.text()).not.toMatch(/PortableFoodBank|portable-food-bank/i);
+    expect($.text()).not.toMatch(/TemporaryKitchenRental|temporary-kitchen-rental/i);
     expect($.text()).toContain("+1 (888) 563-6507");
   });
 
@@ -116,7 +116,7 @@ describe("owner-approved inventory image coverage", () => {
       expect(result.caption, item.id).toMatch(/Rental or Lease(?:\.| for )/);
       expect(result.caption, item.id).toContain("Discuss weekly rental, monthly rental, or yearly rental and lease options");
       expect(result.caption, item.id).toContain("+1 (888) 563-6507");
-      expect(result.caption, item.id).not.toMatch(/Reviewed equipment reference images|PortableFoodBank|800-443-5212/i);
+      expect(result.caption, item.id).not.toMatch(/Reviewed equipment reference images|TemporaryKitchenRental|800-443-5212/i);
     }
   });
 });

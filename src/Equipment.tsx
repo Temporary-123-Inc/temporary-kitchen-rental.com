@@ -78,7 +78,7 @@ for (const item of equipment) {
   const photo = cardGallery(item.name).images[0];
   item.image = photo?.src || "";
   item.smallImage = photo?.thumbnail;
-  item.imageAlt = photo?.alt || `Commercial ${item.name.toLowerCase()} equipment from Portable Food Bank`;
+  item.imageAlt = photo?.alt || `Commercial ${item.name.toLowerCase()} equipment from Temporary Kitchen Rental`;
 }
 
 export function EquipmentImage({
@@ -171,7 +171,7 @@ export function Cards({
               <EquipmentImage
                 image={e.image}
                 smallImage={e.smallImage}
-                alt={e.imageAlt || `${e.name} equipment from Portable Food Bank`}
+                alt={e.imageAlt || `${e.name} equipment from Temporary Kitchen Rental`}
               />
             ) : (
               <div

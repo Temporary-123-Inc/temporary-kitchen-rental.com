@@ -12,12 +12,12 @@ Classify every URL by its real customer need, equipment, and transaction. A term
 
 | Family | Site focus | Relevant topical services |
 | --- | --- | --- |
-| 1. Man camp / life support | PortableFoodBank: remote base camps and life-support facilities | Shower; shower-and-restroom/bathroom combination; ADA shower-and-restroom combination; laundry; kitchen; commercial kitchen; sleeper bunk-bed facilities; remote man camp/life-support services. These are eight topics to distribute across appropriate pages, not eight phrases to combine in one H1. |
+| 1. Man camp / life support | TemporaryKitchenRental: remote base camps and life-support facilities | Shower; shower-and-restroom/bathroom combination; ADA shower-and-restroom combination; laundry; kitchen; commercial kitchen; sleeper bunk-bed facilities; remote man camp/life-support services. These are eight topics to distribute across appropriate pages, not eight phrases to combine in one H1. |
 | 2. Kitchens and supporting operations | Temporary Kitchens 123 | Kitchen; commercial kitchen; modular kitchen; emergency kitchen; dishwashing; commercial dishwasher; refrigeration; emergency refrigeration, where actually offered. An emergency kitchen page may describe a verified construction, renovation, or emergency-operations need. |
 | 3. Refrigeration / freezer | Ice Fox Equipment | Freezer trailer; refrigeration trailer; walk-in refrigeration/freezer; outdoor walk-in cooler; refrigeration/freezer container; temporary or emergency refrigeration, as applicable. Mention sales only on pages that actually offer sales. |
 | 4. Dishwashing / warewashing | Dedicated commercial dishwashing website | Commercial dishwashing; warewashing; dishwashing trailer; dishmachine; flight-type machine. Name CMA, Hobart, Champion, or Jackson only when the page genuinely offers, discusses, or supports that equipment; do not imply an unverified affiliation. |
 
-Do not turn every PortableFoodBank city page into a mobile-kitchen page. A multi-service hub may need a broader facility H1. Inspect existing page content, live/preview behavior, approved product information, and real inventory photos before assigning a topic.
+Do not turn every TemporaryKitchenRental city page into a mobile-kitchen page. A multi-service hub may need a broader facility H1. Inspect existing page content, live/preview behavior, approved product information, and real inventory photos before assigning a topic.
 
 ### 2. Build one clear, stable H1 per page
 
@@ -36,7 +36,7 @@ Examples of readable combinations, **only for pages that truly match**:
 | Refrigeration equipment | `Walk-In Freezer Trailer Rental` |
 | Commercial dishwashing | `Commercial Dishwashing Trailer Rental` |
 
-“Mix 1–8” means rotate among the eight PortableFoodBank topics **across relevant pages**, not place all eight in one H1. Vary compatible Group 1 and Group 2 wording only when the actual equipment and offer support it. Record each assignment against the canonical URL so it is deterministic; never change an H1 randomly on refresh. Grammar, accuracy, and search intent outrank rotation. Avoid `rental trailer rental`, `temporary temporary facilities`, or an H1 promising showers above a kitchen-only page. Keep exactly one H1 per page. Leave homepage H1s unchanged unless separately approved.
+“Mix 1–8” means rotate among the eight TemporaryKitchenRental topics **across relevant pages**, not place all eight in one H1. Vary compatible Group 1 and Group 2 wording only when the actual equipment and offer support it. Record each assignment against the canonical URL so it is deterministic; never change an H1 randomly on refresh. Grammar, accuracy, and search intent outrank rotation. Avoid `rental trailer rental`, `temporary temporary facilities`, or an H1 promising showers above a kitchen-only page. Keep exactly one H1 per page. Leave homepage H1s unchanged unless separately approved.
 
 ### 3. Make the page fulfill its H1 promise
 

@@ -35,8 +35,8 @@ import {
   targetCoreAliases,
   targetRouteByPath,
   type TargetRoute,
-} from "./portableFoodBankTarget";
-import { legacyProductPageCopy } from "./portableFoodBankLegacyCopy";
+} from "./temporaryKitchenRentalTarget";
+import { legacyProductPageCopy } from "./temporaryKitchenRentalLegacyCopy";
 import { equipmentGalleryCaption } from "./equipmentGalleryCaption";
 import { catalogPhotoCoverage } from "./catalogImageCoverage";
 import { commercialPageHeadline } from "./commercialHeadlines";
@@ -88,17 +88,13 @@ export function Header({ path }: { path: string }) {
       </a>
       <div className="header-sticky header-refresh mobile-kitchen-home-header">
         <header className="header wrap">
-          <a className="brand" href="/" aria-label="Portable Food Bank home">
+          <a className="brand" href="/" aria-label="Temporary Kitchen Rental home">
             <img
-              src="/images/portable-food-bank-logo-horizontal.png"
-              width="414"
-              height="151"
-              alt=""
+              src="/temporary-kitchen-rental-logo.svg"
+              width="760"
+              height="180"
+              alt="Temporary Kitchen Rental"
             />
-            <span className="brand-legacy-copy">
-              Portable Food Bank
-              <small>COMMERCIAL KITCHENS · NATIONWIDE RENTALS</small>
-            </span>
           </a>
           <nav aria-label="Main navigation">
             <a href="/" aria-current={path === "/" ? "page" : undefined}>
@@ -340,7 +336,7 @@ export function Header({ path }: { path: string }) {
       <a
         className="contact-rail contact-rail-refresh"
         href="/contact-us/"
-        aria-label="Contact Portable Food Bank rental support now"
+        aria-label="Contact Temporary Kitchen Rental rental support now"
         aria-controls="contact-drawer"
         aria-expanded="false"
         aria-current={path === "/contact-us/" ? "page" : undefined}
@@ -374,7 +370,7 @@ function ContactDrawer() {
     >
       <div className="contact-drawer-shell">
         <div className="contact-drawer-call">
-          <span>Portable Food Bank project desk</span>
+          <span>Temporary Kitchen Rental project desk</span>
           <button
             type="button"
             data-close-contact
@@ -444,9 +440,9 @@ export function Footer({ showClosing = true }: { showClosing?: boolean }) {
       )}
       <footer className="wrap footer">
         <div>
-          <a className="wordmark" href="/">Portable Food Bank</a>
+          <a className="wordmark" href="/">Temporary Kitchen Rental</a>
           <p>Commercial kitchen rentals for the work ahead.</p>
-          <small>© {new Date().getFullYear()} Portable Food Bank</small>
+          <small>© {new Date().getFullYear()} Temporary Kitchen Rental</small>
         </div>
         <div>
           <strong>Explore</strong>
@@ -713,7 +709,7 @@ export function Site({
         {requestedPath === "/testinmonials/" ? (
           <section className="wrap section narrow">
             <span className="eyebrow">CUSTOMER EXPERIENCES</span>
-            <h1>Portable Food Bank Customer Testimonials</h1>
+            <h1>Temporary Kitchen Rental Customer Testimonials</h1>
             <p data-h1-intro>
               This preserved page is ready for owner-approved customer stories.
               Testimonials will only be published with verified attribution and
@@ -763,7 +759,7 @@ export function Site({
               .
             </p>
             <p>
-              Call Portable Food Bank at{" "}
+              Call Temporary Kitchen Rental at{" "}
               <a href={"tel:" + site.phoneE164}>{site.phoneDisplay}</a> to
               discuss the project requirements and next steps.
             </p>
@@ -841,7 +837,7 @@ export function Site({
                     Locations
                   </h1>
                   <p data-h1-intro>
-                    Find Portable Food Bank service areas by state, then review
+                    Find Temporary Kitchen Rental service areas by state, then review
                     local rental planning, equipment options and site-access
                     considerations for your project.
                   </p>
@@ -1116,7 +1112,7 @@ export function Site({
                   </h2>
                   <p>
                     Browse specialized temporary facility, workforce, government
-                    and emergency support pages from Portable Food Bank.
+                    and emergency support pages from Temporary Kitchen Rental.
                   </p>
                 </div>
                 <details>
@@ -1174,12 +1170,12 @@ export function Site({
             <section className="about-hero" aria-labelledby="about-title">
               <div className="wrap section about-hero-grid">
                 <div className="secondary-intro-copy">
-                  <span className="eyebrow">ABOUT PORTABLE FOOD BANK</span>
+                  <span className="eyebrow">ABOUT TEMPORARY KITCHEN RENTAL</span>
                   <h1 id="about-title">
                     Commercial kitchens built around the work.
                   </h1>
                   <p data-h1-intro>
-                    Portable Food Bank helps project teams keep food service
+                    Temporary Kitchen Rental helps project teams keep food service
                     operating through renovations, outages, emergencies and
                     planned maintenance. Kitchen capacity, site access,
                     utilities and rental timing are reviewed together.
@@ -1199,7 +1195,7 @@ export function Site({
                     sizes="(max-width: 760px) calc(100vw - 40px), 480px"
                     width="850"
                     height="650"
-                    alt="Commercial cooking equipment and preparation space inside a Portable Food Bank trailer"
+                    alt="Commercial cooking equipment and preparation space inside a Temporary Kitchen Rental trailer"
                     fetchPriority="high"
                     decoding="async"
                   />
@@ -1527,7 +1523,7 @@ export function Site({
               team.
             </p>
             <p>
-              For questions about your information, contact Portable Food Bank
+              For questions about your information, contact Temporary Kitchen Rental
               at {site.phoneDisplay}.
             </p>
           </section>

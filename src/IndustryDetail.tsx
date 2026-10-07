@@ -77,7 +77,7 @@ export const industryGuides = [
     intro:
       "Plan public-service continuity with a mobile commercial kitchen, refrigerated storage and dishwashing support. Confirm procurement, access, utilities and delivery details for the actual site.",
     answer:
-      "Government kitchen planning starts with the operating brief and purchasing requirements. Portable Food Bank can discuss kitchen, refrigeration and dishwashing options for maintenance, renovation, field operations and emergency support.",
+      "Government kitchen planning starts with the operating brief and purchasing requirements. Temporary Kitchen Rental can discuss kitchen, refrigeration and dishwashing options for maintenance, renovation, field operations and emergency support.",
     steps: [
       [
         "Define the requirement",
@@ -229,7 +229,7 @@ export function IndustryDetail({ path }: { path: string }) {
       </section>
       <section className="wrap industry-equipment">
         <div>
-          <span className="eyebrow">PORTABLE FOOD BANK EQUIPMENT</span>
+          <span className="eyebrow">TEMPORARY KITCHEN RENTAL EQUIPMENT</span>
           <h2>Equipment for the work ahead</h2>
         </div>
         <div className="industry-photo-grid">

@@ -1,7 +1,7 @@
 /* Shared, idempotent gallery controller. State changes explicitly destroy and remount it. */
 (() => {
   "use strict";
-  const namespace = "__portableFoodBankServiceGalleries";
+  const namespace = "__temporaryKitchenRentalServiceGalleries";
   if (window[namespace]) {
     window[namespace].scan(document);
     return;

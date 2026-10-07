@@ -199,8 +199,8 @@ for (const file of htmlFiles) {
     if (
       ![
         new URL(site.origin).hostname,
-        "portable-food-bank.com",
-        "www.portable-food-bank.com",
+        "temporary-kitchen-rental.com",
+        "www.temporary-kitchen-rental.com",
       ].includes(url.hostname)
     )
       continue;

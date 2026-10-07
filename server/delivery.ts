@@ -45,7 +45,7 @@ export async function processDelivery(
   )
     return false;
   try {
-    const emailId = await send(value.message, `portable-food-bank/${id}`);
+    const emailId = await send(value.message, `temporary-kitchen-rental/${id}`);
     await ref.transaction((current) =>
       !current
         ? null

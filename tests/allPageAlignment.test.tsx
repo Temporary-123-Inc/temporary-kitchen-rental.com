@@ -85,7 +85,7 @@ describe("H1, introduction and equipment consistency", () => {
         expect(selection.caption, item.id).toMatch(/labelled 8 ft x 40 ft/i);
         expect(selection.caption, item.id).toMatch(/category reference, not confirmation/i);
         expect(selection.caption, item.id).toContain("+1 (888) 563-6507");
-        expect(selection.caption, item.id).not.toMatch(/PortableFoodBank|portable-food-bank/i);
+        expect(selection.caption, item.id).not.toMatch(/TemporaryKitchenRental|temporary-kitchen-rental/i);
         continue;
       }
       expect(selection.images.length, item.id).toBeGreaterThan(0);
@@ -122,7 +122,7 @@ describe("H1, introduction and equipment consistency", () => {
     const html =
       "<h2>Body details</h2><p>This is a substantive body paragraph that should not be removed because a missing lead was never present.</p>";
     const options = {
-      origin: "https://portable-food-bank.com",
+      origin: "https://temporary-kitchen-rental.com",
       routes: new Set<string>(),
       redirects: new Map<string, string>(),
       media: {},

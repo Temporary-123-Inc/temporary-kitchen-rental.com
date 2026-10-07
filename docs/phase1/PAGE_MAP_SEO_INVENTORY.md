@@ -1,4 +1,4 @@
-# PortableFoodBank Phase 1 Page Map and SEO Inventory
+# TemporaryKitchenRental Phase 1 Page Map and SEO Inventory
 
 Audit date: 2026-09-15 (Asia/Manila)
 
@@ -100,7 +100,7 @@ These are separate systems and their counts must not be combined.
 
 ### Vercel candidate
 
-- Host checked: `https://portable-food-bank-nine.vercel.app/`
+- Host checked: `https://temporary-kitchen-rental-nine.vercel.app/`
 - Local/generated source of truth: this repository and `dist`
 - 650 rendered candidate pages plus 629 redirect sources
 - preview-wide noindex behavior
@@ -109,13 +109,13 @@ These are separate systems and their counts must not be combined.
 
 ### Current public WordPress site
 
-- Host checked: `https://portable-food-bank.com/`
+- Host checked: `https://temporary-kitchen-rental.com/`
 - Homepage returned HTTP 200
-- Homepage title observed: `Portable Food Bank - Lease High Quality Outdoor Kitchens`
+- Homepage title observed: `Temporary Kitchen Rental - Lease High Quality Outdoor Kitchens`
 - Homepage H1 observed: `NEWS/BLOG`
-- Homepage canonical observed: `https://portable-food-bank.com/`
+- Homepage canonical observed: `https://temporary-kitchen-rental.com/`
 - Homepage meta robots observed: `follow, index`
-- `https://portable-food-bank.com/wp-sitemap.xml` returned 301 to `https://portable-food-bank.com/sitemap_index.xml`
+- `https://temporary-kitchen-rental.com/wp-sitemap.xml` returned 301 to `https://temporary-kitchen-rental.com/sitemap_index.xml`
 - The public sitemap index returned HTTP 200 and referenced 328 child page sitemaps
 - The first child sitemap contained 300 URL entries and the last contained 153, but the full public sitemap corpus was not downloaded and reconciled in this task; therefore this report does **not** claim a confirmed public WordPress page total
 

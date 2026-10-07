@@ -30,7 +30,7 @@ try {
       })
       page.on('pageerror', (error) => pageErrors.push(error.message))
 
-      const response = await page.goto(`https://portable-food-bank.com${route}`, {
+      const response = await page.goto(`https://temporary-kitchen-rental.com${route}`, {
         waitUntil: 'networkidle',
       })
 
@@ -52,7 +52,7 @@ try {
         pageErrors,
         passed:
           response?.status() === 200 &&
-          result.url === `https://portable-food-bank.com${route}` &&
+          result.url === `https://temporary-kitchen-rental.com${route}` &&
           Boolean(result.h1) &&
           Boolean(result.title) &&
           !result.horizontalOverflow &&

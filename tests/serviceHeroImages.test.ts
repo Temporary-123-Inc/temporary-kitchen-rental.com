@@ -137,7 +137,7 @@ describe("service hero image ordering", () => {
     expect(showerPage("main [data-carousel-caption]").text()).toMatch(
       /20 ft five-stall.*not a photograph.*22 ft ten-stall/i,
     );
-    expect(showerPage("main").text()).not.toMatch(/PortableFoodBank|portable-food-bank/i);
+    expect(showerPage("main").text()).not.toMatch(/TemporaryKitchenRental|temporary-kitchen-rental/i);
 
     const combination = imagesForServicePath(
       "/services/shower-restroom-combination-trailers/30ft-8-stall/",
@@ -145,7 +145,7 @@ describe("service hero image ordering", () => {
     expect(combination).toHaveLength(1);
     expect(combination?.[0].model).toBe("model-11");
     expect(combination?.[0].alt).toMatch(/30 ft eight-stall.*commercial trailers/i);
-    expect(combination?.[0].alt).not.toMatch(/PortableFoodBank|portable-food-bank/i);
+    expect(combination?.[0].alt).not.toMatch(/TemporaryKitchenRental|temporary-kitchen-rental/i);
     const combinationPage = load(
       renderToStaticMarkup(
         createElement(Site, {

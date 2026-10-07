@@ -3,10 +3,10 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { load } from "cheerio";
 import { describe, expect, it } from "vitest";
 import { Site } from "../src/Site";
-import { targetRoutes } from "../src/portableFoodBankTarget";
-import { legacyProductPageCopy } from "../src/portableFoodBankLegacyCopy";
+import { targetRoutes } from "../src/temporaryKitchenRentalTarget";
+import { legacyProductPageCopy } from "../src/temporaryKitchenRentalLegacyCopy";
 import { ServiceDetail, modelDetails } from "../src/ServiceDetail";
-import { portableFoodBankServiceEditorial } from "../src/portableFoodBankServiceEditorial";
+import { temporaryKitchenRentalServiceEditorial } from "../src/temporaryKitchenRentalServiceEditorial";
 import { IndustryDetail, industryGuides } from "../src/IndustryDetail";
 
 const legacyProductRoutes = targetRoutes.filter(
@@ -35,7 +35,7 @@ function copySimilarity(left: string, right: string) {
     : 1;
 }
 
-describe("Portable Food Bank legacy product-page copy alignment", () => {
+describe("Temporary Kitchen Rental legacy product-page copy alignment", () => {
   it("keeps the preserved product routes and their single H1s intact", () => {
     expect(legacyProductRoutes).toHaveLength(17);
     expect(Object.keys(legacyProductPageCopy)).toHaveLength(17);
@@ -63,8 +63,8 @@ describe("Portable Food Bank legacy product-page copy alignment", () => {
       expect(caption.length, route.path).toBeGreaterThan(100);
       expect(caption, route.path).toMatch(/Rental or Lease(?:\.| for )/);
       expect(caption, route.path).toContain("Discuss weekly rental, monthly rental, or yearly rental and lease options");
-      expect(caption, route.path).toContain("Call Portable Food Bank now for 24/7 live-agent support: +1 (888) 563-6507");
-      expect(caption, route.path).not.toMatch(/Reviewed equipment reference images|PortableFoodBank|800-443-5212/i);
+      expect(caption, route.path).toContain("Call Temporary Kitchen Rental now for 24/7 live-agent support: +1 (888) 563-6507");
+      expect(caption, route.path).not.toMatch(/Reviewed equipment reference images|TemporaryKitchenRental|800-443-5212/i);
     }
   });
 
@@ -154,7 +154,7 @@ describe("Portable Food Bank legacy product-page copy alignment", () => {
   it("covers every registered model page with model-specific planning copy", () => {
     const modelPaths = Object.keys(modelDetails);
     expect(modelPaths).toHaveLength(33);
-    expect(Object.keys(portableFoodBankServiceEditorial)).toHaveLength(modelPaths.length);
+    expect(Object.keys(temporaryKitchenRentalServiceEditorial)).toHaveLength(modelPaths.length);
 
     const planningSections: Array<{ path: string; text: string }> = [];
     for (const path of modelPaths as (keyof typeof modelDetails)[]) {
@@ -162,20 +162,20 @@ describe("Portable Food Bank legacy product-page copy alignment", () => {
         renderToStaticMarkup(createElement(ServiceDetail, { path })),
       );
       const model = modelDetails[path];
-      const editorial = portableFoodBankServiceEditorial[path];
+      const editorial = temporaryKitchenRentalServiceEditorial[path];
 
       expect(editorial, path).toBeDefined();
       expect(page("h1"), path).toHaveLength(1);
       expect(page(".model-information h2").first().text()).toContain(model.name);
       expect(page(".model-information h2").eq(1).text()).toContain(model.name);
       expect(page(".model-planning h2").text()).toContain(model.name);
-      expect(page(".model-related").text()).not.toMatch(/PortableFoodBank/i);
+      expect(page(".model-related").text()).not.toMatch(/TemporaryKitchenRental/i);
       const caption = page("[data-carousel-caption]").text();
       if (caption) {
         expect(caption, path).toContain(model.name.replace(/\s+(?:Rental|For Rent|Leasing)$/i, ""));
         expect(caption, path).toMatch(/Rental or Lease(?:\.| for )/);
         expect(caption, path).toContain("+1 (888) 563-6507");
-        expect(caption, path).not.toMatch(/Reviewed equipment reference images|PortableFoodBank|800-443-5212/i);
+        expect(caption, path).not.toMatch(/Reviewed equipment reference images|TemporaryKitchenRental|800-443-5212/i);
       }
       planningSections.push({
         path,
@@ -207,7 +207,7 @@ describe("Portable Food Bank legacy product-page copy alignment", () => {
         const caption = page(element).text();
         expect(caption, guide.path).toMatch(/Rental or Lease(?:\.| for )/);
         expect(caption, guide.path).toContain("+1 (888) 563-6507");
-        expect(caption, guide.path).not.toMatch(/Reviewed equipment reference images|PortableFoodBank|800-443-5212/i);
+        expect(caption, guide.path).not.toMatch(/Reviewed equipment reference images|TemporaryKitchenRental|800-443-5212/i);
       }
     }
   });

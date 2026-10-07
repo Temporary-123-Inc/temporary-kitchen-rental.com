@@ -1,12 +1,12 @@
 {
   "at": "2026-09-16T09:37:11.169Z",
-  "repo": "C:\\Users\\Charles\\Documents\\New project\\Portable Food Bank",
+  "repo": "C:\\Users\\Charles\\Documents\\New project\\Temporary Kitchen Rental",
   "branch": "main",
   "baseCommit": "8ad98dba33ef6d9b7b1e64028da3fc639bd7fd9a",
   "newCommit": false,
   "deployed": false,
   "preview": "http://127.0.0.1:4205",
-  "frozenBuild": "C:\\Users\\Charles\\Documents\\New project\\Portable Food Bank\\.temp\\image-placement-revert-20260916\\dist",
+  "frozenBuild": "C:\\Users\\Charles\\Documents\\New project\\Temporary Kitchen Rental\\.temp\\image-placement-revert-20260916\\dist",
   "runtimeFilesChanged": [
     "src/Site.tsx",
     "src/CityDirectoryPage.tsx",

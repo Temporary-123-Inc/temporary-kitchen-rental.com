@@ -1,4 +1,4 @@
-# PortableFoodBank - two new Drive photo sources
+# TemporaryKitchenRental - two new Drive photo sources
 
 **Historical preparation-stage checkpoint.** The zero-placement finding below records the initial exact-title search. A later local implementation replaces the two relevant choices inside EXISTING Man Camp / Remote Operations photo groups, with separate product headings and no new slots. Use audit/multifunctional-placement-2026-09-16/ for the current placement inventory and acceptance when its run completes. Do not use this earlier checkpoint as a current website-placement report.
 
@@ -34,9 +34,9 @@ All 651 generated H1s were compared with the prior candidate. All remain unchang
 
 ## Repository / review boundary
 
-Repository: C:\Users\Charles\Documents\New project\Portable Food Bank
+Repository: C:\Users\Charles\Documents\New project\Temporary Kitchen Rental
 Branch: main; base HEAD: 8ad98dba33ef6d9b7b1e64028da3fc639bd7fd9a; changes uncommitted.
-Local compiled candidate: C:\Users\Charles\Documents\New project\Portable Food Bank\.temp\new-equipment-photos-20260916\dist
+Local compiled candidate: C:\Users\Charles\Documents\New project\Temporary Kitchen Rental\.temp\new-equipment-photos-20260916\dist
 No Vercel deployment, live acceptance, indexing submission or contact request. Earlier accepted preview snapshots remain unchanged.
 Exact hashes and results: audit/new-equipment-photos-2026-09-16/summary.json. Complete source receipt: audit/new-equipment-photos-2026-09-16/download-manifest.json. Complete target inventory: audit/new-equipment-photos-2026-09-16/route-modal-inventory.csv.
 

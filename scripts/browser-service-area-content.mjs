@@ -10,7 +10,7 @@ const context=await browser.newContext({viewport:{width:1440,height:1000},reduce
 await context.route('**/*',route=>route.request().url().startsWith(origin)?route.continue():route.abort());
 await context.addInitScript(()=>{
   if(window.top!==window)return;
-  try{localStorage.setItem('portable-food-bank:emergency-dismissed-until-v1',String(Date.now()+86400000));}catch{}
+  try{localStorage.setItem('temporary-kitchen-rental:emergency-dismissed-until-v1',String(Date.now()+86400000));}catch{}
 });
 const page=await context.newPage();
 page.setDefaultTimeout(12000);

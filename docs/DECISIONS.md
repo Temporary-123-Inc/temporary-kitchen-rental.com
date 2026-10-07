@@ -1,24 +1,37 @@
-# PortableFoodBank Decision Log
+# TemporaryKitchenRental Decision Log
+
+## 2026-10-07 — Let semantic section surfaces own full-width backgrounds
+
+- Treat a direct `section.wrap`, `nav.wrap`, or `footer.wrap` as a full-viewport surface with symmetric inline padding, not as a constrained painted box.
+- Preserve the existing content width through the same desktop rail gutter and mobile side padding; leave nested `.wrap` elements constrained for text, cards, forms, carousels, and maps.
+- Keep the fix in the final brand layer so retained page templates are corrected consistently without changing route markup, content, or interactive behavior.
+
+## 2026-10-07 — Make the local checkout an independent Temporary Kitchen Rental site
+
+- Use `Temporary Kitchen Rental` and `temporary-kitchen-rental.com` as the sole current site identity in visible copy, metadata, config, generated output, public logo assets, favicons, audit records, and tracked filenames.
+- Preserve routes, service-area content, carousel/map behavior, images, and existing functionality; this is an identity rebrand, not a content or architecture rewrite.
+- Remove the local GitHub remote and local Vercel project link. Do not push or deploy this checkout unless the owner explicitly requests a new repository/deployment connection.
+- Retain local Git history for provenance. The current working tree and generated output are the scope of the residue scan; historical Git objects are not rewritten by this decision.
 
 ## 2026-10-03 — Enable indexability for eligible public routes
 
 - The owner explicitly authorized moving from staged/preview indexing to a full public-static-route release. For all eligible canonical pages, emit `index,follow`, a self-canonical, and a sitemap entry; publish a `robots.txt` sitemap reference and allow crawling outside `/api/`.
 - Keep only private tooling, duplicate legacy aliases, empty/unapproved testimonials, legacy testimonial copy with unverified attribution, and video media whose brand/rights are unverified out of the sitemap. Preserve preview-host `X-Robots-Tag: noindex, follow`.
-- Do not attribute another supplier’s GSA/DLA/SBA contract or approval claims to Portable Food Bank. The GSA and approval pages must remain factual, identify that verified documents are not published there, and invite direct confirmation rather than repeating historical claims.
+- Do not attribute another supplier’s GSA/DLA/SBA contract or approval claims to Temporary Kitchen Rental. The GSA and approval pages must remain factual, identify that verified documents are not published there, and invite direct confirmation rather than repeating historical claims.
 - A successful build/deployment means the site emits indexable pages; it does not guarantee that Google crawls, indexes, ranks, or selects those URLs. Search Console ownership/submission remains a separate verification step.
 
-## 2026-09-30 — Keep former-brand evidence internal and publish only Portable Food Bank identity
+## 2026-09-30 — Keep former-brand evidence internal and publish only Temporary Kitchen Rental identity
 
-- Preserve historical import/audit records in source when they are needed for provenance, but do not expose the former PortableFoodBank name, logo, hostname, preview URL, storage namespace, or app identity in customer-facing copy or generated public assets.
-- Represent recovered authority evidence publicly by exact legacy path only. Resolve any current-site links against the current Portable Food Bank origin; do not create, rename, redirect, or remove routes as part of identity cleanup.
+- Preserve historical import/audit records in source when they are needed for provenance, but do not expose the former TemporaryKitchenRental name, logo, hostname, preview URL, storage namespace, or app identity in customer-facing copy or generated public assets.
+- Represent recovered authority evidence publicly by exact legacy path only. Resolve any current-site links against the current Temporary Kitchen Rental origin; do not create, rename, redirect, or remove routes as part of identity cleanup.
 - Sanitize final prerender title, description, and rendered copy as a defense-in-depth boundary, and fail the build verification when generated text assets contain the former identity.
 - Treat binary social assets as a separate visual-verification requirement because text scanning cannot detect words baked into PNG pixels.
 - Preserve the established layout, H1 intent, 75–85% primary / 15–25% supporting-family balance, domain routing, and indexing behavior.
 
-## 2026-09-30 — Move the original domain to the current Portable Food Bank project
+## 2026-09-30 — Move the original domain to the current Temporary Kitchen Rental project
 
-- Treat `portable-food-bank-team/portable-food-bank-com` as the current production project for the rebuilt Portable Food Bank site. Move the existing apex and `www` domain assignments together from the superseded `portable-food-bank-team/portable-food-bank` project rather than creating duplicate DNS records or a third project.
-- Preserve `portable-food-bank.com` as a Production apex and `www.portable-food-bank.com` as a permanent 308 redirect to the apex. Leave the already-valid registrar records unchanged.
+- Treat `temporary-kitchen-rental-team/temporary-kitchen-rental-com` as the current production project for the rebuilt Temporary Kitchen Rental site. Move the existing apex and `www` domain assignments together from the superseded `temporary-kitchen-rental-team/temporary-kitchen-rental` project rather than creating duplicate DNS records or a third project.
+- Preserve `temporary-kitchen-rental.com` as a Production apex and `www.temporary-kitchen-rental.com` as a permanent 308 redirect to the apex. Leave the already-valid registrar records unchanged.
 - Keep domain routing separate from SEO release approval. The current generated output remains fail-closed (`noindex,follow`, no production canonical, empty sitemap); do not describe the domain as indexable until source configuration is corrected, rebuilt, deployed, and live-verified.
 
 ## 2026-09-30 — Correct only the homepage intent-language gaps
@@ -31,7 +44,7 @@
 
 ## 2026-09-30 — Use service-specific labels for state directory links
 
-- Label each shared homepage/Service Areas state link “Mobile Kitchen Trailer Rental in [State]” as requested, while preserving its state URL, Portable Food Bank brand, and adjacent region disclosure/links. Do not change the route to include the label text.
+- Label each shared homepage/Service Areas state link “Mobile Kitchen Trailer Rental in [State]” as requested, while preserving its state URL, Temporary Kitchen Rental brand, and adjacent region disclosure/links. Do not change the route to include the label text.
 
 ## 2026-09-30 — Keep state labels and counts visually distinct
 
@@ -45,17 +58,17 @@
 
 ## 2026-09-30 — Keep the audited Mobile Kitchen release fail-closed and noindex
 
-- Release only to the already-linked Vercel project `portable-food-bank-team/portable-food-bank-com`; do not touch the separate `Portable-Food-Bank/Portable-Food-Bank` repository, project, or domains.
+- Release only to the already-linked Vercel project `temporary-kitchen-rental-team/temporary-kitchen-rental-com`; do not touch the separate `Temporary-Kitchen-Rental/Temporary-Kitchen-Rental` repository, project, or domains.
 - Preserve the supplied homepage business hierarchy: temporary commercial mobile kitchens lead the H1 and calls to action; the five supporting families remain directly below the intro; both desktop and mobile allocate approximately 75–85% to the primary card and 15–25% collectively to supporting cards while keeping every family name visible.
 - Measure homepage copy against dedicated family-specific sections only: primary card, trust bar, model, industry, process, coverage-heading, and FAQ copy versus supporting-family cards and the supporting-equipment section. Exclude mixed introductory copy, generic calculator controls, dynamic map content, global navigation, and the footer rather than assigning shared text to either cohort. This produces a reproducible 430 / 92 word split (82.38% / 17.62%).
-- Treat the 24 PortableFoodBank authority URLs as foreign historical evidence, not Mobile Kitchen routes. Keep them label-only, exclude them from generated routes/internal links/indexing targets, and require true live 404 responses.
+- Treat the 24 TemporaryKitchenRental authority URLs as foreign historical evidence, not Mobile Kitchen routes. Keep them label-only, exclude them from generated routes/internal links/indexing targets, and require true live 404 responses.
 - Keep inquiries disabled until provider configuration and delivery acceptance are separately authorized. Defer provider initialization until after method, authentication, and feature gates so disabled endpoints return controlled JSON rather than module/provider failures.
 - Keep `noindex,follow`, the empty sitemap, and API exclusion in robots. A successful audit/deployment is not permission to enable indexing, modify DNS/Search Console/analytics, or send a live inquiry.
 - Record the broad historical Vitest failures, stale security-evidence ledger, two moderate transitive advisories, and large bundle as explicit follow-up debt rather than weakening checks or expanding this incident/audit into a broad rewrite.
 
-## 2026-09-26 — Create an org-owned mirror for the Portable Food Bank project
+## 2026-09-26 — Create an org-owned mirror for the Temporary Kitchen Rental project
 
-- Owner requested a new repository in the PortableFoodBank GitHub organization and a complete repo copy there. Created private Portable-Food-Bank/portable-food-bank.com rather than changing ownership of or deleting the source repo.
+- Owner requested a new repository in the TemporaryKitchenRental GitHub organization and a complete repo copy there. Created private Temporary-Kitchen-Rental/temporary-kitchen-rental.com rather than changing ownership of or deleting the source repo.
 - Mirrored all Git branches and tags with their history. Set this checkout's origin to the new organization repo and retained the old personal repo as source for reference.
 - Git mirroring does not migrate GitHub-only issues, pull requests, settings/secrets, branch protections, release metadata, or wiki data. Vercel source integration was not changed.
 
@@ -70,11 +83,11 @@
 
 - Decision: use “Need equipment? / Talk to us” on the contact-page tab and “24/7 rental help / Call us” on the urgent phone-support trigger. Preserve both contact destinations, the existing phone number and action flow.
 - Positioning: make a small shared-desktop and mobile offset adjustment so the widgets sit slightly higher/inward while remaining fixed and clear of viewport edges/safe areas.
-- Guard: retain Portable Food Bank red/white CTA colors and verify responsive layout when browser tooling is available; do not report browser or Vercel checks as passed without evidence.
+- Guard: retain Temporary Kitchen Rental red/white CTA colors and verify responsive layout when browser tooling is available; do not report browser or Vercel checks as passed without evidence.
 
 ## 2026-09-24 — Restore near-size shower-combination references only with explicit model disclosure
 
-- Owner direction: PortableFoodBank shower-combination images may be used when the image's size and actual service are a reasonable match, even if the product label differs.
+- Owner direction: TemporaryKitchenRental shower-combination images may be used when the image's size and actual service are a reasonable match, even if the product label differs.
 - Decision: show 13 ft / 3-stall combination photos on the 12 ft all-in-one and 14 ft combination entries, and 22 ft / 6-stall combination photos on the 20 ft combination entry. These image references are visually unbranded and show the correct combined shower/restroom service. Captions identify the actual reference configuration and explicitly disclaim proof of the listed page's dimensions, stalls, floor plan or availability. Keep the 12 ft, 14 ft, and 30 ft shower-only routes held in header navigation because combo/restroom imagery is not an appropriate substitute for shower-only models.
 - Decision: reuse the existing unbranded 8 ft x 40 ft refrigerated-container category illustration on the 40 ft legacy route with its visible category-reference / exact-unit disclaimer.
 - Guard: do not alter route slugs or H1s; every near-size reference must remain conspicuously disclosed. Do not claim Vercel deployment without a verified project/deployment.
@@ -88,22 +101,22 @@
 
 ## 2026-09-24 — Resolve inventory slugs from backlink targets, then preserve the master equivalent
 
-- Decision: Prefer exact product paths supplied by the owner’s backlink export. When that export has only homepage targets, use the closest matching PortableFoodBank master slug for approved inventory detail pages. Keep these pages in static prerender and link them from the matching equipment family so a valid slug does not resolve to a 404.
-- Evidence: the provided tab-separated export has 670 rows and one unique target path (`/`). The three approved product/category slugs are present in the PortableFoodBank source sitemap. The refrigerated-container path also overlaps a `service-details.json` model entry, so the catalog’s explicitly disclosed photo/caption must be passed through the model renderer rather than losing the exact model H1.
+- Decision: Prefer exact product paths supplied by the owner’s backlink export. When that export has only homepage targets, use the closest matching TemporaryKitchenRental master slug for approved inventory detail pages. Keep these pages in static prerender and link them from the matching equipment family so a valid slug does not resolve to a 404.
+- Evidence: the provided tab-separated export has 670 rows and one unique target path (`/`). The three approved product/category slugs are present in the TemporaryKitchenRental source sitemap. The refrigerated-container path also overlaps a `service-details.json` model entry, so the catalog’s explicitly disclosed photo/caption must be passed through the model renderer rather than losing the exact model H1.
 - Guard: do not infer new product specifications from a shared slug or category illustration; keep the 8 ft x 40 ft label caveat, preserve model H1s, and do not change the indexing batch or sitemap release scope as part of route recovery.
 
 ## 2026-09-24 — Fill the remaining inventory-detail photo gaps with truthful references
 
-- Decision: Use the clean existing refrigerated-container illustration on the generic container-category detail only, with visible copy noting its printed 8 ft x 40 ft label and that it does not establish the exact target unit or availability. Use one 20 ft five-stall shower-only photo as a disclosed family reference on the 22 ft ten-stall detail; do not assign it to the 22 ft map/modals, where no exact photo is verified. Approve the exact 30 ft eight-stall shower/restroom exterior after visual confirmation of a commercial equipment yard and no PortableFoodBank branding; describe it as exterior-only.
-- Reason: The owner requested useful photos for inventory entries that previously had no gallery and authorized suitable clean PortableFoodBank imagery, while truthful model identity and target branding remain mandatory.
+- Decision: Use the clean existing refrigerated-container illustration on the generic container-category detail only, with visible copy noting its printed 8 ft x 40 ft label and that it does not establish the exact target unit or availability. Use one 20 ft five-stall shower-only photo as a disclosed family reference on the 22 ft ten-stall detail; do not assign it to the 22 ft map/modals, where no exact photo is verified. Approve the exact 30 ft eight-stall shower/restroom exterior after visual confirmation of a commercial equipment yard and no TemporaryKitchenRental branding; describe it as exterior-only.
+- Reason: The owner requested useful photos for inventory entries that previously had no gallery and authorized suitable clean TemporaryKitchenRental imagery, while truthful model identity and target branding remain mandatory.
 - Guard: Keep the explicit size/configuration disclosures, actual image alt text, one H1, and all existing URLs/slugs. Audit all catalog entries and detail routes for a gallery without inserting mismatched photos or branded imagery.
 
 ## 2026-09-24 — Gallery captions must use target-brand rental copy, and legacy galleries sit beside page leads
 
 - Cause: the screenshot-visible disclaimer was an unbranded generic-photo fallback, while dedicated service details could substitute a separate stale phone CTA. The shared legacy route template also placed its gallery after the page lead, producing a tall single-column sequence.
-- Decision: use one shared caption builder for location, legacy model, service-detail, industry, catalog, equipment quick-view, Panhandle and Olympic Peninsula carousels. For service areas, lead in location + commercial use + exact pictured equipment + Rental or Lease order; include rental-term options, a useful product detail and Portable Food Bank’s verified 24/7 live-agent phone line. Preserve explicit size/configuration disclosures. Do not imply availability or delivery from photo captions.
+- Decision: use one shared caption builder for location, legacy model, service-detail, industry, catalog, equipment quick-view, Panhandle and Olympic Peninsula carousels. For service areas, lead in location + commercial use + exact pictured equipment + Rental or Lease order; include rental-term options, a useful product detail and Temporary Kitchen Rental’s verified 24/7 live-agent phone line. Preserve explicit size/configuration disclosures. Do not imply availability or delivery from photo captions.
 - Layout: keep the existing approved images and interactive carousel/lightbox; place the target legacy page’s summary/H1/lead/action beside the gallery on desktop and stack at narrow widths. Do not replace the gallery with a static image grid.
-- Guard: render-check all photographed preserved product routes and all rendered location/service captions for target phone, rental terms and absence of the generic disclaimer or PortableFoodBank phone. Retain slugs, H1s, image assignment and alt text.
+- Guard: render-check all photographed preserved product routes and all rendered location/service captions for target phone, rental terms and absence of the generic disclaimer or TemporaryKitchenRental phone. Retain slugs, H1s, image assignment and alt text.
 
 ## 2026-09-23 — Align model pages by family and distinguish them only with verified facts
 
@@ -127,7 +140,7 @@
 
 ## 2026-09-23 — Mobile Kitchen inventory includes available support equipment
 
-Mobile kitchens, dishwashing, and refrigeration remain the primary Portable Food Bank inventory families. The confirmed available restroom, shower, restroom-and-shower, laundry, and containerized-sleeper families are also publicly listed in Inventory and the shared navigation, using their exact preserved model URLs. Use one approved representative image for each family and link exact models as text; do not reuse a family image to imply that a different-sized or differently configured unit is pictured. Exclude unrelated legacy template categories from the public target inventory.
+Mobile kitchens, dishwashing, and refrigeration remain the primary Temporary Kitchen Rental inventory families. The confirmed available restroom, shower, restroom-and-shower, laundry, and containerized-sleeper families are also publicly listed in Inventory and the shared navigation, using their exact preserved model URLs. Use one approved representative image for each family and link exact models as text; do not reuse a family image to imply that a different-sized or differently configured unit is pictured. Exclude unrelated legacy template categories from the public target inventory.
 
 ## 2026-09-23 — Image schedule is an exact-match approval boundary
 
@@ -135,14 +148,14 @@ Use the owner-supplied Google equipment image schedule only as approval for the 
 
 ## 2026-09-23 — Restore all verified original Mobile Kitchen product URLs
 
-- Source: owner approval to restore every product path present on the original Portable Food Bank site, plus the original homepage navigation inspected on 2026-09-23.
+- Source: owner approval to restore every product path present on the original Temporary Kitchen Rental site, plus the original homepage navigation inspected on 2026-09-23.
 - Decision: Serve all 16 formerly missing exact slugs directly and restore their restroom, shower, combined restroom/shower, laundry, containerized laundry, and containerized sleeper families to the Inventory navigation. Do not redirect them to a kitchen page or a generic planning page.
 - Content and image boundary: The original site blocks sitemap and individual-page retrieval, so each page uses conservative target-owned planning copy and only a matching verified gallery. When no exact asset is verified, state that clearly rather than substituting a different model.
 - SEO boundary: This approval covers routing and useful page restoration; it does not prove a complete historic sitemap nor change the existing controlled indexing policy.
 
 ## 2026-09-23 — Preserved Mobile Kitchen location URLs include the reviewed carousel
 
-The target-only state and city URLs (for example `/massachusetts/`) use a dedicated route component rather than the Portable Food Bank state-page component. Each location route must render the shared reviewed Mobile Kitchen trailer carousel with its existing arrows, pause control, thumbnails, and lightbox. Its gallery headline is deliberately specific to a commercial Mobile Kitchen trailer so no unrelated PortableFoodBank equipment is selected. The visible page H1 and URL remain unchanged.
+The target-only state and city URLs (for example `/massachusetts/`) use a dedicated route component rather than the Temporary Kitchen Rental state-page component. Each location route must render the shared reviewed Mobile Kitchen trailer carousel with its existing arrows, pause control, thumbnails, and lightbox. Its gallery headline is deliberately specific to a commercial Mobile Kitchen trailer so no unrelated TemporaryKitchenRental equipment is selected. The visible page H1 and URL remain unchanged.
 
 ## 2026-09-23 — Dark surfaces set their own readable foreground
 
@@ -160,7 +173,7 @@ For the strict two-color system, orange `#f47b20` action fills must use black te
 
 ## 2026-09-22 — Strict two-color button rule
 
-The owner requires exactly two solid button colors across Portable Food Bank: orange `#f47b20` and red `#b90000`. Use white action text; black text remains allowed only where a control has no solid action fill. Do not retain white, teal, brown, or other legacy solid button backgrounds. Photo-thumbnail controls are excluded because the image itself is their control surface.
+The owner requires exactly two solid button colors across Temporary Kitchen Rental: orange `#f47b20` and red `#b90000`. Use white action text; black text remains allowed only where a control has no solid action fill. Do not retain white, teal, brown, or other legacy solid button backgrounds. Photo-thumbnail controls are excluded because the image itself is their control surface.
 
 ## 2026-09-22 — Orange is the universal primary-action color
 
@@ -172,11 +185,11 @@ The state-modal gallery reuses the same verified `ServiceHeroCarousel` component
 
 ## 2026-09-22 — State-map dialogs use one verified kitchen carousel
 
-Map state dialogs are an entry point for Portable Food Bank, so they must not expose the inherited office, sleeper, shower, restroom, or base-camp gallery groups. Each state now resolves to one verified Mobile Kitchen trailer gallery, retaining the existing carousel controls (arrows, thumbnails, keyboard navigation, and lightbox) instead of presenting mixed equipment as a loose group of images. The map and all state guide URLs remain in place.
+Map state dialogs are an entry point for Temporary Kitchen Rental, so they must not expose the inherited office, sleeper, shower, restroom, or base-camp gallery groups. Each state now resolves to one verified Mobile Kitchen trailer gallery, retaining the existing carousel controls (arrows, thumbnails, keyboard navigation, and lightbox) instead of presenting mixed equipment as a loose group of images. The map and all state guide URLs remain in place.
 
 ## 2026-09-22 — Mobile Kitchen palette supersedes inherited teal/green
 
-All public shared modules must use Portable Food Bank charcoal, orange, red, cream, and white. The inherited Portable Food Bank teal/green palette is not part of the target brand. Preserve service-area maps, calculators, dialogs, rails, and inner-page layouts, but recolor their surfaces, states, and SVG geography through the final shared palette layer.
+All public shared modules must use Temporary Kitchen Rental charcoal, orange, red, cream, and white. The inherited Temporary Kitchen Rental teal/green palette is not part of the target brand. Preserve service-area maps, calculators, dialogs, rails, and inner-page layouts, but recolor their surfaces, states, and SVG geography through the final shared palette layer.
 
 ## 2026-09-22 — Remove the global support ribbon
 
@@ -184,27 +197,27 @@ The owner no longer wants the `Live rental support 24/7`, phone-number, and `Eme
 
 ## 2026-09-22 — Screenshot 1 is the global header reference
 
-The homepage header shown in the supplied first screenshot is the approved navigation reference for every route. Apply its red support ribbon, white navigation shell, Portable Food Bank mark, orange call card, and orange active indicator globally. Do not allow inner routes to inherit the former teal header; shared header variables must live at the root level.
+The homepage header shown in the supplied first screenshot is the approved navigation reference for every route. Apply its red support ribbon, white navigation shell, Temporary Kitchen Rental mark, orange call card, and orange active indicator globally. Do not allow inner routes to inherit the former teal header; shared header variables must live at the root level.
 
-## 2026-09-22 — Retain the Portable Food Bank navigation layout, not the homepage header variant
+## 2026-09-22 — Retain the Temporary Kitchen Rental navigation layout, not the homepage header variant
 
-Use the full original Portable Food Bank shared navigation layout on the homepage and every inner route. The portable-food-bank rebrand changes brand identity, colors, contact identity, and inventory content only; it does not replace the global navigation structure with a homepage-specific header treatment.
+Use the full original Temporary Kitchen Rental shared navigation layout on the homepage and every inner route. The temporary-kitchen-rental rebrand changes brand identity, colors, contact identity, and inventory content only; it does not replace the global navigation structure with a homepage-specific header treatment.
 
 ## 2026-09-22 — One Mobile Kitchen visual system across all routes
 
-The homepage header and palette are the approved Portable Food Bank visual system. Apply that shared header treatment to inner routes as well and use the red/orange/cream/charcoal palette for global controls and coverage-map UI. Do not retain inherited teal/blue Portable Food Bank color combinations on customer-facing pages.
+The homepage header and palette are the approved Temporary Kitchen Rental visual system. Apply that shared header treatment to inner routes as well and use the red/orange/cream/charcoal palette for global controls and coverage-map UI. Do not retain inherited teal/blue Temporary Kitchen Rental color combinations on customer-facing pages.
 
 ## 2026-09-22 — Sanitize retained archive prose at render time
 
-Legacy source pages are retained for public URL continuity, but their archived HTML must not display the former PortableFoodBank brand. Replace visible `Portable Food Bank` / `PortableFoodBank` prose at the archive render boundary with `Portable Food Bank`; do not rewrite source-domain URLs in that pass because link migration handles those independently. Shared rendered components and structured data must use the Portable Food Bank name and logo asset.
+Legacy source pages are retained for public URL continuity, but their archived HTML must not display the former TemporaryKitchenRental brand. Replace visible `Temporary Kitchen Rental` / `TemporaryKitchenRental` prose at the archive render boundary with `Temporary Kitchen Rental`; do not rewrite source-domain URLs in that pass because link migration handles those independently. Shared rendered components and structured data must use the Temporary Kitchen Rental name and logo asset.
 
-## 2026-09-22 — Portable Food Bank visible offer is kitchen-only
+## 2026-09-22 — Temporary Kitchen Rental visible offer is kitchen-only
 
-Use the original Portable Food Bank offer as the visible taxonomy: commercial mobile kitchens, dishwashing/warewashing trailers, and refrigeration. Remove inherited shower, restroom, sleeper, laundry, handwashing, workforce-housing, and base-camp material from navigation, catalogue cards, quote options, and generic hubs. Preserve existing public URLs instead of deleting or redirecting them; the restriction applies to promotion and new claims, not URL continuity. Every rendered route retains exactly one stable, service-appropriate H1.
+Use the original Temporary Kitchen Rental offer as the visible taxonomy: commercial mobile kitchens, dishwashing/warewashing trailers, and refrigeration. Remove inherited shower, restroom, sleeper, laundry, handwashing, workforce-housing, and base-camp material from navigation, catalogue cards, quote options, and generic hubs. Preserve existing public URLs instead of deleting or redirecting them; the restriction applies to promotion and new claims, not URL continuity. Every rendered route retains exactly one stable, service-appropriate H1.
 
-## 2026-09-22 — Let Portable Food Bank own the homepage visual system
+## 2026-09-22 — Let Temporary Kitchen Rental own the homepage visual system
 
-Preserve PortableFoodBank only as the underlying layout/routing reference. The homepage must read unmistakably as Portable Food Bank through its live red, orange, white, and cyan identity; circular logo; stainless commercial-kitchen photography; kitchen-first inventory; verified phone; and kitchen-specific operational copy. Supporting facilities remain reachable through preserved routes, but the homepage leads with kitchens and limits its prominent support choices to dishwashing and refrigeration. Keep the exact approved H1 and existing public slugs. Use already reviewed local kitchen photography when the live source blocks direct asset download rather than shipping a challenged or unverified file.
+Preserve TemporaryKitchenRental only as the underlying layout/routing reference. The homepage must read unmistakably as Temporary Kitchen Rental through its live red, orange, white, and cyan identity; circular logo; stainless commercial-kitchen photography; kitchen-first inventory; verified phone; and kitchen-specific operational copy. Supporting facilities remain reachable through preserved routes, but the homepage leads with kitchens and limits its prominent support choices to dishwashing and refrigeration. Keep the exact approved H1 and existing public slugs. Use already reviewed local kitchen photography when the live source blocks direct asset download rather than shipping a challenged or unverified file.
 
 ## 2026-09-19 — Require crawl links only for indexable pages
 
@@ -307,7 +320,7 @@ Charles's four screenshots and `/services/` clarification apply to the existing 
 
 ## 2026-09-16 — Ordering follow-up: actual views, shared guard and explicit QA evidence
 
-The coordinator requested interior-before-exterior enforcement across every assigned gallery. Use the actual pictured equipment space, not filenames: an external sink bank and the outside of a trailer inside a warehouse are exterior views. Keep all actual interior views and interior details before any exterior within each individual carousel; keep unrelated labelled equipment options as separate carousels. src/galleryImageOrder.ts defines the shared order and ServiceHeroCarousel enforces it for direct callers. The manifest generator stores each model in the same semantic order. No identity/category/caption/held approval changed; the existing external handwashing image's incorrect Interior detail view label was corrected. The original frozen 4201 revision remains untouched. A new port-4203 candidate and all-gallery visual/HTTP evidence are documented in audit/image-order-followup-2026-09-16/HANDOFF.md, pending independent re-review. No commit, push or deployment is authorized by this follow-up; any later release remains limited to the existing portable-food-bank-nine project under coordination.
+The coordinator requested interior-before-exterior enforcement across every assigned gallery. Use the actual pictured equipment space, not filenames: an external sink bank and the outside of a trailer inside a warehouse are exterior views. Keep all actual interior views and interior details before any exterior within each individual carousel; keep unrelated labelled equipment options as separate carousels. src/galleryImageOrder.ts defines the shared order and ServiceHeroCarousel enforces it for direct callers. The manifest generator stores each model in the same semantic order. No identity/category/caption/held approval changed; the existing external handwashing image's incorrect Interior detail view label was corrected. The original frozen 4201 revision remains untouched. A new port-4203 candidate and all-gallery visual/HTTP evidence are documented in audit/image-order-followup-2026-09-16/HANDOFF.md, pending independent re-review. No commit, push or deployment is authorized by this follow-up; any later release remains limited to the existing temporary-kitchen-rental-nine project under coordination.
 
 ## 2026-09-16 — Charles correction: update existing images, do not add sections
 
@@ -340,7 +353,7 @@ Record decisions that multiple tasks must follow. Include the date, decision mak
 ## 2026-09-15 — Shared coordination source
 
 - Source: Charles
-- Decision: All Codex tasks working on PortableFoodBank must read and update the shared coordination files in this repository.
+- Decision: All Codex tasks working on TemporaryKitchenRental must read and update the shared coordination files in this repository.
 - Reason: Separate tasks do not share conversation history, even when they can see the same working directory.
 - Affected areas: Entire repository.
 
@@ -403,15 +416,15 @@ Record decisions that multiple tasks must follow. Include the date, decision mak
 ## 2026-09-15 — Keep noindex preview URLs out of the sitemap
 
 - Source: Charles's all-pages/sitemap request; live preview audit; controlled indexing requirement in `docs/BOSS_REQUIREMENTS.md`
-- Decision: Maintain the complete 650-page owner-visible inventory in `audit/all-pages-sitemap.csv`, but do not add the current Vercel preview URLs to `sitemap.xml`. Add only approved, HTTP-200, indexable, self-canonical `portable-food-bank.com` URLs to the production sitemap in controlled release batches after canonical-domain routing is ready.
+- Decision: Maintain the complete 650-page owner-visible inventory in `audit/all-pages-sitemap.csv`, but do not add the current Vercel preview URLs to `sitemap.xml`. Add only approved, HTTP-200, indexable, self-canonical `temporary-kitchen-rental.com` URLs to the production sitemap in controlled release batches after canonical-domain routing is ready.
 - Reason: All 650 preview pages currently declare `noindex,follow`, expose no canonical, and belong to a build whose canonical production domain is not ready. Listing them would conflict with the robots state and the requirement not to release hundreds of unreviewed pages at once.
 - Affected areas: Page inventory, sitemap generation, canonical-domain activation, controlled indexing batches, release QA, and Search Console submission
 - Replaces an earlier decision: No
 
 ## 2026-09-16 — Provide the complete URL inventory as a separate review sitemap
 
-- Source: Charles's request for the complete sitemap using the eventual `portable-food-bank.com` hostname
-- Decision: Generate all 650 registered routes as `public/sitemap-review.xml` with absolute `https://portable-food-bank.com` URLs, but keep this owner/dev review artifact separate from the official gated `sitemap.xml` and do not submit it to search engines.
+- Source: Charles's request for the complete sitemap using the eventual `temporary-kitchen-rental.com` hostname
+- Decision: Generate all 650 registered routes as `public/sitemap-review.xml` with absolute `https://temporary-kitchen-rental.com` URLs, but keep this owner/dev review artifact separate from the official gated `sitemap.xml` and do not submit it to search engines.
 - Reason: This provides the requested complete XML inventory immediately without representing all currently noindex and not-yet-approved pages as the controlled production indexing batch.
 - Affected areas: Owner/dev URL review, sitemap QA, future canonical-domain cutover, and controlled indexing release
 - Replaces an earlier decision: No; it supplements “Keep noindex preview URLs out of the sitemap.”
@@ -434,10 +447,10 @@ Record decisions that multiple tasks must follow. Include the date, decision mak
 - Affected areas: `/seo-dashboard/`, protected-URL register, Google status register, portfolio readiness, authority-check workflow, future data imports and owner access
 - Replaces an earlier decision: No; it implements the dashboard MVP within the existing controlled-indexing and exact-URL preservation decisions.
 
-## 2026-09-16 — Apply the Boss-approved H1 formula to supported PortableFoodBank pages
+## 2026-09-16 — Apply the Boss-approved H1 formula to supported TemporaryKitchenRental pages
 
 - Source: Charles's instruction to implement the H1 plan discussed in the Boss chat; Boss requirements and Phase 1 audit artifacts
-- Decision: For supported non-home PortableFoodBank pages, compose one deterministic H1 from a relevant service/facility topic, rental intent, and location where applicable. Use the same H1 source for the document title. Apply explicit approved mappings for Alabama, California, Colorado, Texas, Port Angeles, Tacoma, and Olympia, and deterministic supported-topic rotation for the remaining state and region pages.
+- Decision: For supported non-home TemporaryKitchenRental pages, compose one deterministic H1 from a relevant service/facility topic, rental intent, and location where applicable. Use the same H1 source for the document title. Apply explicit approved mappings for Alabama, California, Colorado, Texas, Port Angeles, Tacoma, and Olympia, and deterministic supported-topic rotation for the remaining state and region pages.
 - Reason: This implements the approved SEO/content structure without inventing unsupported specifications or changing page intent, URL architecture, or indexing controls.
 - Affected areas: State, region, reviewed-city, supported service/category/model, equipment, industry, and service hub H1/title generation and focused validation
 - Replaces an earlier decision: No. Homepage wording, URLs, canonicals, redirects, robots/indexing, separate brands, unsupported specifications, Seattle and Sequim editorial headings, dishwashing, and refrigeration wording remain unchanged or held for separate approval.
@@ -504,12 +517,12 @@ Implemented locally: one usable photo is sufficient; 20ft container interior-onl
 
 ## 2026-09-16 — Preserve current Vercel source until org scope is available
 
-- Decision: Keep the existing `cc-devs/portable-food-bank` project connected to `charlessslaranangsss-maker/Portable Food Bank` until GitHub organization access for Vercel is explicitly granted and `Portable-Food-Bank/Portable-Food-Bank` is visible in the picker. Do not create a second Vercel project or deploy shared uncommitted work as a workaround.
+- Decision: Keep the existing `cc-devs/temporary-kitchen-rental` project connected to `charlessslaranangsss-maker/Temporary Kitchen Rental` until GitHub organization access for Vercel is explicitly granted and `Temporary-Kitchen-Rental/Temporary-Kitchen-Rental` is visible in the picker. Do not create a second Vercel project or deploy shared uncommitted work as a workaround.
 - Reason: The GitHub namespace picker offered only the personal account. Granting Vercel app access to the organization is a separate security-sensitive permission step, and the combined local release remains under active multi-owner coordination.
 
 ## 2026-09-17 Panhandle lease terms — LIVE VERIFIED
 
-The Oklahoma Panhandle 30 ft laundry trailer and 20 ft laundry container captions now include rental or lease and weekly/monthly/yearly rental terms. Live alias portable-food-bank-nine.vercel.app verified on dpl_6ykocrDRHboUz1zNH2Em9b164U5Q. Both tabs and all four images decoded at desktop/mobile (eight image displays), zero content/browser/overflow failures. Preservation: 651 H1s/intros and 100 map presentations unchanged. Current tests: 209 targeted + 44 application pass; build 651 pages + 404. Preview noindex preserved. Separate primary staging was not promoted over the already-correct concurrent release. Evidence: work/qa/panhandle-lease-20260917/independent-final/REPORT.md. No further deployment is needed for this request.
+The Oklahoma Panhandle 30 ft laundry trailer and 20 ft laundry container captions now include rental or lease and weekly/monthly/yearly rental terms. Live alias temporary-kitchen-rental-nine.vercel.app verified on dpl_6ykocrDRHboUz1zNH2Em9b164U5Q. Both tabs and all four images decoded at desktop/mobile (eight image displays), zero content/browser/overflow failures. Preservation: 651 H1s/intros and 100 map presentations unchanged. Current tests: 209 targeted + 44 application pass; build 651 pages + 404. Preview noindex preserved. Separate primary staging was not promoted over the already-correct concurrent release. Evidence: work/qa/panhandle-lease-20260917/independent-final/REPORT.md. No further deployment is needed for this request.
 
 ## 2026-09-17 — Service-area caption standard
 
@@ -541,7 +554,7 @@ When exact model photography is unavailable, show the closest reviewed commercia
 ## 2026-09-18 — Preserve old-site authority with exact sources and canonical replacements
 
 - Source: Charles's 153-row old-site backlink export and request to preserve those links during Google indexing.
-- Decision: Keep every historical path reachable. Retain a direct page where the current site has a real matching page; otherwise use a permanent redirect to the closest verified replacement. Consolidate `www.portable-food-bank.com` onto `portable-food-bank.com`. Do not recreate duplicate or thin legacy pages solely to return HTTP 200.
+- Decision: Keep every historical path reachable. Retain a direct page where the current site has a real matching page; otherwise use a permanent redirect to the closest verified replacement. Consolidate `www.temporary-kitchen-rental.com` onto `temporary-kitchen-rental.com`. Do not recreate duplicate or thin legacy pages solely to return HTTP 200.
 - Indexing: Activate only the controlled 25-page first batch. It contains the 23 canonical destinations receiving the supplied legacy links plus the Services and Service Areas hubs. Other generated routes remain `noindex,follow` until a later approved batch.
 - Reason: Permanent redirects consolidate signals for replaced URLs, while self-canonicals and sitemap membership identify the preferred destination. This preserves exact inbound paths without introducing competing copies.
 - Affected areas: Vercel redirects, production-domain gate, indexing order/scope, sitemap, canonical output, migration tests, and backlink audit evidence.
@@ -579,27 +592,27 @@ The supplied restroom-only interior set may appear on the registered 12 ft, 14 f
 - Decision: If a product route has no exact or truthfully disclosed approved image set, omit its image gallery entirely; do not render “verified photo missing”, “coming soon”, or equivalent UI.
 - Reason: An empty gallery is less misleading than false imagery or a public verification placeholder, while the underlying product URL and text remain intact.
 - Application: The supplied 30 ft / 10-stall set is withheld because its source bytes are identical to the 13 ft / 3-stall set. Cross-size refrigeration, shower, ADA, and residential-looking ramp images are not substituted.
-- Decision: Every Portable Food Bank service-area landing page must use one stable H1 that names a genuine target inventory topic, an equipment/facility form, and rental intent. Broad city directories may use a facility-rental H1 because they index multiple families; state-map landings remain kitchen-specific.
-- Decision: Location-gallery captions must identify the particular pictured equipment, remain consistent with the route location, and use the target site's approved phone. Do not carry PortableFoodBank contact details or 24/7 availability into Portable Food Bank captions unless the target explicitly approves those claims. If model-specific detail is unavailable, use cautious site/configuration planning language rather than a false claim.
+- Decision: Every Temporary Kitchen Rental service-area landing page must use one stable H1 that names a genuine target inventory topic, an equipment/facility form, and rental intent. Broad city directories may use a facility-rental H1 because they index multiple families; state-map landings remain kitchen-specific.
+- Decision: Location-gallery captions must identify the particular pictured equipment, remain consistent with the route location, and use the target site's approved phone. Do not carry TemporaryKitchenRental contact details or 24/7 availability into Temporary Kitchen Rental captions unless the target explicitly approves those claims. If model-specific detail is unavailable, use cautious site/configuration planning language rather than a false claim.
 - Reason: Mixed-family legacy H1 rotations and inherited regional caption overrides could make the heading promise, viewed image, site identity, and support offer disagree.
 
 ## 2026-09-24 — Location-first service-area copy and target support captions
 
-- Decision: In Portable Food Bank service-area surfaces, lead a topical rental phrase with its place, then name the service and equipment/facility form, then rental/lease intent. Use the same order in map-modal title, selected-state lead, service summary, and action text; do not write forms such as “equipment rental in [location]”. Preserve existing route paths and slugs.
-- Decision: Every service-area gallery caption identifies its page location and pictured equipment form before Rental or Lease intent, adds configuration-planning detail, and includes Portable Food Bank's phone support CTA: “Call Portable Food Bank now for 24/7 live-agent support: +1 (888) 563-6507.”
+- Decision: In Temporary Kitchen Rental service-area surfaces, lead a topical rental phrase with its place, then name the service and equipment/facility form, then rental/lease intent. Use the same order in map-modal title, selected-state lead, service summary, and action text; do not write forms such as “equipment rental in [location]”. Preserve existing route paths and slugs.
+- Decision: Every service-area gallery caption identifies its page location and pictured equipment form before Rental or Lease intent, adds configuration-planning detail, and includes Temporary Kitchen Rental's phone support CTA: “Call Temporary Kitchen Rental now for 24/7 live-agent support: +1 (888) 563-6507.”
 - Evidence boundary: The target homepage advertises 24/7 live-agent/call support for that phone number. This is a phone-support-hours claim only, not a promise of equipment availability, delivery, or dispatch at any hour.
 
 ## 2026-09-26 — New Vercel project for org-migrated Mobile Kitchen repo
 
-- Decision: Host `Portable-Food-Bank/portable-food-bank.com` in a new project named `portable-food-bank-com` under the `Portable Food Bank Pro` Vercel team, using the generated Vercel project domain for this deployment. Keep the existing `portable-food-bank.com` domain assignment untouched until a separate approved domain migration.
-- Reason: The repo was moved to the Portable-Food-Bank GitHub organization and did not yet have a Vercel project in that team. Vercel's import screen exposed the org namespace and exact repo, so no additional GitHub permission grant was required.
+- Decision: Host `Temporary-Kitchen-Rental/temporary-kitchen-rental.com` in a new project named `temporary-kitchen-rental-com` under the `Temporary Kitchen Rental Pro` Vercel team, using the generated Vercel project domain for this deployment. Keep the existing `temporary-kitchen-rental.com` domain assignment untouched until a separate approved domain migration.
+- Reason: The repo was moved to the Temporary-Kitchen-Rental GitHub organization and did not yet have a Vercel project in that team. Vercel's import screen exposed the org namespace and exact repo, so no additional GitHub permission grant was required.
 - Evidence: Production deployment `dpl_29ymkYhAqwJ8Ye7TRGYVr9EF2Epz` reached Ready from `main` commit `fb15929`; homepage and both restored kitchen routes were checked live. Details in `docs/TEST_RESULTS.md`.
 
 ## 2026-09-29 — Preserve noindex while correcting the audited release candidate
 
-- Decision: keep the current Portable Food Bank rollout in preview/noindex mode. Every generated public page remains `noindex,follow`, the public sitemap remains empty, and the Vercel alias keeps its protective `X-Robots-Tag`. This audit does not authorize a DNS, Search Console, canonical-release, or indexing change.
+- Decision: keep the current Temporary Kitchen Rental rollout in preview/noindex mode. Every generated public page remains `noindex,follow`, the public sitemap remains empty, and the Vercel alias keeps its protective `X-Robots-Tag`. This audit does not authorize a DNS, Search Console, canonical-release, or indexing change.
 - Decision: derive the large Vercel redirect table from the repository route sources with `scripts/sync-vercel-redirects.mjs` and verify query-string preservation in browser tests. This prevents hand-edited redirect drift while retaining historical source paths.
-- Decision: generate all registered current-site catalog, location, region, and reviewed-city pages so internal links resolve to useful static HTML. Imported PortableFoodBank authority records remain non-published, non-clickable historical evidence and are excluded from routes, discovery links, indexing checks, and Google Search Console readiness checks. Preserve the Portable Food Bank URL architecture; do not blanket-redirect valuable current-site routes or replace them with a homepage response.
+- Decision: generate all registered current-site catalog, location, region, and reviewed-city pages so internal links resolve to useful static HTML. Imported TemporaryKitchenRental authority records remain non-published, non-clickable historical evidence and are excluded from routes, discovery links, indexing checks, and Google Search Console readiness checks. Preserve the Temporary Kitchen Rental URL architecture; do not blanket-redirect valuable current-site routes or replace them with a homepage response.
 - Decision: represent the homepage portfolio with one primary mobile-kitchen card and five supporting-family cards. This 2026-09-30 correction supersedes the earlier 25/75 presentation: desktop uses a 4fr/1fr grid, and narrow screens use one image-rich primary card above a compact two-column support grid, keeping the measured primary share within 75–85% and the supporting share within 15–25%. The mobile-kitchen lead remains the largest individual card and controls the H1 and primary actions; every supporting family name remains visible.
 - Boundary: inquiry submission remains disabled and fail-closed. The browser test verifies the visible disabled state and server response without sending a real inquiry or asserting delivery.
 
@@ -609,8 +622,8 @@ The supplied restroom-only interior set may appear on the registered 12 ft, 14 f
 - Decision: when reported output conflicts with the current shared component, check both server HTML and a freshly reloaded browser tab before making another source edit. Do not repeat the same code change when only an old page session is stale.
 - Boundary: live rendering was checked on the public theta URL; the Vercel API did not permit deployment metadata access, so the deployed source revision remains unconfirmed.
 
-## 2026-09-30 — Match Portable Food Bank's state-directory interaction, preserve target routes
+## 2026-09-30 — Match Temporary Kitchen Rental's state-directory interaction, preserve target routes
 
-- Evidence: the live Portable Food Bank Service Areas directory presents a linked state name followed by a separate expandable “Regions and cities in [State]” control; expanding a state exposes its region links. The Portable Food Bank directory previously presented inline totals and exposed city details only for a subset of states.
-- Decision: copy the reference's interaction and visual hierarchy for all 50 states, but populate disclosures from Portable Food Bank's own `stateGuides` and `regionPath` sources. Keep Portable Food Bank branding, root-level state links and `/service-areas/{state}/{region}/` region routes. Do not import Portable Food Bank's service/product content, counts or URL paths.
-- Verification: focused SSR test, typecheck, production build, generated HTML route checks, and live browser interaction on homepage and `/locations/` pass. Commit `43e92eb` is pushed to `origin/main`; live Alabama disclosure exposes the four Portable Food Bank region URLs. Exact Vercel deployment metadata remains unverified (API returned 403).
+- Evidence: the live Temporary Kitchen Rental Service Areas directory presents a linked state name followed by a separate expandable “Regions and cities in [State]” control; expanding a state exposes its region links. The Temporary Kitchen Rental directory previously presented inline totals and exposed city details only for a subset of states.
+- Decision: copy the reference's interaction and visual hierarchy for all 50 states, but populate disclosures from Temporary Kitchen Rental's own `stateGuides` and `regionPath` sources. Keep Temporary Kitchen Rental branding, root-level state links and `/service-areas/{state}/{region}/` region routes. Do not import Temporary Kitchen Rental's service/product content, counts or URL paths.
+- Verification: focused SSR test, typecheck, production build, generated HTML route checks, and live browser interaction on homepage and `/locations/` pass. Commit `43e92eb` is pushed to `origin/main`; live Alabama disclosure exposes the four Temporary Kitchen Rental region URLs. Exact Vercel deployment metadata remains unverified (API returned 403).

@@ -53,7 +53,7 @@ const sourceHtml = (path: string) => {
 const renderRoute = (path: string) =>
   load(
     renderSourceContent(sourceHtml(path), {
-      origin: "https://portable-food-bank.com",
+      origin: "https://temporary-kitchen-rental.com",
       routes: new Set<string>(),
       redirects: new Map<string, string>(),
       media: recoveredMedia,
@@ -77,7 +77,7 @@ const renderMilitarySeals = (path: string) => {
     .join("");
   return load(
     renderSourceContent(fragment, {
-      origin: "https://portable-food-bank.com",
+      origin: "https://temporary-kitchen-rental.com",
       routes: new Set<string>(),
       redirects: new Map<string, string>(),
       media: recoveredMedia,

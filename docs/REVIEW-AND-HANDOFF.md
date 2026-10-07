@@ -1,8 +1,8 @@
-# Portable Food Bank — current review
+# Temporary Kitchen Rental — current review
 
 ## Implemented
 
-- Replaced April with Portable Food Bank branding, the published (800) 443-5212 telephone number, blue/navy design, equipment catalog and original branded kitchen, restroom/shower and sleeper photographs.
+- Replaced April with Temporary Kitchen Rental branding, the published (800) 443-5212 telephone number, blue/navy design, equipment catalog and original branded kitchen, restroom/shower and sleeper photographs.
 - Preserved text and URL records for 625 recovered pages. Built 631 HTML routes including the new homepage, planning and contact pages. Removed executable scripts, styling and old embedded forms from imported markup.
 - Moved large repeated city directories out of equipment page bodies into the catalog. Compressed source records retain the recovered text. Unrecovered links point to the current original site during preview; they do not constitute completed migration.
 - Reduced shared JavaScript from roughly 340 KB to 2.83 KB before gzip (about 1.34 KB gzip). Form code loads separately only when enabled. This is a bundle measurement, not a production Core Web Vitals claim.
@@ -21,7 +21,7 @@ The recovered-content scan found no executable scripts, inline handlers, embedde
 1. **Full source recovery:** WordPress reported 98,253 pages; 625 have been recovered. Public export requests later returned HTTP 500. A WordPress export or hosting backup, with media, is needed to complete the requested migration. Direct HTML fallback results are separately logged.
 2. **Backlinks:** all 148 workbook rows are accounted for. Initially 21 matched recovered content and four were homepage variants; 123 still needed source recovery. No blanket homepage redirects were created. The machine-readable reconciliation is authoritative if totals change.
 3. **Media:** 186 working source images are downloaded to `public/media`. Failed images are omitted from rendered articles, not replaced with unrelated equipment photos. Original references and failure statuses remain recorded. Full media recovery is incomplete.
-4. **Vercel:** browser and CLI deny project creation in Portable Food Bank (`portable-food-bank-team`). A team owner must grant the signed-in account project-creation access. No unrelated team was used and no domain settings were changed.
+4. **Vercel:** browser and CLI deny project creation in Temporary Kitchen Rental (`temporary-kitchen-rental-team`). A team owner must grant the signed-in account project-creation access. No unrelated team was used and no domain settings were changed.
 5. **Online intake:** rules are live, but server credentials, App Check, notification sender/recipient and authenticated job scheduling are not verified in Vercel. Public contact uses the published telephone number; online inquiry collection is disabled.
 
 Production indexing and domain cutover remain blocked by actual migration completeness checks. The current live site remains the canonical business site during review.

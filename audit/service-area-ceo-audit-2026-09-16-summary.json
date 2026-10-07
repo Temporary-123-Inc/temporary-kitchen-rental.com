@@ -45,7 +45,7 @@
     {
       "route": "/service-areas/",
       "status": 404,
-      "title": "\n\t\t\tPage not found - Portable Food Bank\t\t",
+      "title": "\n\t\t\tPage not found - Temporary Kitchen Rental\t\t",
       "h1": "The page can’t be found.",
       "checkedAt": "2026-09-16T06:43:50.221Z"
     },
@@ -73,14 +73,14 @@
     {
       "route": "/service-areas/washington/olympic-peninsula/port-angeles/",
       "status": 404,
-      "title": "\n\t\t\tPage not found - Portable Food Bank\t\t",
+      "title": "\n\t\t\tPage not found - Temporary Kitchen Rental\t\t",
       "h1": "The page can’t be found.",
       "checkedAt": "2026-09-16T06:43:53.682Z"
     },
     {
       "route": "/service-areas/washington/puget-sound/tacoma/",
       "status": 404,
-      "title": "\n\t\t\tPage not found - Portable Food Bank\t\t",
+      "title": "\n\t\t\tPage not found - Temporary Kitchen Rental\t\t",
       "h1": "The page can’t be found.",
       "checkedAt": "2026-09-16T06:43:54.141Z"
     }

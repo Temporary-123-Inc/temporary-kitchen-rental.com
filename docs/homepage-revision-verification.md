@@ -2,7 +2,7 @@
 
 The homepage now puts 800-443-5212 in the main hero action, sticky desktop navigation and a fixed mobile call bar. Equipment cards include larger source images, facility uses, normal detail links and keyboard-accessible quick-view dialogs. Planning, industry links and practical FAQs provide a clearer route from browsing to a call.
 
-The design takes inspiration from the product presentation at https://www.medvillediabetes.com/ while retaining Portable Food Bank typography, photography and business content. Motion includes an entry sequence, a site-plan line graphic, a scroll progress indicator where supported, card hover feedback and once-only planning-step entrances. Reduced-motion preferences apply in CSS and JavaScript. No animation library or tracking script was added.
+The design takes inspiration from the product presentation at https://www.medvillediabetes.com/ while retaining Temporary Kitchen Rental typography, photography and business content. Motion includes an entry sequence, a site-plan line graphic, a scroll progress indicator where supported, card hover feedback and once-only planning-step entrances. Reduced-motion preferences apply in CSS and JavaScript. No animation library or tracking script was added.
 
 ## Verification on 12 September 2026, Singapore time
 
@@ -52,4 +52,4 @@ Final local verification: 637 static routes plus a real 404; 638 HTML documents,
 
 Images use optimized WebP variants of the available source assets. Higher-resolution source assets replaced several thumbnails. Four source originals remain low resolution: handwashing stations, refrigerated containers, wastewater/freshwater containers and modular buildings. They are displayed without enlargement in the catalog and have original-size links. Clearer source files are still needed for those four entries; no fictional equipment specifications or photographs were invented.
 
-The live backend compatibility corrections were verified on portable-food-bank-alpha.vercel.app: contact GET returns 405, disabled contact POST returns 503, and delivery GET returns 405, all with private/no-store responses. Customer intake remains disabled. The full 98,253-page migration and production security/provider readiness remain separate outstanding project work.
+The live backend compatibility corrections were verified on temporary-kitchen-rental-alpha.vercel.app: contact GET returns 405, disabled contact POST returns 503, and delivery GET returns 405, all with private/no-store responses. Customer intake remains disabled. The full 98,253-page migration and production security/provider readiness remain separate outstanding project work.

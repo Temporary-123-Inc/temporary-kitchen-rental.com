@@ -58,7 +58,7 @@ export function EquipmentCatalog() {
     >
       <div className="catalog-heading">
         <div>
-          <span className="eyebrow">PORTABLE FOOD BANK INVENTORY</span>
+          <span className="eyebrow">TEMPORARY KITCHEN RENTAL INVENTORY</span>
           <h2 id="catalog-heading">
             Equipment for food service
             <br />
@@ -153,7 +153,7 @@ export function EquipmentBrief({ item }: { item: CatalogItem }) {
       </nav>
       <div className="brief-intro">
         <div>
-          <span className="eyebrow">PORTABLE FOOD BANK EQUIPMENT</span>
+          <span className="eyebrow">TEMPORARY KITCHEN RENTAL EQUIPMENT</span>
           <h1>{rentalProductHeadline(item.name)}</h1>
           <p data-h1-intro>{alignedPageIntro(item.path, item.name, item.summary)}</p>
           <a className="button" href={`tel:${site.phoneE164}`}>

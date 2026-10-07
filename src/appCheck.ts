@@ -55,8 +55,8 @@ export async function appCheckToken() {
       import("firebase/app-check"),
     ]);
     const app =
-      getApps().find((candidate) => candidate.name === "portable-food-bank-public") ||
-      initializeApp(config.firebase, "portable-food-bank-public");
+      getApps().find((candidate) => candidate.name === "temporary-kitchen-rental-public") ||
+      initializeApp(config.firebase, "temporary-kitchen-rental-public");
     check ||= initializeAppCheck(app, {
       provider: new ReCaptchaEnterpriseProvider(
         config.recaptchaEnterpriseSiteKey,

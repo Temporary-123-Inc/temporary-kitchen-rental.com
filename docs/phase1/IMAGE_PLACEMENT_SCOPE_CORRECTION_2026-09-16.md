@@ -1,4 +1,4 @@
-# PortableFoodBank — photo-placement scope correction
+# TemporaryKitchenRental — photo-placement scope correction
 
 Implemented and verified locally on 16 September 2026. Not committed or deployed.
 
@@ -18,7 +18,7 @@ Runtime files changed: src/Site.tsx, src/CityDirectoryPage.tsx, src/ApprovedEqui
 
 ## QA target and results
 
-- Repo: C:/Users/Charles/Documents/New project/Portable Food Bank; branch main; base HEAD 8ad98dba33ef6d9b7b1e64028da3fc639bd7fd9a. Changes remain uncommitted.
+- Repo: C:/Users/Charles/Documents/New project/Temporary Kitchen Rental; branch main; base HEAD 8ad98dba33ef6d9b7b1e64028da3fc639bd7fd9a. Changes remain uncommitted.
 - Frozen preview: http://127.0.0.1:4205/service-areas/ from .temp/image-placement-revert-20260916/dist. Older previews are historical and unchanged.
 - TypeScript/build passed; 651 pages plus 404. Focused tests: 110 passed. Browser tests: 31 passed, including all 100 modal presentations, desktop/mobile layouts and lightboxes.
 - Application tests: initial archive-test timeout at 15 seconds; unchanged full serial rerun passed 44/44 at a 30-second limit (archive test completed in 5.7 seconds). Both logs preserved.

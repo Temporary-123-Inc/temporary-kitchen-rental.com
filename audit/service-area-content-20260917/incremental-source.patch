@@ -155,7 +155,7 @@ index 2c8b6da..34f126d 100644
 +++ b/src/cityEditorial.ts
 @@ -97,7 +97,7 @@ export const cityEditorial: Record<string, CityEditorial> = {
      intro:
-       "Tacoma combines residential, institutional and industrial work areas, so a temporary facility plan should start with the specific site rather than the city name alone. For a crew base camp or occupied-facility renovation, PortableFoodBank can review kitchen, shower, restroom and sleeper trailer rental options alongside servicing needs.",
+       "Tacoma combines residential, institutional and industrial work areas, so a temporary facility plan should start with the specific site rather than the city name alone. For a crew base camp or occupied-facility renovation, TemporaryKitchenRental can review kitchen, shower, restroom and sleeper trailer rental options alongside servicing needs.",
      answer:
 -      "Tacoma crews can rent or lease mobile commercial kitchens, shower and restroom combination trailers, a 22 ft 10-stall shower-only trailer, and sleeper or bunkbed units. A longer man camp may also need laundry, refrigeration, dishwashing, separate restrooms and handwashing. Choose capacity after confirming shift size and available utility connections.",
 +      "Tacoma crews can discuss leasing sleeper and bunk-bed facilities for workforce housing. Review sleeping capacity, shift schedules, privacy, ventilation and access for the chosen unit. Kitchens and shower or shower/restroom combination units are separate supporting rental options. A longer man camp may also need laundry, refrigeration, dishwashing, separate restrooms and handwashing. Choose capacity after confirming shift size and available utility connections.",
@@ -164,7 +164,7 @@ index 2c8b6da..34f126d 100644
      seasonal:
 @@ -122,7 +122,7 @@ export const cityEditorial: Record<string, CityEditorial> = {
      intro:
-       "An Olympia project can range from an occupied campus or government property to a separate work compound. PortableFoodBank can discuss kitchens, shower and restroom trailers, and sleeper accommodation for construction, renovation or emergency planning when the project team defines the site boundary and who must keep using it.",
+       "An Olympia project can range from an occupied campus or government property to a separate work compound. TemporaryKitchenRental can discuss kitchens, shower and restroom trailers, and sleeper accommodation for construction, renovation or emergency planning when the project team defines the site boundary and who must keep using it.",
      answer:
 -      "Olympia project teams can discuss a mobile kitchen rental, shower and restroom combination trailers, a 22 ft 10-stall shower-only trailer, and sleeper or bunkbed accommodation. For a temporary base camp or a building renovation, refrigeration, laundry, dishwashing and handwashing may complete the setup. Lease length and final equipment are confirmed with the team.",
 +      "Olympia project teams can discuss shower and restroom combination trailer rental for an institutional facility. Plan shower and toilet access together, including the stall layout, water supply, hot water, wastewater servicing and site access. Mobile kitchens, shower-only trailers and sleeper facilities are separate rental options. For a temporary base camp or a building renovation, refrigeration, laundry, dishwashing and handwashing may complete the setup. Lease length and final equipment are confirmed with the team.",
@@ -178,7 +178,7 @@ index 3f84c57..02a307d 100644
 @@ -226,7 +226,7 @@ for (const path of [...allRoutes, "/404/"]) {
        : city
          ? {
-             title: `${cityHeadline(city)} | PortableFoodBank`,
+             title: `${cityHeadline(city)} | TemporaryKitchenRental`,
 -            description: compact(alignedLocationIntro(cityHeadline(city), `${city.name}, ${city.state}`).split(". ")[0] + ".", 155),
 +            description: compact(alignedLocationIntro(cityHeadline(city), `${city.name}, ${city.state}`).split(/(?<!\bSt)\. /)[0] + ".", 155),
            }
@@ -187,13 +187,13 @@ index 3f84c57..02a307d 100644
 @@ -236,12 +236,12 @@ for (const path of [...allRoutes, "/404/"]) {
        : region
          ? {
-             title: `${regionRentalHeadline(region.region, region.state, region.index)} | PortableFoodBank`,
+             title: `${regionRentalHeadline(region.region, region.state, region.index)} | TemporaryKitchenRental`,
 -            description: compact(alignedLocationIntro(regionRentalHeadline(region.region, region.state, region.index), regionLocationLabel(region.region, region.state)).split(". ")[0] + ".", 155),
 +            description: compact(alignedLocationIntro(regionRentalHeadline(region.region, region.state, region.index), regionLocationLabel(region.region, region.state)).split(/(?<!\bSt)\. /)[0] + ".", 155),
            }
          : stateName
            ? {
-               title: `${stateRentalHeadline(stateName)} | PortableFoodBank`,
+               title: `${stateRentalHeadline(stateName)} | TemporaryKitchenRental`,
 -              description: compact(alignedLocationIntro(stateRentalHeadline(stateName), stateName).split(". ")[0] + ".", 155),
 +              description: compact(alignedLocationIntro(stateRentalHeadline(stateName), stateName).split(/(?<!\bSt)\. /)[0] + ".", 155),
              }
@@ -248,13 +248,13 @@ index 80027ed..cf96995 100644
 -    !/\/(equipment-rental|services)\//.test(window.location.pathname)
 -  )
 -    return;
--  const originalTitle = title.textContent || "PortableFoodBank equipment";
+-  const originalTitle = title.textContent || "TemporaryKitchenRental equipment";
 -  main.dataset.cityView = "true";
 -  const headline = cityRentalHeadline(location, originalTitle);
 -  title.replaceChildren(document.createTextNode(headline));
 -  const description = document.createElement("p");
 -  description.className = "model-intro";
--  description.textContent = `Rent or lease Temporary Facilities for your ${location} project. Explore ${originalTitle} and discuss rental availability with PortableFoodBank. Emergency 24/7.`;
+-  description.textContent = `Rent or lease Temporary Facilities for your ${location} project. Explore ${originalTitle} and discuss rental availability with TemporaryKitchenRental. Emergency 24/7.`;
 -  title.after(description);
 -  main.querySelectorAll("figure").forEach((figure) => (figure.hidden = true));
 -  main.querySelectorAll("img").forEach((image) => (image.hidden = true));
@@ -303,7 +303,7 @@ index 80027ed..cf96995 100644
 +    title.after(description);
    }
 -  description.after(gallery);
--  document.title = `${headline}: Temporary Facilities to Rent or Lease | PortableFoodBank`;
+-  document.title = `${headline}: Temporary Facilities to Rent or Lease | TemporaryKitchenRental`;
 -  document
 -    .querySelector('meta[name="description"]')
 -    ?.setAttribute("content", description.textContent);
@@ -324,7 +324,7 @@ index 80027ed..cf96995 100644
 +
 +  // All reviewed galleries, specifications, product tabs and supporting copy stay intact.
 +  // In particular, never substitute a modular kitchen for a trailer or ADA for non-ADA.
-+  document.title = copy.heading + " | PortableFoodBank";
++  document.title = copy.heading + " | TemporaryKitchenRental";
 +  document.querySelector('meta[name="description"]')?.setAttribute("content", copy.introduction);
 +  for (const script of document.querySelectorAll('script[type="application/ld+json"]')) {
 +    try {

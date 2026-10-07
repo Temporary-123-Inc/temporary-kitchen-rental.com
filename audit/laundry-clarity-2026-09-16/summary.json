@@ -1,12 +1,12 @@
 {
   "at": "2026-09-16T10:11:42.863Z",
-  "repo": "C:\\Users\\Charles\\Documents\\New project\\Portable Food Bank",
+  "repo": "C:\\Users\\Charles\\Documents\\New project\\Temporary Kitchen Rental",
   "branch": "main",
   "baseCommit": "8ad98dba33ef6d9b7b1e64028da3fc639bd7fd9a",
   "newCommit": false,
   "deployed": false,
   "preview": "http://127.0.0.1:4207",
-  "frozenBuild": "C:\\Users\\Charles\\Documents\\New project\\Portable Food Bank\\.temp\\laundry-clarity-20260916\\dist",
+  "frozenBuild": "C:\\Users\\Charles\\Documents\\New project\\Temporary Kitchen Rental\\.temp\\laundry-clarity-20260916\\dist",
   "sourceFingerprint": "4640b6077785c8efe9500f2af6eb2a99196af53c8dc47942b7cadae257f0cebc",
   "manifestSha256": "77fb4db6af4efab4c22d2b75556aad90c3e391ec5bc2baf0742a5a102d734617",
   "files": [

@@ -1,4 +1,4 @@
-"""Verify the legacy backlink migration against the live PortableFoodBank site."""
+"""Verify the legacy backlink migration against the live TemporaryKitchenRental site."""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ import requests
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = ROOT / "audit" / "legacy-url-restoration-2026-09-18"
-BASE = "https://portable-food-bank.com"
+BASE = "https://temporary-kitchen-rental.com"
 TIMEOUT = 30
 
 
@@ -22,7 +22,7 @@ def fetch(url: str) -> requests.Response:
         url,
         timeout=TIMEOUT,
         allow_redirects=True,
-        headers={"User-Agent": "PortableFoodBank-Legacy-URL-QA/1.0"},
+        headers={"User-Agent": "TemporaryKitchenRental-Legacy-URL-QA/1.0"},
     )
 
 
@@ -107,7 +107,7 @@ def check_row(index_and_row: tuple[int, dict[str, str]]) -> dict[str, object]:
         exact_ok = (
             response.status_code == 200
             and final.scheme == "https"
-            and final.netloc == "portable-food-bank.com"
+            and final.netloc == "temporary-kitchen-rental.com"
             and final.path == expected_path
         )
         result.update(

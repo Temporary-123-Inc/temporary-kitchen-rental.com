@@ -18,7 +18,7 @@ test("all grouped-gallery contexts omit the review banner on desktop and mobile"
   page.on("pageerror", (error) => errors.push(error.message));
   await page.addInitScript(() =>
     localStorage.setItem(
-      "portable-food-bank:emergency-dismissed-until-v1",
+      "temporary-kitchen-rental:emergency-dismissed-until-v1",
       String(Date.now() + 86400000),
     ),
   );

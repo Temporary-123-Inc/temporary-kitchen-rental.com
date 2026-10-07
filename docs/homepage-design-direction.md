@@ -1,4 +1,4 @@
-# Portable Food Bank homepage revision direction
+# Temporary Kitchen Rental homepage revision direction
 
 Subject: Help facility managers find temporary equipment and call 800-443-5212 with their site requirements.
 Direction: Industrial clarity with a confident, photo-led equipment showcase.
@@ -9,7 +9,7 @@ Signature: A large, always reachable phone action paired with real equipment pho
 Distinctive choices: Industrial display typography; large equipment views with practical planning prompts; scroll progress and a stationary planning panel beside moving steps.
 Omitted: Autoplay carousels, invented specifications, simulated 3D equipment, and scroll hijacking.
 Mobile: One-column cards, compact sticky navigation, fixed bottom phone action with safe-area padding, native dialogs and readable type. Content remains available without JavaScript. Motion responds to reduced-motion changes.
-Reference: https://www.medvillediabetes.com/ inspected in the connected browser. Adapt its strong product presentation and obvious action hierarchy to Portable Food Bank.
+Reference: https://www.medvillediabetes.com/ inspected in the connected browser. Adapt its strong product presentation and obvious action hierarchy to Temporary Kitchen Rental.
 
 ## Scope and security
 The static public pages and shared navigation change. No new customer data collection, tracking, authentication, or external scripts. The existing server-only inquiry/rate-limit data and deny-all client Realtime Database rules remain in place. Re-run handler and rules tests; verify deployed CSP and disabled-intake behavior. Full production security readiness remains dependent on the existing intake configuration work.

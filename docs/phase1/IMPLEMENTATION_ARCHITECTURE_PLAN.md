@@ -1,8 +1,8 @@
-# PortableFoodBank Phase 1 Implementation Architecture Plan
+# TemporaryKitchenRental Phase 1 Implementation Architecture Plan
 
 **Status:** Read-only implementation design  
 **Prepared:** 2026-09-15  
-**Scope:** Deterministic H1, metadata, body-copy, and image governance across the existing PortableFoodBank route families. This document does not authorize source, route, URL, canonical, indexing, deployment, or production changes.
+**Scope:** Deterministic H1, metadata, body-copy, and image governance across the existing TemporaryKitchenRental route families. This document does not authorize source, route, URL, canonical, indexing, deployment, or production changes.
 
 ## Executive recommendation
 
@@ -37,7 +37,7 @@ This arrangement produces usable static pages, but it has four structural risks:
 3. `src/regionGuides.tsx` also selects copy and equipment imagery by offsets and modulo values. Inserting a state, region, template, or image can cascade changes to unrelated pages.
 4. `src/cityRentalView.ts` rewrites the visible H1, document title, description, schema, and image gallery from a `location` query value after the page loads. The calculation is deterministic, but the semantic identity of one URL changes by query and differs between prerendered HTML and hydrated browser state.
 
-The prerender post-processing step also replaces filename-like alt text with `<visible H1>: PortableFoodBank equipment reference`. That prevents empty-looking alts but couples accessibility text to SEO copy and can create repetitive, non-descriptive alternatives.
+The prerender post-processing step also replaces filename-like alt text with `<visible H1>: TemporaryKitchenRental equipment reference`. That prevents empty-looking alts but couples accessibility text to SEO copy and can create repetitive, non-descriptive alternatives.
 
 ## Proposed content model
 

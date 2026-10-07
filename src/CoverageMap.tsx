@@ -265,7 +265,7 @@ export function CoverageMap({
             <div className="state-dialog-composition">
               <div className="state-services-heading">
                 <p className="eyebrow">
-                  <span>Portable Food Bank nationwide service.</span>
+                  <span>Temporary Kitchen Rental nationwide service.</span>
                   <span className="state-dialog-code" data-state-code>
                     State 01 of 50
                   </span>
@@ -290,7 +290,7 @@ export function CoverageMap({
                     </span>
                   </h2>
                   <p id="state-services-intro">
-                    Portable Food Bank supports commercial kitchen projects in
+                    Temporary Kitchen Rental supports commercial kitchen projects in
                     <span data-state-name>your state</span> and across the
                     United States. Confirm the equipment, site utilities, and
                     delivery timing with our rental team.
@@ -367,7 +367,7 @@ export function CoverageMap({
 
               <section
                 className="state-dialog-visual"
-                aria-label="Portable Food Bank equipment photographs"
+                aria-label="Temporary Kitchen Rental equipment photographs"
               >
                 <div className="state-visual-heading">
                   <div>
@@ -385,7 +385,7 @@ export function CoverageMap({
 
               <section
                 className="state-dialog-services"
-                aria-label="Portable Food Bank rental services"
+                aria-label="Temporary Kitchen Rental rental services"
               >
                 <div className="state-service-heading">
                   <span>Commercial food-service rentals</span>

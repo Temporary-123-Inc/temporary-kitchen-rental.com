@@ -14,8 +14,8 @@ const save=()=>fs.writeFileSync(out+'/browser-recheck.json',JSON.stringify(resul
 async function context(guarded){
  const c=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'});
  await c.route('**/*',r=>r.request().url().startsWith(origin)?r.continue():r.abort());
- if(guarded)await c.addInitScript(()=>{if(window.top!==window)return;try{localStorage.setItem('portable-food-bank:emergency-dismissed-until-v1',String(Date.now()+86400000));}catch{}});
- else await c.addInitScript(()=>localStorage.setItem('portable-food-bank:emergency-dismissed-until-v1',String(Date.now()+86400000)));
+ if(guarded)await c.addInitScript(()=>{if(window.top!==window)return;try{localStorage.setItem('temporary-kitchen-rental:emergency-dismissed-until-v1',String(Date.now()+86400000));}catch{}});
+ else await c.addInitScript(()=>localStorage.setItem('temporary-kitchen-rental:emergency-dismissed-until-v1',String(Date.now()+86400000)));
  return c;
 }
 try{

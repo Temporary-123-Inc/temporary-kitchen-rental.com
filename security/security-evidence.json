@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "project": "Portable Food Bank",
+  "project": "Temporary Kitchen Rental",
   "source_revision": "8ea8db4f8b840807295c302ac69f5fed1d3e9f73",
-  "environment": "Node 24; demo-portable-food-bank Realtime Database emulator; Chrome local preview; live locked database rules; Vercel project creation denied",
+  "environment": "Node 24; demo-temporary-kitchen-rental Realtime Database emulator; Chrome local preview; live locked database rules; Vercel project creation denied",
   "generated_at": "2026-09-11T16:49:57.473Z",
   "controls": [
     {

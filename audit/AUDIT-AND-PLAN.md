@@ -4,13 +4,13 @@ Audit date: 2026-09-11 UTC. Source: the attached workbook, read without modifica
 
 ## Decision
 
-Prepare an isolated, nonindexable April implementation and preserve the existing website. Do not activate a migration from this evidence alone. The user's latest instruction authorizes improving the plan and delivering ZIP files. This revised plan permits offline engineering after the spreadsheet audit, while moving business-fact and migration approval to the release gate. It does not represent the audit or any URL decision as owner-approved. Draft service content is for review, not production publication. No phone number is borrowed from PortableFoodBank.
+Prepare an isolated, nonindexable April implementation and preserve the existing website. Do not activate a migration from this evidence alone. The user's latest instruction authorizes improving the plan and delivering ZIP files. This revised plan permits offline engineering after the spreadsheet audit, while moving business-fact and migration approval to the release gate. It does not represent the audit or any URL decision as owner-approved. Draft service content is for review, not production publication. No phone number is borrowed from TemporaryKitchenRental.
 
 ## Recalculated data quality
 
 | Observation | Result |
 |---|---:|
-| Sheets | 1: portable-food-bank.com-bbl-external-s |
+| Sheets | 1: temporary-kitchen-rental.com-bbl-external-s |
 | Data rows / columns | 148 / 16 |
 | Exact unique URLs | 148 |
 | Strategic groups after https + apex + trailing-slash normalization | 102 |
@@ -61,7 +61,7 @@ Nofollow links can carry referral and brand value. Do not discard them. DR/UR ar
 
 The public homepage was accessible through web retrieval on 2026-09-11. Its retrieved body included a news/blog empty state and very extensive location navigation. This is a public retrieval observation, not proof of browser rendering, current HTTP status or indexing. Direct terminal access timed out; robots.txt and sitemap_index.xml web retrieval returned tool errors. Do not interpret retrieval errors as site HTTP errors. No authenticated Search Console, CMS export, logs or analytics were available. The spreadsheet is a backlink-target export, not the whole website inventory. A complete live crawl and content comparison remain open.
 
-Reference: https://portable-food-bank.com/ . A sampled page fetch log is supplied separately. No reference copy, images, claims or telephone number are adopted as April business facts.
+Reference: https://temporary-kitchen-rental.com/ . A sampled page fetch log is supplied separately. No reference copy, images, claims or telephone number are adopted as April business facts.
 
 ## Architecture and page-type plan
 
@@ -86,14 +86,14 @@ Begin with Houston kitchen and the relevant California restroom region because t
 
 ## Redirect and canonical strategy
 
-Retain valuable paths by default. Final origin is configurable, never portable-food-bank.com by assumption. Origin/host normalization must go directly to the final path, with a tested permanent redirect. Implement only individually approved, content-equivalent mappings. Exclude assets from HTML normalization. Keep query semantics. Do not turn every unresolved URL into a homepage redirect. Never use `noindex` as a canonicalization mechanism. Unresolved rows block migration, not the old site. Keep the source site operating until replacement coverage is reconciled.
+Retain valuable paths by default. Final origin is configurable, never temporary-kitchen-rental.com by assumption. Origin/host normalization must go directly to the final path, with a tested permanent redirect. Implement only individually approved, content-equivalent mappings. Exclude assets from HTML normalization. Keep query semantics. Do not turn every unresolved URL into a homepage redirect. Never use `noindex` as a canonicalization mechanism. Unresolved rows block migration, not the old site. Keep the source site operating until replacement coverage is reconciled.
 
 Draft builds contain no production canonicals and an empty sitemap, with noindex. Approved release builds produce route-specific static HTML, self canonicals and sitemap entries from approved content. Unknown paths return 404. Redirect activation is intentionally separate from draft builds.
 
 ## Missing-data request and approval checklist
 
 - [ ] April's approved display phone + international tel value, final domain, legal identity and contact
-- [ ] Confirm whether April owns PortableFoodBank and whether this is a same-domain rebuild or cross-domain move
+- [ ] Confirm whether April owns TemporaryKitchenRental and whether this is a same-domain rebuild or cross-domain move
 - [ ] Actual offered services, coverage, addresses (if any), equipment facts and owned images
 - [ ] Backlink-level export: source page/domain, target, anchor, attributes, placement, dates and context
 - [ ] Search Console page/query/indexing exports and representative URL Inspection

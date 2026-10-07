@@ -6,12 +6,12 @@ const authorityDomain = new URL(site.origin).hostname;
 
 export const SEO_ORIGINS = {
   production: site.origin,
-  preview: "https://portable-food-bank-com-theta.vercel.app",
+  preview: "https://temporary-kitchen-rental-com-theta.vercel.app",
 } as const;
 
 // The imported authority register belongs to another source property. Keep it
 // available as historical migration evidence, but never query or inspect those
-// URLs as though they were Portable Food Bank evidence.
+// URLs as though they were Temporary Kitchen Rental evidence.
 const currentSiteAuthorityUrls: typeof authorityTop25 = [];
 
 export type LivePageCheck = {
@@ -416,7 +416,7 @@ export async function inspectPage(url: string): Promise<LivePageCheck> {
   try {
     const response = await fetch(url, {
       redirect: "manual",
-      headers: { "User-Agent": "PortableFoodBank-SEO-Dashboard/1.0" },
+      headers: { "User-Agent": "TemporaryKitchenRental-SEO-Dashboard/1.0" },
       signal: AbortSignal.timeout(8_000),
     });
     const location = response.headers.get("location");
@@ -457,7 +457,7 @@ async function inspectText(url: string) {
   try {
     const response = await fetch(url, {
       redirect: "manual",
-      headers: { "User-Agent": "PortableFoodBank-SEO-Dashboard/1.0" },
+      headers: { "User-Agent": "TemporaryKitchenRental-SEO-Dashboard/1.0" },
       signal: AbortSignal.timeout(8_000),
     });
     const text =

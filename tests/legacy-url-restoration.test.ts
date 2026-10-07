@@ -191,7 +191,7 @@ describe("archived cross-domain backlink evidence", () => {
           rule.has?.some(
             (condition) =>
               condition.type === "host" &&
-              condition.value === "www.portable-food-bank.com",
+              condition.value === "www.temporary-kitchen-rental.com",
           ),
       ),
     ).toMatchObject({

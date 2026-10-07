@@ -1,5 +1,5 @@
 {
-  "name": "portable-food-bank",
+  "name": "temporary-kitchen-rental",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -11,7 +11,7 @@
     "build": "tsc --noEmit && vite build && node --import tsx scripts/prerender.tsx",
     "preview": "node scripts/serve.mjs",
     "test": "vitest run --exclude \"work/**\" tests/contact.test.ts tests/public-config.test.ts tests/routes.test.ts tests/import.test.mjs tests/migration.test.ts tests/legacy-url-restoration.test.ts tests/legacyVisibleImageAlt.test.ts tests/prerender-text.test.ts tests/seasonal.test.ts tests/calculator.test.ts tests/homepagePortfolio.test.tsx tests/coverageMapAccessibility.test.tsx tests/seo-dashboard.test.tsx",
-    "test:rules": "firebase emulators:exec --project demo-portable-food-bank --only database \"vitest run --no-file-parallelism tests/rules.test.ts\"",
+    "test:rules": "firebase emulators:exec --project demo-temporary-kitchen-rental --only database \"vitest run --no-file-parallelism tests/rules.test.ts\"",
     "test:e2e": "playwright test",
     "check:release": "node --import tsx scripts/release.ts",
     "check:seo": "node scripts/check-preview.mjs",

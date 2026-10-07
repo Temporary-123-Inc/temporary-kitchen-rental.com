@@ -31,7 +31,7 @@ export function firebase() {
   )
     throw new Error("Deployed backend refuses emulator configuration.");
   const app =
-    getApps().find((app) => app.name === "portable-food-bank-server") ||
+    getApps().find((app) => app.name === "temporary-kitchen-rental-server") ||
     initializeApp(
       {
         databaseURL: required("FIREBASE_DATABASE_URL"),
@@ -41,7 +41,7 @@ export function firebase() {
           privateKey: firebasePrivateKey(),
         }),
       },
-      "portable-food-bank-server",
+      "temporary-kitchen-rental-server",
     );
   return {
     db: asAdminRealtimeDatabase(getDatabase(app)),

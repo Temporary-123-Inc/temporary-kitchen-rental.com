@@ -15,8 +15,8 @@ describe('Oklahoma Panhandle rental durations and lease descriptions', () => {
       for (const term of ['weekly rental', 'monthly rental', 'yearly rental', 'lease options']) expect(copy?.caption.toLowerCase()).toContain(term);
       expect(copy?.caption).toMatch(/Discuss weekly rental/i);
       expect(copy?.caption).not.toMatch(/availability|site requirements|confirm|quote/i);
-      expect(copy?.caption.endsWith('Call Portable Food Bank now for 24/7 live-agent support: +1 (888) 563-6507.')).toBe(true);
-      expect(copy?.caption.split("Call Portable Food Bank")[0]).not.toMatch(/guaranteed|in stock|immediate delivery|shower|kitchen/i);
+      expect(copy?.caption.endsWith('Call Temporary Kitchen Rental now for 24/7 live-agent support: +1 (888) 563-6507.')).toBe(true);
+      expect(copy?.caption.split("Call Temporary Kitchen Rental")[0]).not.toMatch(/guaranteed|in stock|immediate delivery|shower|kitchen/i);
       expect(copy?.altPrefix).not.toMatch(/weekly|monthly|yearly/i);
       expect(copy?.altPrefix).toBe(product.toLowerCase() + ' rental option — ');
     });

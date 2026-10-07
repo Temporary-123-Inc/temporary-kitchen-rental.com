@@ -12,8 +12,8 @@ import "./location-refresh.css";
 import "./location-image-gallery.css";
 import "./service-hero-carousel.css";
 import "./seo-dashboard.css";
-import "./portable-food-bank-palette.css";
-import "./portable-food-bank-brand.css";
+import "./temporary-kitchen-rental-palette.css";
+import "./temporary-kitchen-rental-brand.css";
 import "@fontsource-variable/manrope";
 import {
   calculateStartingEstimate,
@@ -22,7 +22,7 @@ import {
   equipmentPrices,
 } from "./calculatorData";
 import { appCheckToken } from "./appCheck";
-import { targetRouteByPath } from "./portableFoodBankTarget";
+import { targetRouteByPath } from "./temporaryKitchenRentalTarget";
 import { stateMapRentalHeadline } from "./rentalHeadlines";
 
 const requestedTargetRoute = targetRouteByPath[location.pathname];
@@ -38,18 +38,18 @@ const mountSite = () => {
 };
 
 if (requestedTargetRoute?.location?.city) {
-  document.title = `${requestedTargetRoute.title} | Portable Food Bank`;
+  document.title = `${requestedTargetRoute.title} | Temporary Kitchen Rental`;
   const description = document.querySelector<HTMLMetaElement>(
     'meta[name="description"]',
   );
   if (description) {
-    description.content = `${requestedTargetRoute.location.city}, ${requestedTargetRoute.location.state}: Plan a commercial mobile kitchen trailer rental. Confirm equipment, utilities, availability, and delivery with Portable Food Bank.`;
+    description.content = `${requestedTargetRoute.location.city}, ${requestedTargetRoute.location.state}: Plan a commercial mobile kitchen trailer rental. Confirm equipment, utilities, availability, and delivery with Temporary Kitchen Rental.`;
   }
   const canonical = document.querySelector<HTMLLinkElement>(
     'link[rel="canonical"]',
   );
   if (canonical)
-    canonical.href = `https://portable-food-bank.com${location.pathname}`;
+    canonical.href = `https://temporary-kitchen-rental.com${location.pathname}`;
   mountSite();
 } else if (location.pathname !== "/seo-dashboard/" && root?.childElementCount === 0) {
   // Vite serves the shell with an empty root during local development. Mount
@@ -420,7 +420,7 @@ const contactDrawer =
 const emergencyDispatch = document.querySelector<HTMLElement>(
   "[data-emergency-dispatch]",
 );
-const emergencyStorageKey = "portable-food-bank:emergency-dismissed-until-v1";
+const emergencyStorageKey = "temporary-kitchen-rental:emergency-dismissed-until-v1";
 const emergencyDismissalDuration = 24 * 60 * 60 * 1000;
 let emergencyAutoTimer: number | undefined;
 let emergencyAutoAttempted = false;
@@ -1021,7 +1021,7 @@ const openState = (name: string, trigger: HTMLElement | SVGElement) => {
   if (initials)
     initials.textContent = guide?.dataset.stateAbbreviation || name.slice(0, 2);
   if (intro)
-    intro.textContent = `${name}: Plan a commercial mobile kitchen trailer rental. Confirm equipment, utilities, availability, and delivery timing with Portable Food Bank.`;
+    intro.textContent = `${name}: Plan a commercial mobile kitchen trailer rental. Confirm equipment, utilities, availability, and delivery timing with Temporary Kitchen Rental.`;
   if (question) question.textContent = "";
   const statePage =
     stateDialog.querySelector<HTMLAnchorElement>("[data-state-page]");

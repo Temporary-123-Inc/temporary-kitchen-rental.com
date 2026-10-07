@@ -6,7 +6,7 @@ import ts from "typescript";
 
 // Exercise emitted JavaScript with native Node resolution. Vitest/tsx resolve
 // extensionless TS paths and cannot catch the corresponding Vercel ESM failure.
-const output = resolve("node_modules/.cache/portable-food-bank-runtime");
+const output = resolve("node_modules/.cache/temporary-kitchen-rental-runtime");
 await mkdir(output, { recursive: true });
 await writeFile(resolve(output, "package.json"), '{"type":"module"}');
 await writeFile(resolve(output, "site.json"), await readFile("site.json"));

@@ -20,7 +20,7 @@ test("emergency dispatch waits for activity, dismisses for 24 hours, and remains
   await dispatch.locator("[data-emergency-close]").click();
   await expect(panel).toHaveAttribute("aria-hidden", "true");
   const dismissedUntil = await page.evaluate(() =>
-    Number(localStorage.getItem("portable-food-bank:emergency-dismissed-until-v1")),
+    Number(localStorage.getItem("temporary-kitchen-rental:emergency-dismissed-until-v1")),
   );
   expect(dismissedUntil - Date.now()).toBeGreaterThanOrEqual(24 * 60 * 60 * 1000);
   expect(dismissedUntil - Date.now()).toBeLessThanOrEqual(
@@ -118,8 +118,8 @@ for (const width of [320, 390, 768, 1024, 1280, 1440])
     await expect(
       page.getByRole("link", { name: "Find your rental", exact: true }),
     ).toHaveAttribute("href", "#equipment");
-    await expect(page).toHaveTitle(/PortableFoodBank/);
-    await expect(page.locator(".brand")).toContainText("PortableFoodBank");
+    await expect(page).toHaveTitle(/TemporaryKitchenRental/);
+    await expect(page.locator(".brand")).toContainText("TemporaryKitchenRental");
     await expect(page.locator(".visual-note, .equipment-jumps")).toHaveCount(0);
     await expect(
       page.getByRole("link", { name: "Prepare for your project" }),
@@ -230,7 +230,7 @@ for (const width of [320, 390, 768, 1024, 1280, 1440])
         .evaluate((i: HTMLImageElement) => i.complete && i.naturalWidth > 0),
     ).toBe(true);
     await page.screenshot({
-      path: `test-results/portable-food-bank-${width}.png`,
+      path: `test-results/temporary-kitchen-rental-${width}.png`,
       fullPage: true,
     });
   });
@@ -319,7 +319,7 @@ test("service model pages provide unique planning content", async ({
     "22 ft 6-Stall Shower and Restroom Combination Trailer Rental",
   );
   await expect(page).toHaveTitle(
-    "22 ft 6-Stall Shower and Restroom Combination Trailer Rental | PortableFoodBank",
+    "22 ft 6-Stall Shower and Restroom Combination Trailer Rental | TemporaryKitchenRental",
   );
   await expect(page.getByText("PLAN BEFORE DELIVERY")).toBeVisible();
 });

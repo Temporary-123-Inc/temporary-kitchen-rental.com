@@ -1,14 +1,14 @@
-# Portable Food Bank — Website Style Guide
+# Temporary Kitchen Rental — Website Style Guide
 
 Version 1.0 · October 2026
 
-This guide defines the visual, interaction, and content system for Portable Food Bank. It is the source of truth for the rebrand: approachable, practical, dignified, and ready to help people access food during disruption or emergency.
+This guide defines the visual, interaction, and content system for Temporary Kitchen Rental. It is the source of truth for the rebrand: approachable, practical, dignified, and ready to help people access food during disruption or emergency.
 
 ## 1. Brand foundation
 
 ### Positioning
 
-Portable Food Bank connects people and communities with practical mobile food support. The brand should feel capable enough for emergency response and warm enough for a person asking for help.
+Temporary Kitchen Rental connects people and communities with practical mobile food support. The brand should feel capable enough for emergency response and warm enough for a person asking for help.
 
 ### Personality
 
@@ -29,9 +29,9 @@ Portable Food Bank connects people and communities with practical mobile food su
 
 ### Primary logo
 
-Use `/images/portable-food-bank-logo-horizontal.png` for the website header and other horizontal placements. It places the emblem on the left and the `Portable Food Bank` wordmark on the right. The mark combines a portable serving platform, nourishing food, produce, and a simple community-support gesture.
+Use `/temporary-kitchen-rental-logo.svg` for the website header and other horizontal placements. It places the emblem on the left and the `Temporary Kitchen Rental` wordmark on the right. The mark combines a mobile kitchen trailer, cooking equipment, and a clean service-focused wordmark.
 
-Use `/images/portable-food-bank-logo.png` for centered, stacked, or square placements such as social graphics and promotional panels.
+Use `/images/temporary-kitchen-rental-mark.svg` for centered, stacked, or square placements such as social graphics and promotional panels.
 
 ### Clear space
 
@@ -59,7 +59,7 @@ Do not:
 - Add drop shadows, gradients, or effects.
 - Place it over a busy photograph.
 - Recreate the wordmark in a different font.
-- Use the old `portable-food-bank` logo for new Portable Food Bank surfaces.
+- Use the old `temporary-kitchen-rental` logo for new Temporary Kitchen Rental surfaces.
 
 ## 3. Color system
 
@@ -276,7 +276,7 @@ Clear, calm, respectful, practical, and reassuring.
 
 | Asset | Path | Use |
 | --- | --- | --- |
-| Horizontal header logo | `/public/images/portable-food-bank-logo-horizontal.png` | Website header and horizontal footer lockup |
-| Stacked logo | `/public/images/portable-food-bank-logo.png` | Centered, square, and social compositions |
-| Existing legacy logo | `/public/images/portable-food-bank-legacy-logo.webp` | Retain only until the rebrand implementation removes its references |
+| Horizontal header logo | `/public/temporary-kitchen-rental-logo.svg` | Website header and horizontal footer lockup |
+| Stacked logo | `/public/images/temporary-kitchen-rental-mark.svg` | Centered, square, and social compositions |
+| Compact brand mark | `/public/images/temporary-kitchen-rental-mark.svg` | Favicon, compact header, and social compositions |
 

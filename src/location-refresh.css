@@ -1062,7 +1062,7 @@
 }
 
 /* JSON-driven regional planning modules. The existing hero remains unchanged;
-   these cards keep the location pages in the Portable Food Bank visual system. */
+   these cards keep the location pages in the Temporary Kitchen Rental visual system. */
 .regional-data-modules {
   display: grid;
   gap: clamp(1.5rem, 3vw, 2.5rem);

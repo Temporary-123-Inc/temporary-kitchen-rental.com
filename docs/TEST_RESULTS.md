@@ -1,58 +1,78 @@
-# PortableFoodBank Test Results
+# TemporaryKitchenRental Test Results
+
+## 2026-10-07 — Sitewide full-bleed background containment
+
+- `pnpm exec tsc --noEmit` — PASS.
+- Focused regression suite (`coverageMapAccessibility`, `homepagePortfolio`, `routes`) — PASS: 3 files / 12 tests.
+- `pnpm run build` — PASS: Vite build and prerender generated 664 pages plus 404; existing JSON import-attribute, annotation, and large-chunk warnings remain.
+- `git diff --check` — PASS; only existing line-ending normalization warnings were reported for pre-existing audit files.
+- Local browser verification — PASS on `/` and `/service-areas/washington/olympic-peninsula/port-angeles/`: homepage calculator and service-area surfaces reach the viewport edges, content remains inset, the long-page carousel renders, and the full-width footer renders without visible side clipping.
+- Scope boundary — no content, route, image, carousel, map, remote repository, or deployment change was made.
+
+## 2026-10-07 — Temporary Kitchen Rental local rebrand and decoupling
+
+- `pnpm exec tsc --noEmit` — PASS.
+- `pnpm run build` — PASS: Vite build and prerender generated 664 pages plus 404; existing JSON import-attribute, annotation, and large-chunk warnings remain.
+- `pnpm run check:brand` — PASS: no former identity in generated public output.
+- `public/social-card.png` and `dist/social-card.png` — visually inspected after regeneration; both show only the Temporary Kitchen Rental identity and current domain/phone.
+- Current-source residue scan — PASS: zero old-brand text matches and zero old-brand filenames outside `.git`, `dist`, `node_modules`, and `work`.
+- Local HTTP/browser smoke check — PASS: `/` and `/service-areas/washington/olympic-peninsula/port-angeles/` return HTTP 200 with the Temporary Kitchen Rental title; the visible preview shows the new wordmark, service-area carousel, and existing page content.
+- Repository decoupling — PASS: `git remote -v` is empty and `.vercel/project.json` is absent. No push or deployment was performed.
+- `pnpm run test` — 74/77 tests passed. Three failures remain in existing legacy image-fixture expectations and the Alabama seasonal-copy word-count bound; none is caused by the identity/file rename and they are outside this rebrand scope.
 
 ## 2026-10-03 — Full public-route indexing and sitemap candidate
 
 - Owner explicitly approved removing noindex from the public static site. Production prerender now emits `index,follow`, self-canonicals, and sitemap URLs for eligible public routes; `robots.txt` permits site crawling except `/api/` and points to the canonical sitemap. Vercel preview host noindex protection is preserved.
 - `pnpm build` — PASS, 664 routes + 404. `pnpm test` — PASS, 13 files / 77 tests. `pnpm check:seo` — PASS, 658 eligible canonical URLs, no audit problems, no pending migration links. `pnpm check:cities` — PASS, 19,702 Census places, 246 region directories, 5 reviewed city guides. `pnpm check:generated` — PASS, 665 HTML files, 90,013 links, 12,427 images, 664 structured-data payloads, 670 forms. `pnpm check:links` — PASS, 664 pages; zero missing/case defects. `pnpm check:headlines` — PASS, 548 unique headlines. Typecheck, `pnpm check:release`, `pnpm check:brand`, secret scan, and `git diff --check` pass.
-- The 658 sitemap entries match the current candidate’s indexable route registry. Private SEO tooling, duplicate aliases, unapproved/empty testimonials, legacy customer-testimonial copy and unverified video media remain reachable where appropriate but `noindex,follow`; these are not sitemap entries. Government approval and GSA pages are sanitized to avoid attributing unverified procurement/contract claims and are included as truthful information pages. `origin/main` advanced during validation; incoming identity-cleanup changes were integrated. Commit `8c6910c` was pushed to `Portable-Food-Bank/portable-food-bank.com` `main`.
-- Post-push live verification — PASS after delayed Git-triggered deployment: `https://portable-food-bank.com/robots.txt` contains `Sitemap: https://portable-food-bank.com/sitemap.xml`; live `/sitemap.xml` contains 658 `<loc>` entries; `/` returns HTTP 200 with `index,follow`; GSA and government-approval pages return HTTP 200 with `index,follow`, self-canonicals, and no old contract numbers or DLA/SBA approval claims. `/service-areas/` also returns 200 with `index,follow` and a self-canonical. The stable `portable-food-bank-com-theta.vercel.app` alias serves the same sitemap while retaining response header `X-Robots-Tag: noindex, follow`. The Vercel connector returned 403 for scope `portable-food-bank-team`, so the deployment ID/revision was not directly queried; deployed output itself was verified over HTTPS.
+- The 658 sitemap entries match the current candidate’s indexable route registry. Private SEO tooling, duplicate aliases, unapproved/empty testimonials, legacy customer-testimonial copy and unverified video media remain reachable where appropriate but `noindex,follow`; these are not sitemap entries. Government approval and GSA pages are sanitized to avoid attributing unverified procurement/contract claims and are included as truthful information pages. `origin/main` advanced during validation; incoming identity-cleanup changes were integrated. Commit `8c6910c` was pushed to `Temporary-Kitchen-Rental/temporary-kitchen-rental.com` `main`.
+- Post-push live verification — PASS after delayed Git-triggered deployment: `https://temporary-kitchen-rental.com/robots.txt` contains `Sitemap: https://temporary-kitchen-rental.com/sitemap.xml`; live `/sitemap.xml` contains 658 `<loc>` entries; `/` returns HTTP 200 with `index,follow`; GSA and government-approval pages return HTTP 200 with `index,follow`, self-canonicals, and no old contract numbers or DLA/SBA approval claims. `/service-areas/` also returns 200 with `index,follow` and a self-canonical. The stable `temporary-kitchen-rental-com-theta.vercel.app` alias serves the same sitemap while retaining response header `X-Robots-Tag: noindex, follow`. The Vercel connector returned 403 for scope `temporary-kitchen-rental-team`, so the deployment ID/revision was not directly queried; deployed output itself was verified over HTTPS.
 - Google Search Console ownership, sitemap submission, and actual Google indexing are outside this deployment check and are not verified.
 
-## 2026-09-30 — Portable Food Bank public-identity residue removal
+## 2026-09-30 — Temporary Kitchen Rental public-identity residue removal
 
 - Audited homepage-visible copy, title/meta and JSON-LD inputs, image alt/title/captions, SEO dashboard evidence, public helper scripts, prerendered HTML/state, generated JavaScript, XML/SVG output, and the binary social card for improper former-identity references.
-- Replaced the stale binary `social-card.png` from the corrected Portable Food Bank SVG and visually confirmed the logo, domain label, phone number, and supporting-family wording.
+- Replaced the stale binary `social-card.png` from the corrected Temporary Kitchen Rental SVG and visually confirmed the logo, domain label, phone number, and supporting-family wording.
 - `npm run build` — PASS: TypeScript and Vite build completed and prerender generated 664 pages plus 404. Existing JSON import-attribute, third-party annotation, and large-chunk warnings remain.
 - `npm test` — PASS: 13 test files / 76 tests. The SEO dashboard regression now requires path-only legacy evidence and rejects former identity text.
 - `npm run check:brand` — PASS: zero former-identity matches in generated HTML, JavaScript, JSON, SVG, XML, CSS, and text assets.
 - `npm run check:generated` — PASS: 665 HTML files, 86,053 links, 12,427 images, 664 structured-data payloads, and 670 forms; zero failures. Existing warning: draft `/service-areas/oklahoma/panhandle/` emits one canonical.
 - `npm run check:links` — PASS: 664 pages, zero capitalization issues, zero missing targets.
 - Existing URLs, slugs, route count, domain routing, layout, H1 intent, approved family balance, and indexing policy were unchanged.
-- Release: implementation commit `fec9dad` pushed to `origin/main`; existing-project production deployment `dpl_88E8V3gPJPAxguMoXKMP4RYNnhmz` reached Ready. Vercel inspection lists `https://portable-food-bank-com-theta.vercel.app` and `https://portable-food-bank.com` as aliases of that exact deployment.
+- Release: implementation commit `fec9dad` pushed to `origin/main`; existing-project production deployment `dpl_88E8V3gPJPAxguMoXKMP4RYNnhmz` reached Ready. Vercel inspection lists `https://temporary-kitchen-rental-com-theta.vercel.app` and `https://temporary-kitchen-rental.com` as aliases of that exact deployment.
 - Exhaustive live artifact audit — PASS independently on both hosts: 665/665 generated routes requested, six public JS/CSS/SVG/XML assets checked, zero former-identity matches. The literal static `/404.html` artifact returns 200 as a file; an unknown route follows the normal slash redirect and returns the generated 404 with no former identity.
-- Browser-runtime audit — PASS independently on both hosts: HTTP 200, title `Temporary Commercial Mobile Kitchen Facility Rentals Nationwide | Portable Food Bank`, one expected H1, zero former-identity matches in visible body, JSON-LD, or image alt/title attributes, zero console errors, and live `/social-card.png` SHA-256 identical to the visually reviewed local asset.
+- Browser-runtime audit — PASS independently on both hosts: HTTP 200, title `Temporary Commercial Mobile Kitchen Facility Rentals Nationwide | Temporary Kitchen Rental`, one expected H1, zero former-identity matches in visible body, JSON-LD, or image alt/title attributes, zero console errors, and live `/social-card.png` SHA-256 identical to the visually reviewed local asset.
 
 ## 2026-09-30 — Original-domain Vercel routing verification
 
-- Vercel UI: `portable-food-bank-team/portable-food-bank-com` reports `portable-food-bank.com` as **Valid Configuration / Production** and `www.portable-food-bank.com` as **Valid Configuration / 308 -> portable-food-bank.com** after moving both entries from `portable-food-bank-team/portable-food-bank`.
+- Vercel UI: `temporary-kitchen-rental-team/temporary-kitchen-rental-com` reports `temporary-kitchen-rental.com` as **Valid Configuration / Production** and `www.temporary-kitchen-rental.com` as **Valid Configuration / 308 -> temporary-kitchen-rental.com** after moving both entries from `temporary-kitchen-rental-team/temporary-kitchen-rental`.
 - Public DNS: apex A resolves to `216.150.1.1`; `www` CNAME resolves to `56dd81f9194c50e2.vercel-dns-016.com` (currently backed by Vercel A addresses `216.150.16.1` and `216.150.1.1`).
-- HTTPS: apex returns `200 OK` from Vercel; `www` returns `308 Permanent Redirect` with `Location: https://portable-food-bank.com/`.
+- HTTPS: apex returns `200 OK` from Vercel; `www` returns `308 Permanent Redirect` with `Location: https://temporary-kitchen-rental.com/`.
 - Indexing boundary: apex and sitemap responses still include `X-Robots-Tag: noindex, follow`; page markup contains `noindex,follow`, the production canonical is absent, and `robots.txt` says revision HTML remains noindex while the primary domain is elsewhere. Domain routing is verified, but indexability is not released or claimed.
 - No registrar, source-code, page-content, route, layout, form, or deployment mutation was performed in this domain-routing step.
 
 ## 2026-09-30 — Homepage V16.3 intent-copy follow-up, integrated candidate
 
 - Baseline before this follow-up: one H1, “Temporary Commercial Mobile Kitchen Rentals Nationwide”; meta description, “Temporary commercial mobile kitchen rentals nationwide for hospitals, schools, military bases, government agencies, industrial facilities and commercial operations.” Concurrent work had also introduced a kitchen-first primary/support opening structure before this candidate could be pushed.
-- Integrated candidate H1: “Temporary Commercial Mobile Kitchen Facility Rentals Nationwide.” Opening: “Portable Food Bank provides temporary commercial mobile kitchen trailer and modular facility rentals nationwide for hospitals, schools, military and government sites, industrial facilities, and other commercial operations. These facilities help teams maintain food service while permanent kitchens are offline during renovations, planned maintenance, emergency response, or added-capacity projects. Each kitchen plan considers the cooking line, prep flow, equipment needs, utilities, site access, and delivery logistics. Supporting rentals include temporary dishwashing facilities, refrigeration/freezer trailers, mobile shower trailers, shower/restroom trailer combinations, and man-camp/workforce housing units.” Meta description: “Temporary commercial mobile kitchen trailer and modular facility rentals nationwide for hospitals, schools, military, government, industrial and commercial operations.”
+- Integrated candidate H1: “Temporary Commercial Mobile Kitchen Facility Rentals Nationwide.” Opening: “Temporary Kitchen Rental provides temporary commercial mobile kitchen trailer and modular facility rentals nationwide for hospitals, schools, military and government sites, industrial facilities, and other commercial operations. These facilities help teams maintain food service while permanent kitchens are offline during renovations, planned maintenance, emergency response, or added-capacity projects. Each kitchen plan considers the cooking line, prep flow, equipment needs, utilities, site access, and delivery logistics. Supporting rentals include temporary dishwashing facilities, refrigeration/freezer trailers, mobile shower trailers, shower/restroom trailer combinations, and man-camp/workforce housing units.” Meta description: “Temporary commercial mobile kitchen trailer and modular facility rentals nationwide for hospitals, schools, military, government, industrial and commercial operations.”
 - Meaningful visible service-card phrases: “Mobile shower trailer rentals,” “Shower/restroom trailer rentals,” “Workforce housing unit rentals,” “Refrigeration/freezer trailer rentals,” and “Dishwashing facility rentals.” Metadata and alt text are not used as substitutes.
 - Post-integration deterministic content audit: PASS, 430 primary and 95 supporting family-specific words out of 525, or 81.90% / 18.10%; one H1; five support families; no missing phrase. Rendered geometry: 80.00% primary at 1440 x 900 (979.1875 / 244.8125 px columns) and 77.45% at 390 x 844 (680 / 197.9375 px family-section heights).
 - `npm run typecheck` — PASS. `npm test` — PASS, 13 files / 76 tests. `npm run build` — PASS, 664 pages plus 404. Focused local Playwright — PASS, 8/8. Exact desktop/mobile extraction confirms the H1, opening, meta description, five support labels, geometry, and zero console errors.
 - Release: commit `83abca2cbbff7734fd3bbd30f623dc17b11e6cad` pushed to `origin/main`; exact-project production deployment `dpl_2iUYTUwUgoy8aR3yuR1xJK6SRFVz` reached Ready.
-- Focused live Playwright — PASS, 8/8 independently on `https://portable-food-bank.com` and `https://portable-food-bank-com-theta.vercel.app`. Exact desktop/mobile extraction on both hosts returned HTTP 200, one H1, the expected opening/meta/support labels, 80.00% / 77.45% primary geometry, and zero console errors.
+- Focused live Playwright — PASS, 8/8 independently on `https://temporary-kitchen-rental.com` and `https://temporary-kitchen-rental-com-theta.vercel.app`. Exact desktop/mobile extraction on both hosts returned HTTP 200, one H1, the expected opening/meta/support labels, 80.00% / 77.45% primary geometry, and zero console errors.
 - No URL, domain, DNS, alias, indexing, or inquiry-delivery change was made.
 
 ## 2026-09-30 — State directory mobile-kitchen rental labels
 
 - Updated the shared homepage/Service Areas directory link text for all 50 states to “Mobile Kitchen Trailer Rental in [State]”; existing routes and expandable region links remain unchanged.
 - Added SSR assertions for the exact Alaska example, all 50 labels, and every state link. `pnpm exec vitest run tests/mapLocationDirectory.test.tsx` — PASS, 1 test. `pnpm typecheck` — PASS. `pnpm build` — PASS, 664 static pages + 404; existing JSON import, third-party annotation, and large-chunk warnings remain. `git diff --check` — PASS.
-- A direct check of the generated prerender HTML did not expose the directory strings. Commit `afc4a8e` was pushed to `origin/main`; a fresh browser tab on the public homepage still showed bare state labels at the time of the check. Vercel API listing failed with 403 for team scope `portable-food-bank-team`; deployment status and `/locations/` live behavior remain unverified.
+- A direct check of the generated prerender HTML did not expose the directory strings. Commit `afc4a8e` was pushed to `origin/main`; a fresh browser tab on the public homepage still showed bare state labels at the time of the check. Vercel API listing failed with 403 for team scope `temporary-kitchen-rental-team`; deployment status and `/locations/` live behavior remain unverified.
 
 ## 2026-09-30 — State-directory label spacing
 
 - Added an explicit whitespace separator between each linked state name and its listed-location count in the shared homepage/service-area directory.
 - Preserved all state hrefs, counts, map behavior, and directory layout.
 - `pnpm exec vitest run tests/mapLocationDirectory.test.tsx` — PASS, 1 test. `pnpm typecheck` — PASS. `git diff --check` — PASS.
-- Browser and Vercel deployment checks were not run. Commit `673f264` was pushed to `Portable-Food-Bank/portable-food-bank.com` `main`.
+- Browser and Vercel deployment checks were not run. Commit `673f264` was pushed to `Temporary-Kitchen-Rental/temporary-kitchen-rental.com` `main`.
 
 ## 2026-09-30 — Homepage kitchen-first intro copy
 
@@ -60,11 +80,11 @@
 - Preserved the homepage H1, routes, CTAs, service cards, family distribution, and remaining page copy.
 - Added an SSR assertion that the introductory paragraph has a 75–85% primary-kitchen word share. Updated responsive browser assertions for the full supporting-family names.
 - `pnpm exec vitest run tests/homepagePortfolio.test.tsx` — PASS, 1 file / 5 tests. `pnpm typecheck` — PASS. `git diff --check` — PASS.
-- Browser execution and full prerender were not run for this copy-only change. Commit `64f2298` was pushed successfully to `Portable-Food-Bank/portable-food-bank.com` `main`. Vercel deployment was not checked.
+- Browser execution and full prerender were not run for this copy-only change. Commit `64f2298` was pushed successfully to `Temporary-Kitchen-Rental/temporary-kitchen-rental.com` `main`. Vercel deployment was not checked.
 
 ## 2026-09-30 — V16.3 corrected distribution and local release candidate
 
-- Scope and identity: isolated repository `Portable-Food-Bank/portable-food-bank.com`; Vercel team/project `portable-food-bank-team/portable-food-bank-com` (`prj_4Xktb9zJ8Y39Ezh391gKoVsIoY38`). No PortableFoodBank repository, project, domain, DNS, or alias was changed.
+- Scope and identity: isolated repository `Temporary-Kitchen-Rental/temporary-kitchen-rental.com`; Vercel team/project `temporary-kitchen-rental-team/temporary-kitchen-rental-com` (`prj_4Xktb9zJ8Y39Ezh391gKoVsIoY38`). No TemporaryKitchenRental repository, project, domain, DNS, or alias was changed.
 - Baseline distribution evidence: 401 initially classified pages, 99 primary and 302 supporting (24.69% / 75.31%), with 32 commercial H1 failures. The final explicit denominator removes six operational/private routes that do not sell a commercial equipment or facility rental.
 - Final generated distribution: 395 commercial pages, 324 primary and 71 supporting (82.03% / 17.97%); route-family counts are equipment/detail 144 (76 primary / 68 support), region/state 246 (246 primary), and reviewed city/industry 5 (2 primary / 3 support). All 395 commercial pages have one topical + facility + rental H1; location pages also carry location + use-case intent.
 - Homepage hierarchy audit: one primary-led H1; dedicated family-specific copy measures 430 primary words versus 92 supporting words (82.38% / 17.62%) over a documented 522-word denominator. Mixed introductory copy, generic calculator controls, dynamic map content, global navigation, and the footer are excluded rather than assigned to either cohort. Desktop 1440 x 900 geometry measures 979.1875 px primary versus 244.8125 px supporting, or 80.00% primary. Mobile 390 x 844 geometry measures 680 px primary versus 217.9375 px supporting, or 75.73% primary. All five verified supporting-family names remain visible.
@@ -73,17 +93,17 @@
 - Focused local Playwright — PASS, 8/8 against a dedicated clean preview. Coverage includes desktop/mobile V16.3 geometry, H1/support copy, image loading, overflow/duplicate IDs, map keyboard behavior, fail-closed form behavior, authored routes, true 404, redirect behavior, and security headers.
 - `npm run check:seo` — UNVERIFIED under current machine contention. The exhaustive checker produced no result after two attempts, including a high-memory run allowed to continue for more than one minute; it was stopped instead of being restarted again. The separate generated-output, link, headline, city, distribution, and browser checks above remain valid.
 - `npm audit --omit=dev` reports two moderate transitive advisories and no high/critical advisories. `npm run check:security` remains blocked by the incomplete/stale security-evidence ledger. Existing JSON-import/Zod annotation warnings and the approximately 2.98 MB / 785 KB gzip Site bundle remain. No independent second-agent review was available for this new revision.
-- Release result: implementation commit `d936fe0` and evidence commit `42a46cc` are pushed to `origin/main`. `npx vercel build --prod --yes --scope portable-food-bank-team` passed for the explicitly linked project and generated 664 pages plus 404. Production deployment `dpl_EPmbX5P3VmXnPKQySEcGvTeQLVS2` reached Ready; the current alias-owning production deployment `dpl_3jZybnjUpjrrw7GBvjqdieaHtGTR` is also Ready. Focused live Playwright passes 8/8 independently on `https://portable-food-bank.com` and `https://portable-food-bank-com-theta.vercel.app`, covering desktop/mobile hierarchy, map keyboard/focus, fail-closed inquiries, authored routes, true 404, query-preserving redirect behavior, and security headers. Existing DNS, domains, and aliases were unchanged. The CLI initially inferred the worktree name and created an unused empty project `portable-food-bank-v163-20260930`; it was stopped before deployment, explicitly relinked to the correct project, and left undeleted pending separate destructive-action approval. Indexing remains disabled, the sitemap remains empty, inquiry delivery remains disabled, and no live inquiry or external indexing action was performed. Full V16.3 release certification remains blocked by the unavailable independent reviewer and the owner-approved indexing policy's conflict with the public-indexability gate.
+- Release result: implementation commit `d936fe0` and evidence commit `42a46cc` are pushed to `origin/main`. `npx vercel build --prod --yes --scope temporary-kitchen-rental-team` passed for the explicitly linked project and generated 664 pages plus 404. Production deployment `dpl_EPmbX5P3VmXnPKQySEcGvTeQLVS2` reached Ready; the current alias-owning production deployment `dpl_3jZybnjUpjrrw7GBvjqdieaHtGTR` is also Ready. Focused live Playwright passes 8/8 independently on `https://temporary-kitchen-rental.com` and `https://temporary-kitchen-rental-com-theta.vercel.app`, covering desktop/mobile hierarchy, map keyboard/focus, fail-closed inquiries, authored routes, true 404, query-preserving redirect behavior, and security headers. Existing DNS, domains, and aliases were unchanged. The CLI initially inferred the worktree name and created an unused empty project `temporary-kitchen-rental-v163-20260930`; it was stopped before deployment, explicitly relinked to the correct project, and left undeleted pending separate destructive-action approval. Indexing remains disabled, the sitemap remains empty, inquiry delivery remains disabled, and no live inquiry or external indexing action was performed. Full V16.3 release certification remains blocked by the unavailable independent reviewer and the owner-approved indexing policy's conflict with the public-indexability gate.
 
 ## 2026-09-30 — Superseded pre-V16.3 whole-site release and live verification
 
-- Scope and identity: isolated repository `Portable-Food-Bank/portable-food-bank.com`; Vercel team/project `portable-food-bank-team/portable-food-bank-com` (`prj_4Xktb9zJ8Y39Ezh391gKoVsIoY38`). The `Portable-Food-Bank/Portable-Food-Bank` repository/project/domains were not changed.
+- Scope and identity: isolated repository `Temporary-Kitchen-Rental/temporary-kitchen-rental.com`; Vercel team/project `temporary-kitchen-rental-team/temporary-kitchen-rental-com` (`prj_4Xktb9zJ8Y39Ezh391gKoVsIoY38`). The `Temporary-Kitchen-Rental/Temporary-Kitchen-Rental` repository/project/domains were not changed.
 - Source state: audit/fix sequence `dc611ca`, `85850f8`, `1339d02`, `51b9f8a`, and `cdd6727` pushed to `origin/main`. The final code deployment was `dpl_EJ9Rdu1cmhDdK4Gitk9zUUmBT3j8`, built from `cdd6727`, and reached Ready.
-- `npm run typecheck` — PASS. `npm test` — PASS, 13 files / 74 tests. `node scripts/check-server-runtime.mjs` — PASS, four provider-initialization and method/feature-gate safety boundaries. `npm run build` — PASS, 664 pages plus 404. `npx vercel build --prod --yes --scope portable-food-bank-team` — PASS, including Vercel's post-build serverless TypeScript checks.
+- `npm run typecheck` — PASS. `npm test` — PASS, 13 files / 74 tests. `node scripts/check-server-runtime.mjs` — PASS, four provider-initialization and method/feature-gate safety boundaries. `npm run build` — PASS, 664 pages plus 404. `npx vercel build --prod --yes --scope temporary-kitchen-rental-team` — PASS, including Vercel's post-build serverless TypeScript checks.
 - Generated checks — PASS: 665 HTML files; 85,330 static-audit links; 77,041 SEO-audit local links; 12,154 images; 664 schemas; 670 forms; 665 unique titles and descriptions; zero generated-audit failures; zero missing/case-mismatched links; 548 location headlines; 19,702 Census places, 246 directories, and 5 reviewed city pages; 1,063 secret-scanned files with no findings. One intentional warning remains for the noindex draft canonical at `/service-areas/oklahoma/panhandle/`.
-- Focused local Playwright — PASS, 8/8. Final live Playwright — PASS, 8/8 independently on `https://portable-food-bank-com-theta.vercel.app` and `https://portable-food-bank.com`. Coverage includes desktop/mobile homepage acceptance and 25/75 geometry, image load/overflow/duplicate IDs, map keyboard/focus and all seven Texas region links, two quote-form islands, authored state/region/directory/industry/city routes, true 404, query-preserving 308, and baseline security headers.
+- Focused local Playwright — PASS, 8/8. Final live Playwright — PASS, 8/8 independently on `https://temporary-kitchen-rental-com-theta.vercel.app` and `https://temporary-kitchen-rental.com`. Coverage includes desktop/mobile homepage acceptance and 25/75 geometry, image load/overflow/duplicate IDs, map keyboard/focus and all seven Texas region links, two quote-form islands, authored state/region/directory/industry/city routes, true 404, query-preserving 308, and baseline security headers.
 - Live HTTP/API proof on both hostnames: homepage 200 with HTML `noindex`; `robots.txt` 200 with root allowed and `/api/` excluded; empty `sitemap.xml` 200 with zero URL entries; unknown route 404; POST `/api/contact.json` 503 `Inquiries are not enabled yet.`; GET `/api/deliver.json` 405 `Use POST.`; GET `/api/seo-diagnostics.json` 200 with `configured:false`. The Vercel alias also returns `X-Robots-Tag: noindex, follow`; the custom domain is protected by the rendered robots meta.
-- Foreign-path proof: every one of the 24 non-root PortableFoodBank authority paths returns 404 with no redirect on both public hostnames. The records remain label-only historical evidence and are absent from current route/indexing/internal-link targets.
+- Foreign-path proof: every one of the 24 non-root TemporaryKitchenRental authority paths returns 404 with no redirect on both public hostnames. The records remain label-only historical evidence and are absent from current route/indexing/internal-link targets.
 - Vercel runtime logs after live probes contain only the expected controlled 503/405 rejection events and successful diagnostics requests; no error-level entries, `ERR_REQUIRE_ESM`, missing-module failure, or current function exception was recorded.
 - Remaining boundaries: `npm audit --omit=dev` reports 2 moderate transitive advisories and no high/critical advisories. `npm run check:security` remains blocked by stale/incomplete 2026-09-11 evidence. An exploratory broad Vitest run still has historical debt (14 failing files / 109 failing tests; 34 passing files / 488 passing tests / 7 skipped), so only the supported designated suite is claimed green. The build retains JSON import/Zod annotation warnings and a roughly 2.98 MB / 785 KB gzip Site chunk.
 - Indexing and external-action boundary: noindex remains active and the sitemap remains empty. No DNS, Search Console, indexing, analytics, external-delivery, or live-inquiry action was performed.
@@ -105,7 +125,7 @@
 
 ## 2026-09-24 — Restore image-backed combination inventory routes
 
-- Added server-rendered regression coverage for four header-visible combination routes: 12 ft and 14 ft listings show clean 13 ft / 3-stall combination reference photos; the 20 ft listing shows the 22 ft / 6-stall reference photos. Each rendered caption identifies that separate reference model and explicitly states the image does not establish the listed model's dimensions, stall count, floor plan or availability. Captions do not expose PortableFoodBank branding.
+- Added server-rendered regression coverage for four header-visible combination routes: 12 ft and 14 ft listings show clean 13 ft / 3-stall combination reference photos; the 20 ft listing shows the 22 ft / 6-stall reference photos. Each rendered caption identifies that separate reference model and explicitly states the image does not establish the listed model's dimensions, stall count, floor plan or availability. Captions do not expose TemporaryKitchenRental branding.
 - Restored `/refrigeration-container-40ft-rental-5/` in the header with its existing illustrated 8 ft x 40 ft refrigerated-container category reference and category/availability disclosure.
 - Kept `/12ft-shower/`, `/14ft-shower/`, and `/30ft-shower/` held from header inventory because the discovered image sets were not suitable shower-only references for those listed sizes. Direct URLs and directory links remain intact.
 - `node node_modules/vitest/vitest.mjs run tests/inventoryNavigationPhotoCoverage.test.tsx` — PASS, 1 file / 4 tests, including all header product destinations and complete directory links.
@@ -123,27 +143,27 @@ Release update for the inventory navigation photo-coverage check: implementation
 - `pnpm typecheck` — PASS. `git diff --check` — PASS (Git reports existing line-ending conversion notices only).
 - Full production build and Vercel deployment/live-page verification were not run. This worktree has no `.vercel/project.json` or `.vercel/repo.json`.
 
-## PortableFoodBank-equivalent inventory URL reachability — 2026-09-24
+## TemporaryKitchenRental-equivalent inventory URL reachability — 2026-09-24
 
-- Source: the supplied tab-separated backlinks export contains 670 rows; every `Target URL` is `https://portable-food-bank.com/`, so it identifies no inventory-specific path. Per owner direction, matched the three uncovered routes to the exact same product/category slugs in `public/sitemap-review.xml` (PortableFoodBank source sitemap).
+- Source: the supplied tab-separated backlinks export contains 670 rows; every `Target URL` is `https://temporary-kitchen-rental.com/`, so it identifies no inventory-specific path. Per owner direction, matched the three uncovered routes to the exact same product/category slugs in `public/sitemap-review.xml` (TemporaryKitchenRental source sitemap).
 - Added the two product models to their matching service-menu families and explicitly added the refrigerated-container catalog detail path to static prerender generation. The 40 ft refrigerated-container URL also existed in `service-details.json`; the route had therefore rendered as a text-only `ServiceDetail` before, rather than its catalog gallery. `ServiceDetail` now accepts that page’s catalog photo/caption data while preserving the 40 ft model H1 and the 8 ft x 40 ft category-reference disclosure.
 - Focused tests: **25/25 pass** across `preservedInventoryRoutes.test.tsx`, `equipmentMissingPhotos.test.tsx`, and `serviceHeroImages.test.ts`; TypeScript `tsc --noEmit` — PASS.
 - Vite production client build — PASS (existing JSON import-attribute and large-chunk warnings). Static prerender — **98 pages + 404**. Verified generated HTML files and page H1/gallery for `/equipment-rental/refrigerated-containers/`, `/services/shower-trailers/22ft-10-stall/`, and `/services/shower-restroom-combination-trailers/30ft-8-stall/`. Generated audit registry snapshots were restored after the verification build; `dist/` remains ignored output.
 - `git diff --check` — PASS. Released via `origin/main`; Vercel production deployment state is not asserted from this local build.
 
-## Portable Food Bank remaining inventory-photo gaps — 2026-09-24 (PUSHED TO origin/main; VERCEL STATUS UNVERIFIED)
+## Temporary Kitchen Rental remaining inventory-photo gaps — 2026-09-24 (PUSHED TO origin/main; VERCEL STATUS UNVERIFIED)
 
-- Audited all 25 catalog entries and all 33 dedicated equipment-detail routes. Filled the missing refrigerated-container detail with the existing unbranded source illustration, explicitly describing its printed 8 ft x 40 ft label as a category reference, not confirmation of Portable Food Bank's exact unit/availability.
+- Audited all 25 catalog entries and all 33 dedicated equipment-detail routes. Filled the missing refrigerated-container detail with the existing unbranded source illustration, explicitly describing its printed 8 ft x 40 ft label as a category reference, not confirmation of Temporary Kitchen Rental's exact unit/availability.
 - Added one correctly labelled 20 ft five-stall shower-only reference image to the 22 ft ten-stall shower page; its caption explicitly says it is not a photo of that 22 ft model. Left the 22 ft service-area/map selection unpictured to avoid presenting a different model as an exact match.
-- Visual review confirmed the exact 30 ft eight-stall shower/restroom combination trailer exterior is photographed in a commercial equipment yard and has no visible PortableFoodBank logo or brand reference; approved its existing responsive derivatives and model-matched gallery alt text. No interior view is claimed.
+- Visual review confirmed the exact 30 ft eight-stall shower/restroom combination trailer exterior is photographed in a commercial equipment yard and has no visible TemporaryKitchenRental logo or brand reference; approved its existing responsive derivatives and model-matched gallery alt text. No interior view is claimed.
 - Focused SSR/image coverage: **85 passed, 1 skipped** across `equipmentMissingPhotos`, `serviceHeroImages`, `ownerPhotoBundleCoverage`, and `allPageAlignment`. This includes all homepage equipment cards, all eight inventory-family cards, all catalog entries, all 33 product-detail galleries and the no-placeholder checks. The skipped case requires an absent historical `work/qa/all-page-alignment-20260916/before.json` fixture; all catalog-image assertions and all service-detail-gallery assertions passed.
 - TypeScript `tsc --noEmit` — PASS; `git diff --check` — PASS. Commit `8564719` pushed to `origin/main`. This turn did not run a complete production build or verify a deployed URL. No route, slug, H1 or canonical changed.
 
-## Portable Food Bank service/product gallery captions and side-by-side hero — 2026-09-24 (PUSHED TO origin/main; VERCEL STATUS UNVERIFIED)
+## Temporary Kitchen Rental service/product gallery captions and side-by-side hero — 2026-09-24 (PUSHED TO origin/main; VERCEL STATUS UNVERIFIED)
 
 - Replaced the screenshot-visible generic equipment-reference fallback in `LocationImageCarousel`; target product, service-area, industry, equipment quick-view, represented inventory-family, Panhandle and Olympic Peninsula captions now use the shared equipment/family caption builder, and location copy keeps its location + commercial use + exact equipment + Rental or Lease lead.
 - `TargetLegacyPage` renders the product/service summary, H1, intro and request/call action beside its existing gallery on desktop, and stacks them below the 860 px breakpoint. It preserves carousel/lightbox markup, approved image identities, image order, alt text, URLs and H1s.
-- Dedicated `ServiceDetail` and Equipment quick-view captions now share the standard structure, approved rental-term language and Portable Food Bank verified support line; the stale `+1 (800) 443-5212` caption is no longer injected.
+- Dedicated `ServiceDetail` and Equipment quick-view captions now share the standard structure, approved rental-term language and Temporary Kitchen Rental verified support line; the stale `+1 (800) 443-5212` caption is no longer injected.
 - Focused suite: **60/60 tests passed** across service-area caption/heading, legacy product/service model copy, inventory photo coverage, carousel ordering, owner-photo rollout, Panhandle captions/metadata and Olympic Peninsula captions. Covers every photographed legacy route, all 33 registered service details where a carousel is present, industry hero captions, represented inventory-family captions and location-page rendered caption rules.
 - `pnpm typecheck` — PASS. `git diff --cached --check` — PASS. Secret pattern scan — PASS (386 files, no findings).
 - In a disposable copy of the exact worktree snapshot, Vite production build passed and prerender generated 95 pages plus 404. Local browser verification confirmed the homepage and `/12ft-restroom/` render; both returned HTTP 200, and the restroom route contains its expected H1, carousel and support caption. The copy isolated the existing audit files from prerender output.
@@ -156,7 +176,7 @@ Release update for the inventory navigation photo-coverage check: implementation
 - Legacy-page SSR assertions: all preserved H1s remain single and unchanged; all 17 route leads and planning guides differ; kitchen-only meals/cooking language is absent from non-kitchen pages; the kitchen page retains kitchen-specific planning copy; the old generic planning heading is absent. A pairwise Jaccard token-overlap screen compares the page-specific copy for every route pair and flags any pair at/above the internal 0.55 review cutoff (not a Google threshold).
 - Service-detail SSR assertions: all 33 records have route-specific use/planning copy, include the current model name in section headings, preserve exactly one H1, render without category-name errors, and pass the same pairwise overlap screen. Explicit family aliases cover legacy Restroom, Shower, Shower/Restroom Combination and Sleeper labels.
 - The 12 ft restroom service-detail has a source-conflict disclosure and no copied fixture-count claims. The two 14 ft combination paths remain separately routable but their identity is not fabricated.
-- `node node_modules/vitest/vitest.mjs run tests/portableFoodBankTargetCopy.test.tsx` — PASS, 1 file / 7 tests after adding pairwise near-duplicate screening. Initial run exposed the legacy menu category-name mismatch; after the alias/fallback correction the suite passed.
+- `node node_modules/vitest/vitest.mjs run tests/temporaryKitchenRentalTargetCopy.test.tsx` — PASS, 1 file / 7 tests after adding pairwise near-duplicate screening. Initial run exposed the legacy menu category-name mismatch; after the alias/fallback correction the suite passed.
 - `node node_modules/typescript/bin/tsc --noEmit` — PASS. `git diff --check` — PASS.
 - Added a reusable category/family and distinct-model content prompt at `docs/prompts/06_CATEGORY_AND_PAGE_DISTINCTIVENESS.md`; README index updated. Its similarity thresholds are internal review flags, not claimed Google thresholds, and it forbids invented differentiators/canonical changes without approval.
 - Vite production client bundle passed with existing import-attribute/chunk-size warnings; full prerender and live browser verification were not run. Commit `bb47824` was pushed to `main` and `codex/homepage-mobile-kitchen-brand`; GitHub reports Vercel pending. Google indexing outcome is external and unverified.
@@ -173,12 +193,12 @@ Release update for the inventory navigation photo-coverage check: implementation
 
 ## Mobile Kitchen inventory restoration — 2026-09-23 (LOCAL PASS)
 
-- `/equipment-rental/` now renders exactly eight Portable Food Bank families: Mobile Kitchens, Dishwashing, Refrigeration, Restroom Trailers, Shower Trailers, Restroom & Shower Combination, Laundry, and Containerized Sleeper Units.
+- `/equipment-rental/` now renders exactly eight Temporary Kitchen Rental families: Mobile Kitchens, Dishwashing, Refrigeration, Restroom Trailers, Shower Trailers, Restroom & Shower Combination, Laundry, and Containerized Sleeper Units.
 - Static rendered HTML contains 28 direct model links, including the retained restroom, shower, combined, laundry, and containerized-sleeper slugs; it contains no unrelated legacy command-center, security-camera, or tent inventory.
 - Category imagery resolves through the approved image registry. One reviewed family representative is shown per family; model names are text links to their exact pages so a category reference image is not represented as a different unit.
-- Local browser check at `http://127.0.0.1:4174/equipment-rental/index.html` found the eight section headings, 28 model links, exactly one H1, and no browser-console errors. The inherited `PortableFoodBank equipment` introduction is absent.
+- Local browser check at `http://127.0.0.1:4174/equipment-rental/index.html` found the eight section headings, 28 model links, exactly one H1, and no browser-console errors. The inherited `TemporaryKitchenRental equipment` introduction is absent.
 - `pnpm typecheck`, `git diff --check`, production Vite build, and static prerender verification pass.
-- READY Vercel preview `https://portable-food-bank-4s6f767ar-jhomar0021s-projects.vercel.app/equipment-rental/` browser verification found the eight family headings, 28 model links, one H1, corrected Mobile Kitchen introduction, and no console errors. Production deployment `portable-food-bank-bp30wxswj-jhomar0021s-projects.vercel.app` was still BUILDING when checked.
+- READY Vercel preview `https://temporary-kitchen-rental-4s6f767ar-jhomar0021s-projects.vercel.app/equipment-rental/` browser verification found the eight family headings, 28 model links, one H1, corrected Mobile Kitchen introduction, and no console errors. Production deployment `temporary-kitchen-rental-bp30wxswj-jhomar0021s-projects.vercel.app` was still BUILDING when checked.
 
 ## Approved-equipment image placement — 2026-09-23 (LOCAL PASS)
 
@@ -191,7 +211,7 @@ Release update for the inventory navigation photo-coverage check: implementation
 ## 2026-09-23 — Mobile Kitchen original-product URL restoration (local)
 
 - Evidence: original homepage navigation exposed 33 non-fragment paths. Sixteen product paths were absent from the rebuild and returned the generic 404 prior to this change. The supplied backlink file contains 670 rows but only homepage targets, so it cannot provide a deeper URL inventory.
-- Restoration: registered each missing exact path, restored its product family in the desktop and mobile Inventory menus, and rendered every page as a direct product page with one H1. The affected paths are documented in `docs/PORTABLE_FOOD_BANK_URL_AUDIT_2026-09-23.md`.
+- Restoration: registered each missing exact path, restored its product family in the desktop and mobile Inventory menus, and rendered every page as a direct product page with one H1. The affected paths are documented in `docs/TEMPORARY_KITCHEN_RENTAL_URL_AUDIT_2026-09-23.md`.
 - Checks: `pnpm typecheck` passed; `git diff --check` passed; Vite production build completed (non-blocking existing JSON-import and bundle-size warnings only); prerender output contains all 16 paths; an output audit confirmed every restored route exists and has exactly one `<h1>`. A clean-build then prerender check also confirmed `/12ft-restroom/` contains its product H1 and does not contain the homepage H1.
 - Boundary: the original site returns HTTP 403 for automated sitemap, robots, and individual-page retrieval. The verified homepage inventory is restored, but an assertion that it represents every historic URL remains pending a sitemap or CMS export. No deployment is recorded in this local entry.
 
@@ -200,7 +220,7 @@ Release update for the inventory navigation photo-coverage check: implementation
 - `pnpm typecheck` and `git diff --check` passed.
 - Production Vite build and static prerender passed: 79 pages plus 404. Existing JSON-import-attribute and bundle-size warnings remain non-blocking.
 - Browser verification at `http://localhost:4173/massachusetts/` found exactly one H1 and the restored five-image Mobile Kitchen carousel, including prior/next controls, pause control, five thumbnail selectors, and full-image lightbox trigger. The gallery title resolves to `Massachusetts Commercial Mobile Kitchen Trailer Rental`.
-- Browser verification repeated on preview `portable-food-bank-684opggao-jhomar0021s-projects.vercel.app/massachusetts/` and production `portable-food-bank-com.vercel.app/massachusetts/` after READY deployment `dpl_2mKrJPyv3aDLsJvLHLuojs9Akanj`; both have exactly one H1 and the five-image carousel with its full-image, previous/next, and pause controls.
+- Browser verification repeated on preview `temporary-kitchen-rental-684opggao-jhomar0021s-projects.vercel.app/massachusetts/` and production `temporary-kitchen-rental-com.vercel.app/massachusetts/` after READY deployment `dpl_2mKrJPyv3aDLsJvLHLuojs9Akanj`; both have exactly one H1 and the five-image carousel with its full-image, previous/next, and pause controls.
 
 ## Shared dark-surface contrast correction — 2026-09-23 (LOCAL PASS)
 
@@ -212,7 +232,7 @@ Release update for the inventory navigation photo-coverage check: implementation
 
 - Replaced the fixed contact rail’s inherited turquoise icon tile and pale-teal status copy with orange `#f47b20`/black and red/white values; its hover/focus shadow is now red.
 - `pnpm typecheck` and `git diff --check` passed.
-- Deployed preview `https://portable-food-bank-gkndhefk0-jhomar0021s-projects.vercel.app/`: computed contact-rail tile `rgb(244, 123, 32)`, icon `rgb(23, 23, 23)`, rail `rgb(185, 0, 0)`, and status copy `rgb(255, 255, 255)`; no teal remains in this component.
+- Deployed preview `https://temporary-kitchen-rental-gkndhefk0-jhomar0021s-projects.vercel.app/`: computed contact-rail tile `rgb(244, 123, 32)`, icon `rgb(23, 23, 23)`, rail `rgb(185, 0, 0)`, and status copy `rgb(255, 255, 255)`; no teal remains in this component.
 
 ## Button contrast correction — 2026-09-22 (LOCAL PASS)
 
@@ -264,28 +284,28 @@ Release update for the inventory navigation photo-coverage check: implementation
 
 - `pnpm typecheck`: passed.
 - `git diff --check`: passed.
-- Shared route header now has the required global Portable Food Bank variables and header class; all routes receive the approved red/white/orange header system.
+- Shared route header now has the required global Temporary Kitchen Rental variables and header class; all routes receive the approved red/white/orange header system.
 
-## Portable Food Bank-layout navigation correction — 2026-09-22 (LOCAL PASS)
-
-- `pnpm typecheck`: passed.
-- `git diff --check`: passed.
-- Every route now renders the shared Portable Food Bank-layout navigation; inventory content remains Portable Food Bank-only.
-
-## Portable Food Bank global visual-system remediation — 2026-09-22 (LOCAL PASS)
+## Temporary Kitchen Rental-layout navigation correction — 2026-09-22 (LOCAL PASS)
 
 - `pnpm typecheck`: passed.
 - `git diff --check`: passed.
-- Shared header now uses the Portable Food Bank class on every route; global and coverage-map color tokens are red/orange/cream rather than inherited teal/blue.
+- Every route now renders the shared Temporary Kitchen Rental-layout navigation; inventory content remains Temporary Kitchen Rental-only.
 
-## Portable Food Bank brand/render remediation — 2026-09-22 (PARTIAL LOCAL PASS)
+## Temporary Kitchen Rental global visual-system remediation — 2026-09-22 (LOCAL PASS)
+
+- `pnpm typecheck`: passed.
+- `git diff --check`: passed.
+- Shared header now uses the Temporary Kitchen Rental class on every route; global and coverage-map color tokens are red/orange/cream rather than inherited teal/blue.
+
+## Temporary Kitchen Rental brand/render remediation — 2026-09-22 (PARTIAL LOCAL PASS)
 
 - `pnpm typecheck`: passed.
 - Vite client bundle: passed.
 - Archive prerender verification: blocked locally because the combined build command did not complete its archive-output phase; preview deployment verification remains required.
-- Corrected structured-data logo target exists locally at `/images/portable-food-bank-legacy-logo.webp`.
+- Corrected structured-data logo target exists locally at `/images/temporary-kitchen-rental-mark.svg`.
 
-## Portable Food Bank visible-service rebrand — 2026-09-22 (LOCAL PASS)
+## Temporary Kitchen Rental visible-service rebrand — 2026-09-22 (LOCAL PASS)
 
 - `pnpm typecheck`: passed.
 - `pnpm build`: passed. Existing Vite warnings remain for `calculatorCities.json` import-attribute consistency, vendor annotations, and a large Site bundle.
@@ -299,34 +319,34 @@ Release update for the inventory navigation photo-coverage check: implementation
 - Generated `/locations/`: contains the service-area H1 and `map-location-directory` map/directory component.
 - Generated `/rental-calculator/`: contains the calculator H1 and `rental-calculator-form`.
 
-## Portable Food Bank homepage brand correction — 2026-09-22 (PREVIEW LIVE; PASS)
+## Temporary Kitchen Rental homepage brand correction — 2026-09-22 (PREVIEW LIVE; PASS)
 
 - Scope: `src/Home.tsx`, `src/homepage.css`, and homepage-only header treatment in `src/Site.tsx`; no non-homepage page content or public slug was changed.
 - `pnpm typecheck`: passed.
 - `pnpm build`: passed; generated 95 pages plus 404. Existing JSON import-consistency and large-chunk warnings remain non-blocking.
-- Focused Vitest: `tests/routes.test.ts` and `tests/prerender-text.test.ts` passed 6/6. `tests/migration.test.ts` passed 8/11; its three failures are stale PortableFoodBank assertions for the former canonical hostname and an old Akiak redirect, not regressions from this homepage change.
+- Focused Vitest: `tests/routes.test.ts` and `tests/prerender-text.test.ts` passed 6/6. `tests/migration.test.ts` passed 8/11; its three failures are stale TemporaryKitchenRental assertions for the former canonical hostname and an old Akiak redirect, not regressions from this homepage change.
 - Desktop browser QA at 1280 px: exact H1 present once; brand logo loaded; zero broken images; all six kitchen-model links match preserved target slugs; red ribbon and orange header CTA computed correctly; no horizontal overflow.
 - Mobile browser QA at 390×844: logo and mobile navigation render, header CTA correctly yields to the mobile menu, exact H1 remains readable, red/orange hero actions render, one H1 is present, and no horizontal overflow was found.
 - React review: static model/industry/FAQ data is module-scoped, no component is defined during render, the hero image is prioritized, below-fold images are lazy, decorative card images are excluded from accessibility, and headings/actions remain semantic.
-- Release: commit `8827d89` on `codex/homepage-mobile-kitchen-brand` produced Ready preview deployment `dpl_AmhJLVWv5uaBnfdQvvLAFr1WxEiN` at `https://portable-food-bank-com-git-codex-home-67f036-jhomar0021s-projects.vercel.app/`. Vercel recorded the environment as Preview and custom-domain assignment as skipped.
+- Release: commit `8827d89` on `codex/homepage-mobile-kitchen-brand` produced Ready preview deployment `dpl_AmhJLVWv5uaBnfdQvvLAFr1WxEiN` at `https://temporary-kitchen-rental-com-git-codex-home-67f036-jhomar0021s-projects.vercel.app/`. Vercel recorded the environment as Preview and custom-domain assignment as skipped.
 - Live preview browser QA: exact H1 present once, zero broken images, zero console errors, no horizontal overflow, red `rgb(185, 0, 0)` ribbon, and orange `rgb(244, 123, 32)` header CTA.
 
 ## Whole-site QA continuation — 2026-09-19 (LIVE PASS; SECURITY EVIDENCE PARTIAL)
 
-- Isolation: all source changes and builds used `C:\Users\Charles\.codex\worktrees\whole-site-qa-origin\Portable Food Bank`; the dirty primary checkout and its unfinished 1,000-city draft were not changed or published.
+- Isolation: all source changes and builds used `C:\Users\Charles\.codex\worktrees\whole-site-qa-origin\Temporary Kitchen Rental`; the dirty primary checkout and its unfinished 1,000-city draft were not changed or published.
 - Runtime inventory: the independent browser pass covered 13 representative templates at three viewports, 39/39 presentations, plus one safe interaction flow. The dedicated equipment test covered 42 routes and 14 modal/gallery presentations at both desktop and 390 px mobile with decoded images, current captions, phone contract and zero same-origin resource errors.
 - Source fixes: Contact Us breadcrumb extraction now preserves spaces across JSX line breaks; six military seals across 36 appearances and two restroom references have truthful nonempty alternatives; nine equipment pages and 12 overlapping workforce pages have route-specific metadata; the gallery browser fixture is embedded rather than depending on an absent local QA file.
 - Contact selector: generated `/contact-us/` contains `Mobile Kitchen Trailers`, `Dishwashing Trailers`, `Refrigeration Trailers`, `Restroom & Shower Trailers`, `Sleeper Trailers`, `Laundry Trailers`, and `Sink Trailers`. The three broad choices and every submitted value remain unchanged.
 - Automated checks: `npm test` passed **62/62**; `npm run test:rules` passed **7/7** against the isolated Firebase RTDB emulator; `npm run typecheck` passed; `npm run build` generated **745 pages plus 404**.
 - SEO gate: `npm run check:seo` checked 746 HTML files, 96,715 local links and 12,342 local images with **746 unique titles, 746 unique descriptions and zero problems**. The orphan rule remains strict for indexable routes and intentionally excludes nonindex utilities/staged content. The controlled rollout remains 25 indexable routes; historical recovery reports 625 of 98,253 source records and is not claimed complete.
 - Crawl/content gates: `npm run check:links` passed 745 pages with zero capitalization or missing-target findings; `npm run check:headlines` passed 548/548 unique location H1s; `npm run check:cities` passed 19,702 census places, 246 region directories and five reviewed city pages; `npm run check:secrets` scanned 1,141 files with zero findings.
-- Vercel domain routing: after changing `www.portable-food-bank.com` to redirect to `portable-food-bank.com`, a live audit passed **745/745** first-hop 308 redirects to the exact apex path, **745/745** final HTTP 200 responses, exact query preservation, and zero chains, loops or failures. All 25 indexable URLs passed. `/sitemap-review.xml` remains an owner-review artifact that must not be submitted, and Oklahoma Panhandle remains an intentional noindex staged exception.
+- Vercel domain routing: after changing `www.temporary-kitchen-rental.com` to redirect to `temporary-kitchen-rental.com`, a live audit passed **745/745** first-hop 308 redirects to the exact apex path, **745/745** final HTTP 200 responses, exact query preservation, and zero chains, loops or failures. All 25 indexable URLs passed. `/sitemap-review.xml` remains an owner-review artifact that must not be submitted, and Oklahoma Panhandle remains an intentional noindex staged exception.
 - Security boundary: production dependency audit has no high/critical findings and two moderate transitive findings through Firebase Admin (`@google-cloud/storage` → `gaxios` → `uuid`). `AUTHZ`, `CORS_HEADERS`, `APP_CHECK`, `INTEGRATIONS`, `SECRETS`, `DEPLOY`, `OBSERVE`, and `RECOVERY` remain blocked until their required staging/provider evidence is collected; the security checker was not weakened.
 - External-action boundary: no production form submission was made during this continuation. Prior form/Resend acceptance evidence remains valid, but inbox receipt was not rechecked.
-- Release: commit `93a2a49` was pushed only to `Portable-Food-Bank/Portable-Food-Bank` main. Vercel production deployment `dpl_G2ABdYFMKHF8R57gkoJztjD3pf9s` reached READY after a 2m 5s build.
-- Live Contact Us: `PLAYWRIGHT_BASE_URL=https://portable-food-bank.com npx playwright test tests/browser/contact-facilities.spec.ts --workers=1` passed **1/1**, opening the production drawer, verifying all seven trailer labels plus the three broad choices, and selecting every unchanged submitted value.
+- Release: commit `93a2a49` was pushed only to `Temporary-Kitchen-Rental/Temporary-Kitchen-Rental` main. Vercel production deployment `dpl_G2ABdYFMKHF8R57gkoJztjD3pf9s` reached READY after a 2m 5s build.
+- Live Contact Us: `PLAYWRIGHT_BASE_URL=https://temporary-kitchen-rental.com npx playwright test tests/browser/contact-facilities.spec.ts --workers=1` passed **1/1**, opening the production drawer, verifying all seven trailer labels plus the three broad choices, and selecting every unchanged submitted value.
 - Live galleries: the production 42-route plus 14-modal equipment regression passed **2/2** at 1440 px and 390 px, including decoded images, current captions, phone contract and modal/lightbox behavior.
-- Live metadata/routing: `/equipment-rental/sleeper-trailers/` and `/remote-workforce-house-company-in-alabama/` returned HTTP 200 with their corrected unique titles and self-canonicals. `www.portable-food-bank.com/contact-us/?qa=redirect` returned a direct 308 to the exact apex path and query.
+- Live metadata/routing: `/equipment-rental/sleeper-trailers/` and `/remote-workforce-house-company-in-alabama/` returned HTTP 200 with their corrected unique titles and self-canonicals. `www.temporary-kitchen-rental.com/contact-us/?qa=redirect` returned a direct 308 to the exact apex path and query.
 
 ## Contact Us trailer labels — 2026-09-19 (LIVE PASS)
 
@@ -335,20 +355,20 @@ Release update for the inventory navigation photo-coverage check: implementation
 - `npm run typecheck`: passed.
 - `npm run build`: passed and generated **745 pages plus 404**.
 - Browser: the first Playwright attempt reused an unrelated stale server already listening on port 4173 and correctly failed on the old `Mobile kitchens` label. A fresh preview of this build on isolated port 4327 then passed `tests/browser/contact-facilities.spec.ts` **1/1**, opening the actual Contact Us drawer, verifying all ten visible options, and selecting each unchanged value.
-- Release: commit `a55ca90` was pushed only to `Portable-Food-Bank/Portable-Food-Bank` main. Vercel production deployment `dpl_ATN5UCHnp2ujUp8AUNiU8FVsrpZH` reached READY after a 1m 43s build.
-- Live browser: `PLAYWRIGHT_BASE_URL=https://portable-food-bank.com npx playwright test tests/browser/contact-facilities.spec.ts --reporter=line`: **1/1 passed** in 5.9s, opening the production Contact Us drawer, verifying all ten labels, and selecting every unchanged value.
+- Release: commit `a55ca90` was pushed only to `Temporary-Kitchen-Rental/Temporary-Kitchen-Rental` main. Vercel production deployment `dpl_ATN5UCHnp2ujUp8AUNiU8FVsrpZH` reached READY after a 1m 43s build.
+- Live browser: `PLAYWRIGHT_BASE_URL=https://temporary-kitchen-rental.com npx playwright test tests/browser/contact-facilities.spec.ts --reporter=line`: **1/1 passed** in 5.9s, opening the production Contact Us drawer, verifying all ten labels, and selecting every unchanged value.
 - Boundary: no live inquiry was submitted because this release changes display labels only; production email delivery was not retested.
 
 ## Whole-site production-baseline QA — 2026-09-19 (LIVE PASS; RELEASE GATE PARTIAL)
 
-- Isolation: audited `origin/main` in `C:\Users\Charles\.codex\worktrees\whole-site-qa-origin\Portable Food Bank`; the dirty primary checkout and its separate 1,000-city draft were not used or overwritten.
+- Isolation: audited `origin/main` in `C:\Users\Charles\.codex\worktrees\whole-site-qa-origin\Temporary Kitchen Rental`; the dirty primary checkout and its separate 1,000-city draft were not used or overwritten.
 - Build and unit checks: `npm test -- --run` passed 56/56; `npm run typecheck` passed; `npm run build` generated 745 pages plus 404.
 - Crawl checks: `npm run check:links` scanned 745 pages with 0 capitalization issues and 0 missing internal targets. `npm run check:headlines` found 548 location pages and 548 unique headlines. `npm run check:cities` found 19,702 census places, 246 regional directories, five reviewed city pages and zero issues.
 - Content repairs: `/temporary-facilities-2/` now permanently resolves to `/planning/`; two stale handwashing image references use an existing asset; ten migrated placeholder/file-name alts use visually verified descriptions; duplicate ADA-combination titles now include their 3-stall or 8-stall configuration.
 - Dashboard runtime: headless Chromium loaded `http://127.0.0.1:4174/seo-dashboard/#workflow`, selected `Next checks`, and recorded zero console or page errors after replacing mismatched hydration with an interactive mount over the prerendered fallback.
 - Secret scan: 1,107 source/built text files scanned with zero complete credential findings. A BEGIN marker alone is no longer treated as an exposed key; the scanner still requires a complete key-shaped block.
 - Known release boundary: `npm run check:security` and therefore `npm run check:release` remain blocked by unresolved pre-existing security-evidence controls. The SEO report also retains legacy duplicate-title/description findings, the intentionally unlinked noindex dashboard, and an incomplete historical migration count. These results are documented, not suppressed.
-- Release: commit `4f7bf1c` was pushed to `Portable-Food-Bank/Portable-Food-Bank` main. Vercel deployment `dpl_HJTTMT5Ys7DHxukf5Y1zUYy3oiVV` reached READY and serves `portable-food-bank.com`.
+- Release: commit `4f7bf1c` was pushed to `Temporary-Kitchen-Rental/Temporary-Kitchen-Rental` main. Vercel deployment `dpl_HJTTMT5Ys7DHxukf5Y1zUYy3oiVV` reached READY and serves `temporary-kitchen-rental.com`.
 - Production runtime: `/temporary-facilities-2/` returns a permanent redirect to `/planning/`; `/seo-dashboard/#workflow` loaded with the expected heading/tab state and zero browser console/page errors; `/sitemap.xml` returned HTTP 200.
 - Indexing workbook crawl: all 327 controlled-rollout URLs returned HTTP 200. Batch 1 contains 25/25 pages with matching self-canonicals, `index,follow`, and sitemap membership. The remaining 302/302 URLs are intentionally staged with `noindex,follow` outside the sitemap. Classification issues: zero; formula-error scan: zero.
 - External boundaries: Google index inclusion was not inferred from crawlability and remains `Not verified in Search Console`. Deep `www` paths can return HTTP 200 with `noindex,follow` rather than consistently redirecting to apex. Contact and quote forms were not resubmitted during this SEO verification because downstream messages are external actions and require action-time confirmation.
@@ -358,7 +378,7 @@ Release update for the inventory navigation photo-coverage check: implementation
 - Exact scope: 648 service-area and modal presentations inventoried; 557 contained one of seven internal review context variants and were changed (477 public route presentations, 40 full-map modals, 40 compact-map modals). The remaining 91 presentations were unaffected.
 - Source and generated output: exhaustive SSR passed 648/648; all 656 generated HTML files contained zero `.location-gallery-context` elements and zero cited review phrases.
 - Local verification: 241/241 focused assertions, 45/45 application tests, 655-page link check, release check, and the 655-page plus 404 build passed. Browser QA passed all 12 representative desktop/mobile route presentations and all 100 state-modal presentations.
-- Release: commit `68d2f6b` was pushed only to `Portable-Food-Bank/Portable-Food-Bank` main. Portable Food Bank team project `portable-food-bank` deployment `dpl_7TvgbnRjjsVReBkmD55kzrm7dXkb` reached READY and was aliased to `portable-food-bank.com`.
+- Release: commit `68d2f6b` was pushed only to `Temporary-Kitchen-Rental/Temporary-Kitchen-Rental` main. Temporary Kitchen Rental team project `temporary-kitchen-rental` deployment `dpl_7TvgbnRjjsVReBkmD55kzrm7dXkb` reached READY and was aliased to `temporary-kitchen-rental.com`.
 - Production verification: the live representative page source contained zero removed banner classes and zero review phrases. Playwright repeated all 12 route presentations plus all 50 full-map and 50 compact-map modals; 3/3 suites passed.
 - Preservation: customer-facing product headings and individual captions remain, as do images, truthful alt text, H1s, URLs, canonicals and indexing settings.
 
@@ -371,8 +391,8 @@ Release update for the inventory navigation photo-coverage check: implementation
 - Application tests: 45/45 passed with `npm test`.
 - Production build: passed TypeScript, Vite, and prerender; 655 pages plus 404 generated.
 - Local browser QA: 26/26 desktop/mobile presentations passed across the 13 changed routes; every response was HTTP 200, each lead image decoded with truthful nonempty alt text, each caption met the acceptance checks, and zero console/page errors occurred. Evidence: `work/qa/dedicated-service-captions-20260918/browser-results.json`.
-- Production browser QA: 26/26 desktop/mobile presentations passed on `portable-food-bank.com` with the same status, caption, decoded-image, alt-text, and console checks. The complete live route scan passed 33/33. Evidence: `work/qa/dedicated-service-captions-20260918/live-browser-results.json` and `live-route-results.json`.
-- Release: commit `349f011` was pushed only to `Portable-Food-Bank/Portable-Food-Bank` main. Vercel production deployment `dpl_HfjDn5HnFEpGvdfs81EtZWJjiBdn` is READY and verified on `portable-food-bank.com`.
+- Production browser QA: 26/26 desktop/mobile presentations passed on `temporary-kitchen-rental.com` with the same status, caption, decoded-image, alt-text, and console checks. The complete live route scan passed 33/33. Evidence: `work/qa/dedicated-service-captions-20260918/live-browser-results.json` and `live-route-results.json`.
+- Release: commit `349f011` was pushed only to `Temporary-Kitchen-Rental/Temporary-Kitchen-Rental` main. Vercel production deployment `dpl_HfjDn5HnFEpGvdfs81EtZWJjiBdn` is READY and verified on `temporary-kitchen-rental.com`.
 - Preservation: no H1, URL, canonical, indexing directive, gallery image, or alt-text source changed.
 
 ## Equipment Rental missing-photo production release — 2026-09-18
@@ -410,7 +430,7 @@ Release update for the inventory navigation photo-coverage check: implementation
 
 ## Caption quality skill package — local verification, 2026-09-17
 
-- Updated installed `portable-food-bank-portfolio-rebuild` skill and original `LOCAL SKILL CHARLES_IMPORTANT.zip` with the approved Panhandle caption example and guidance for concise, distinct, verified customer copy.
+- Updated installed `temporary-kitchen-rental-portfolio-rebuild` skill and original `LOCAL SKILL CHARLES_IMPORTANT.zip` with the approved Panhandle caption example and guidance for concise, distinct, verified customer copy.
 - Verified required skill frontmatter fields, preserved all seven ZIP entries, checked ZIP CRC/integrity, and byte-compared three updated package entries against the installed skill. Preserved an original ZIP backup beside the package.
 - `quick_validate.py` could not start because PyYAML is unavailable in both available Python runtimes; no validator pass is claimed. No website behavior changed or deployment occurred in this task.
 
@@ -440,7 +460,7 @@ Standard TypeScript/Vite/prerender build passed for 651 pages plus 404. Focused 
 
 Local and live browser runs each passed at 1440/390 px: 8 page checks, 4 product panels, 8 decoded-image displays, 4 Oklahoma map checks, zero failures or JavaScript errors. Separate 30 ft trailer and 20 ft container groups and image alt text retained. Exact rendered copy includes all three rental durations, rental/lease leading phrases and the published 24/7 phone CTA; rejected quote-confirmation disclaimers absent.
 
-Read-only final Vercel inspection confirms READY dpl_6ykocrDRHboUz1zNH2Em9b164U5Q serves portable-food-bank-nine.vercel.app. The live alias was updated by an existing release during this lane's verification; no duplicate promotion was performed. The separately observed dpl_JBnwQgnt5e7vwV6Zd8MMgca8vkHR URL requires authentication and is not treated as successful public verification. Complete remote-source fingerprint equivalence is not claimed.
+Read-only final Vercel inspection confirms READY dpl_6ykocrDRHboUz1zNH2Em9b164U5Q serves temporary-kitchen-rental-nine.vercel.app. The live alias was updated by an existing release during this lane's verification; no duplicate promotion was performed. The separately observed dpl_JBnwQgnt5e7vwV6Zd8MMgca8vkHR URL requires authentication and is not treated as successful public verification. Complete remote-source fingerprint equivalence is not claimed.
 
 Initial raw caption assertion failed because the existing prerender normalizes punctuation and telephone formatting. Rendered expectations were corrected; no runtime change was made to satisfy that harness issue. Historical failed assertions and cached-CLI lookup failure are retained. Exact evidence and visual-review limitations: work/qa/panhandle-lease-20260917/cta-final/REPORT.md, audit.json, local-browser.json, live-browser.json, release-reconciliation.json and alias-final.log.
 
@@ -448,13 +468,13 @@ Initial raw caption assertion failed because the existing prerender normalizes p
 
 - Build/typecheck passed; generated 651 pages plus 404.
 - Two new focused tests passed. Laundry gallery regression run passed 108 tests (54 current tests plus a 54-test archived copy discovered by Vitest).
-- Local browser: one canonical to https://portable-food-bank.com/service-areas/oklahoma/panhandle/; robots noindex,follow preserved; both revised rental captions present; Service schema uses laundry trailer and laundry container rental, with Panhandle/Oklahoma areaServed.
+- Local browser: one canonical to https://temporary-kitchen-rental.com/service-areas/oklahoma/panhandle/; robots noindex,follow preserved; both revised rental captions present; Service schema uses laundry trailer and laundry container rental, with Panhandle/Oklahoma areaServed.
 - Trailer main image loaded; container main image loaded after selecting its product tab. JSON-LD parsed successfully. No image assets or ordering changed.
 - No deployment performed by this task. Full SEO audit launched separately; completion is not claimed here.
 
 ## 2026-09-17 — Latest shared-tree production-alias release
 
-- Deployment `dpl_DqJgJTcMxMUKE7CUeAFX26jwXCNx` READY; immutable URL https://portable-food-bank-mxikekck8-cc-devs.vercel.app; existing alias https://portable-food-bank-nine.vercel.app.
+- Deployment `dpl_DqJgJTcMxMUKE7CUeAFX26jwXCNx` READY; immutable URL https://temporary-kitchen-rental-mxikekck8-cc-devs.vercel.app; existing alias https://temporary-kitchen-rental-nine.vercel.app.
 - Vercel build passed: TypeScript, Vite, 651 static pages plus 404. Existing import-attribute/annotation warnings remain non-fatal.
 - Targeted H1/description suite: 91 passed. Local typecheck passed.
 - Live homepage, equipment-rental, Port Angeles and SEO dashboard returned 200. Inventory HTML contains the updated equipment rental introduction. All retained noindex, follow.
@@ -463,7 +483,7 @@ Initial raw caption assertion failed because the existing prerender normalizes p
 
 ## 2026-09-17 — City dropdown production-alias verification
 
-- Existing CC Devs/portable-food-bank deployment `dpl_DE5mTkuYS9bnLzcL3T11L9fNbKqB`, immutable URL https://portable-food-bank-ad2vteq2m-cc-devs.vercel.app, aliased to https://portable-food-bank-nine.vercel.app.
+- Existing CC Devs/temporary-kitchen-rental deployment `dpl_DE5mTkuYS9bnLzcL3T11L9fNbKqB`, immutable URL https://temporary-kitchen-rental-ad2vteq2m-cc-devs.vercel.app, aliased to https://temporary-kitchen-rental-nine.vercel.app.
 - Vercel build passed: 651 pages plus 404, draft/noindex retained. Existing non-fatal import/annotation warnings remain.
 - Live Playwright `calculator-city-dropdown.spec.ts`: 2 passed (30.1s), homepage and `/rental-calculator/`. All 50 states match source city options; 19,523 distinct state-city pairs in supplied dataset. City disabled before state selection, no free-text city input, prior city cleared on state change, new city selectable.
 - `.vercelignore` excludes local QA/work and old build folders; no files deleted. These tests do not certify unrelated dashboard, contact, or gallery behavior.
@@ -534,7 +554,7 @@ Initial raw caption assertion failed because the existing prerender normalizes p
 - Retained caveats: 38 modular-kitchen photo-held pages and the ADA, sleeper and refrigeration reference-evidence limits remain correctly labelled. This acceptance does not provide missing photos or validate previously unproven specifications.
 - Status: image implementation and scoped independent frozen-build QA complete. Deployment and independent live QA remain separate pending stages; no new Vercel release is performed by this acknowledgment.
 - Read-only confirmation at acknowledgment: branch `main`, base HEAD `8ad98dba33ef6d9b7b1e64028da3fc639bd7fd9a`; image changes remain uncommitted. Both root and snapshot manifest SHA-256 match `b2dd5c5c6b5bd2d6194421d9d583a8bdddeac914a512d80eda8dc72331fdcd57`; both policy hashes match `a6d254484922a68e1f1974a6d2f6952e84091625fc07005f7e143efd8ef070ad`. These match the handoff.
-- Release boundary: preserve the accepted frozen build and original handoff. A later coordinated release must use the EXISTING portable-food-bank-nine Vercel project (no new project), record its source revision, immutable deployment URL and deployment ID, verify the alias points to that revision, and hand that exact URL to the independent reviewer for live QA. A passing build or an HTTP 200 alone is not live acceptance.
+- Release boundary: preserve the accepted frozen build and original handoff. A later coordinated release must use the EXISTING temporary-kitchen-rental-nine Vercel project (no new project), record its source revision, immutable deployment URL and deployment ID, verify the alias points to that revision, and hand that exact URL to the independent reviewer for live QA. A passing build or an HTTP 200 alone is not live acceptance.
 
 ## 2026-09-16 — Owner-delegated available-photo rollout
 
@@ -552,7 +572,7 @@ Record meaningful verification here. Do not record a check as passed unless it w
 ### 2026-09-16 — Independent CEO-level Service Areas image and SEO audit
 
 - Scope: Read-only website/source audit; separate new audit artifacts, no implementation or deployment changes.
-- Environments: Fresh isolated current-source production build; live public Vercel preview at portable-food-bank-nine.vercel.app; six canonical-domain paths probed separately.
+- Environments: Fresh isolated current-source production build; live public Vercel preview at temporary-kitchen-rental-nine.vercel.app; six canonical-domain paths probed separately.
 - Evidence: 548 generated Service Areas routes reconciled with the registry and checked live (548 HTTP 200). Every actual image src, original lightbox path, responsive srcset, label, source hash, family and single-model association was independently checked rather than simply accepting the resolver output.
 - Observed matching: 150 pages have correct photo sets. Another 73 have a safe pending state for missing ADA/modular-kitchen photography; 325 have a safe pending state requiring a title/image-policy decision. Placeholder safety is not photography completion.
 - Browser: All 50 states in full Service Areas and compact mobile homepage maps (100 presentations) opened, navigated and cleared correctly. All assigned modal slides decoded. Twenty-two representative page visits at 1440/390px passed. State switching/reset, native uncropped lightbox layering/keyboard/focus/close, real 5.5-second autoplay, interaction pause and reduced motion passed. Zero recorded page exceptions, failed same-origin image requests or unexpected contact submissions.
@@ -593,7 +613,7 @@ Record meaningful verification here. Do not record a check as passed unless it w
 
 ### 2026-09-16 — Owner-visible SEO dashboard MVP
 
-- Owner/task: Urgent PortableFoodBank workstream — owner-visible SEO dashboard
+- Owner/task: Urgent TemporaryKitchenRental workstream — owner-visible SEO dashboard
 - Environment and URL: Local production build and static preview at `http://127.0.0.1:4173/seo-dashboard/`; no deployment
 - Change or requirement tested: Display the imported Top 25 authority URLs as protected exact targets; distinguish exact slug, HTTP/redirect, canonical, sitemap, content restoration, proposed-title approval, testing, internal-link, Google verification/indexing/submission, portfolio readiness, and domain-authority evidence without inventing third-party results
 - Commands/checks performed: `npx vitest run tests/seo-dashboard.test.tsx`; `npm run typecheck`; `npm test`; `npm run build`; isolated final `npx vite build --outDir dist-seo-dashboard-validation --emptyOutDir`; local HTTP request to the prerendered dashboard; headless Chromium at 1440 x 900 and 390 x 900
@@ -631,7 +651,7 @@ No earlier test result is being reconstructed as confirmed by this coordination 
 ### 2026-09-15 — Calculator-only action and optional exact-quote release
 
 - Owner/task: Temporary Kitchen 123 — calculator quote submission
-- Environment and URL: Local production build and live production at `https://portable-food-bank-nine.vercel.app/` and `/rental-calculator/`; current deployment `dpl_J7uvvuU7BA8LLTQWoNW2d1gvGWzS`
+- Environment and URL: Local production build and live production at `https://temporary-kitchen-rental-nine.vercel.app/` and `/rental-calculator/`; current deployment `dpl_J7uvvuU7BA8LLTQWoNW2d1gvGWzS`
 - Change or requirement tested: Separate calculator-only and exact-quote actions; required contact consent; deterministic equipment/delivery result; separate state, city and optional ZIP; static city HTML; mobile overflow; production intake readiness
 - Commands/checks performed: `npm test`; `npm run build`; local and live `npx playwright test tests/browser/calculator.spec.ts`; one headless live calculation with network-request counting; one clearly labeled fictional QA quote attempt; one valid-shaped direct API boundary probe; temporary `CONTACT_ENABLED=true` deployment followed by safe rollback and redeployment
 - Observed result: 44 automated tests passed. TypeScript/Vite build and static generation for 650 pages plus the draft/noindex 404 completed. All 4 calculator browser tests passed both locally and on the current production alias. The live Port Angeles mobile-kitchen example produced `$6,490`, displayed that no contact information was sent, and made zero `/api/contact` requests. The fictional exact-quote attempt stopped before an API request because the deployed client lacks usable Firebase/App Check configuration; a direct valid-shaped API probe returned HTTP 503. No inquiry was saved or emailed. `CONTACT_ENABLED` was restored to `false`, and the production UI now visibly disables the exact-quote action while keeping the calculator available.
@@ -641,8 +661,8 @@ No earlier test result is being reconstructed as confirmed by this coordination 
 
 ### 2026-09-15 — Phase 1 content and H1 audit
 
-- Owner/task: PortableFoodBank Phase 1 — CONTENT + H1
-- Environment and URL: Current local `dist` snapshot and live candidate `https://portable-food-bank-nine.vercel.app/`
+- Owner/task: TemporaryKitchenRental Phase 1 — CONTENT + H1
+- Environment and URL: Current local `dist` snapshot and live candidate `https://temporary-kitchen-rental-nine.vercel.app/`
 - Change or requirement tested: Inventory all current rendered page families; verify H1 counts; compare representative live/local H1s; prepare multi-family content and H1 proposals without implementation
 - Commands/checks performed: Parsed all local `dist/**/index.html` files with Cheerio; classified page families; counted state/region heading-pattern distribution; fetched and parsed 16 representative live routes; inspected source data for the 22 ft shower configuration; parsed the new CSV with PowerShell `Import-Csv`; ran scoped whitespace/diff validation
 - Observed result: 650 local rendered pages were inventoried; all 650 have exactly one H1. All 16 representative live routes returned HTTP 200 with exactly one H1 and matched local H1 text. Four weak generated patterns affect 23 of 50 state pages and 119 of 246 region pages. The proposal CSV contains 49 data rows and all required mapping fields.
@@ -652,7 +672,7 @@ No earlier test result is being reconstructed as confirmed by this coordination 
 
 ### 2026-09-15 — Exact-service carousel integration
 
-- Owner/task: PortableFoodBank image/carousel — IMPLEMENTATION
+- Owner/task: TemporaryKitchenRental image/carousel — IMPLEMENTATION
 - Environment and URL: Local production build served at `http://localhost:4173/`; no deployment
 - Change or requirement tested: Exact inventory mapping; responsive derivative generation; deterministic interior, exterior, then remaining order; server-rendered first image; deferred later images; native controls; arrow/Home/End keys; horizontal swipe; vertical-gesture preservation; inactive-alt suppression; truthful unverified-route fallback; and removal of mislabeled homepage Shower/Restroom imagery
 - Commands/checks performed: `python scripts/build-service-hero-assets.py`; `npm run build`; `npx vitest run tests/serviceHeroImages.test.ts tests/ServiceHeroCarousel.test.tsx`; `npx playwright test tests/browser/service-hero-carousel.spec.ts --reporter=line`; a Chromium smoke loop through all ten mapped routes that decoded the first image, activated/decoded the second image, and checked image counts; scoped Prettier; `git diff --check`; Chromium screenshots and element-level visual inspection at 1440×1000 and 390×844
@@ -663,7 +683,7 @@ No earlier test result is being reconstructed as confirmed by this coordination 
 
 ### 2026-09-15 — Google Drive equipment-image inventory and classification
 
-- Owner/task: PortableFoodBank image/carousel — ASSET INVENTORY AND CLASSIFICATION
+- Owner/task: TemporaryKitchenRental image/carousel — ASSET INVENTORY AND CLASSIFICATION
 - Environment and URL: Read-only inspection of the 20 supplied Google Drive references; local inventory artifact only
 - Change or requirement tested: Enumerate every accessible image; classify interior, exterior, detail, diagram, duplicate, or unusable; record orientation and exact Drive file identity; select deterministic best-interior and best-exterior positions; identify asset and route-model gaps
 - Commands/checks performed: Enumerated every supplied folder through the Google Drive connector; followed the nested actual 20ft Laundry Container folder; downloaded accessible images for contact-sheet review; extracted image dimensions, orientation, SHA-256 hashes, and Drive metadata; visually inspected all contact sheets; validated the finished Markdown for 20 detailed folder sections and 115 detailed image rows
@@ -675,17 +695,17 @@ No earlier test result is being reconstructed as confirmed by this coordination 
 ### 2026-09-15 — Full page inventory and live sitemap reconciliation
 
 - Owner/task: Temporary Kitchen 123 — ALL PAGES + SITEMAP
-- Environment and URL: Local generated `dist` inventory and live preview `https://portable-food-bank-nine.vercel.app/`
+- Environment and URL: Local generated `dist` inventory and live preview `https://temporary-kitchen-rental-nine.vercel.app/`
 - Change or requirement tested: Enumerate every registered page; reconcile generated HTML, live HTTP behavior, robots directives, canonicals, and membership in the live `sitemap.xml`
 - Commands/checks performed: Parsed `audit/build-registry.json`; checked the corresponding local HTML file for every route; fetched all 650 live preview URLs; parsed each response's robots meta and canonical; fetched and parsed the live sitemap and robots file; validated the resulting CSV for row and URL uniqueness
 - Observed result: 650 unique registered routes and 650 corresponding local HTML files. All 650 live URLs returned HTTP 200, with 0 redirects and 0 request errors. Every live page carried `noindex,follow`, 0 pages exposed a canonical, and the valid live sitemap contained 0 URLs. The registry also reported 0 routes indexable in the current preview build.
 - Pass/fail: Pass for complete route enumeration and current preview reconciliation. The preview sitemap is intentionally empty and must not list noindex Vercel URLs.
-- Remaining unverified boundary: Canonical-domain routing, first-batch production activation, index/follow output, self-referencing `portable-food-bank.com` canonicals, production sitemap membership, Search Console submission, and Google indexation were not enabled or verified. Content approval of all 650 pages is not implied.
+- Remaining unverified boundary: Canonical-domain routing, first-batch production activation, index/follow output, self-referencing `temporary-kitchen-rental.com` canonicals, production sitemap membership, Search Console submission, and Google indexation were not enabled or verified. Content approval of all 650 pages is not implied.
 - Evidence or artifact: `docs/phase1/ALL_PAGES_SITEMAP_AUDIT.md`; `audit/all-pages-sitemap.csv`; `audit/all-pages-sitemap-summary.json`
 
 ### 2026-09-16 — Owner-approved homepage Shower Trailer image
 
-- Owner/task: PortableFoodBank — approved Shower Trailer homepage image
+- Owner/task: TemporaryKitchenRental — approved Shower Trailer homepage image
 - Environment and URL: Local component/render harness using the current source and static preview assets at `http://localhost:4173/`; no deployment
 - Change or requirement tested: Replace the incorrect shower/restroom-combination homepage Shower thumbnail with Charles's explicitly identified Shower Trailer image; preserve responsive delivery and truthful labeling without asserting an exact model
 - Commands/checks performed: Generated 480 x 640 and 960 x 1280 WebP derivatives with FFmpeg; ran `npm run build`; ran the focused Playwright homepage assertion; rendered the actual `Cards` component server-side and exercised it in Chromium at 1440 x 1000 and 390 x 844; checked decoded image dimensions, `src`, `srcset`, alt text, `object-fit`, and document overflow
@@ -694,13 +714,13 @@ No earlier test result is being reconstructed as confirmed by this coordination 
 - Remaining unverified boundary: The complete prerendered homepage and live Vercel deployment were not verified or changed. The supplied image establishes the Shower Trailer category only, not an exact length, stall count, or route-level model. Restroom imagery was not changed by this task.
 - Evidence or artifact: `public/images/catalog/shower-trailer-480.webp`; `public/images/catalog/shower-trailer-960.webp`; `src/Equipment.tsx`; `tests/browser/service-hero-carousel.spec.ts`
 
-### 2026-09-16 — Full PortableFoodBank review sitemap export
+### 2026-09-16 — Full TemporaryKitchenRental review sitemap export
 
 - Owner/task: Temporary Kitchen 123 — sitemap review export
-- Environment and URL: Local repository artifact for the future canonical origin `https://portable-food-bank.com`; no deployment or Search Console submission
+- Environment and URL: Local repository artifact for the future canonical origin `https://temporary-kitchen-rental.com`; no deployment or Search Console submission
 - Change or requirement tested: Generate a complete owner/dev review sitemap without weakening the preview noindex gate or changing the official controlled production sitemap
 - Commands/checks performed: Generated `public/sitemap-review.xml` from all paths in `audit/build-registry.json`; parsed the XML with PowerShell's XML parser; counted URL and unique URL nodes; validated every hostname
-- Observed result: Valid XML containing 650 URL entries, 650 unique URLs, and 0 non-`portable-food-bank.com` hosts. First URL is `https://portable-food-bank.com/`; final sorted URL is `https://portable-food-bank.com/video/`. File size is 58,569 bytes; SHA-256 is `945B1DAAA65AF4BAE7912D1CBCB87B9C9B904E413C3BDF6F6B4A2F37E37D0CFF`.
+- Observed result: Valid XML containing 650 URL entries, 650 unique URLs, and 0 non-`temporary-kitchen-rental.com` hosts. First URL is `https://temporary-kitchen-rental.com/`; final sorted URL is `https://temporary-kitchen-rental.com/video/`. File size is 58,569 bytes; SHA-256 is `945B1DAAA65AF4BAE7912D1CBCB87B9C9B904E413C3BDF6F6B4A2F37E37D0CFF`.
 - Pass/fail: Pass for complete review export and XML integrity
 - Remaining unverified boundary: The review export does not approve all pages for indexing and was not deployed, linked from robots.txt, submitted to Search Console, or checked against the future production host. The official `sitemap.xml` remains gated until the canonical domain and first approved indexing batch are ready.
 - Evidence or artifact: `public/sitemap-review.xml`; `scripts/generate-review-sitemap.mjs`
@@ -716,7 +736,7 @@ No earlier test result is being reconstructed as confirmed by this coordination 
 - Remaining unverified boundary: The Vite development shell cannot provide a page-level browser render because this app expects prerendered HTML, and the full prerender remains blocked by the separately owned CSV-module import error already recorded above. The live Vercel page was not changed or post-deployment tested.
 - Evidence or artifact: `src/CityDetail.tsx`
 
-### 2026-09-16 — Boss-approved PortableFoodBank H1 plan
+### 2026-09-16 — Boss-approved TemporaryKitchenRental H1 plan
 
 - Owner/task: Current task — Boss H1 implementation
 - Environment and URL: Local production build and static preview at `http://localhost:4173/`; no deployment
@@ -724,7 +744,7 @@ No earlier test result is being reconstructed as confirmed by this coordination 
 - Commands/checks performed: `npm run build`; `npm test`; `npm run check:headlines`; `npx vitest run tests/h1-plan.test.ts`; focused Playwright runs for `tests/browser/location-refresh.spec.ts` and `tests/browser/site.spec.ts`; direct inspection of generated homepage, service-area, state, city, and exact-model HTML; `git diff --check`
 - Observed result: TypeScript, Vite, and prerender completed for 651 pages plus the draft/noindex 404. All 44 existing automated tests passed. The headline audit checked 548 location pages with 548 unique H1s and zero issues. Four focused unit tests passed. Seven responsive location/industry/planner Chromium tests plus the exact-model H1/title Chromium test passed. Representative generated pages each had exactly one H1 and an aligned title, including California, Texas, Port Angeles, and the 22 ft 6-stall combination trailer. The homepage H1 remained `Temporary Facilities and Trailer Rental / Rent or Lease Nationwide`.
 - Pass/fail: Pass for the approved local H1 implementation and affected runtime behavior
-- Remaining unverified boundary: No commit or Vercel deployment was performed. Live `portable-food-bank-nine.vercel.app` output, future `portable-food-bank.com` production metadata, canonical/indexing activation, and Search Console behavior were not changed or verified. Seattle and Sequim editorial H1s, unsupported brand/specification claims, dishwashing, and refrigeration wording remain held or unchanged by design.
+- Remaining unverified boundary: No commit or Vercel deployment was performed. Live `temporary-kitchen-rental-nine.vercel.app` output, future `temporary-kitchen-rental.com` production metadata, canonical/indexing activation, and Search Console behavior were not changed or verified. Seattle and Sequim editorial H1s, unsupported brand/specification claims, dishwashing, and refrigeration wording remain held or unchanged by design.
 - Evidence or artifact: `src/rentalHeadlines.ts`; `src/StateDetail.tsx`; `src/CityDetail.tsx`; `src/Site.tsx`; `scripts/prerender.tsx`; `scripts/check-location-headlines.mjs`; `tests/h1-plan.test.ts`; focused browser tests
 
 ### 2026-09-16 — Service-area state modal H1-rule wording
@@ -735,7 +755,7 @@ No earlier test result is being reconstructed as confirmed by this coordination 
 - Commands/checks performed: `npm run build`; `npx playwright test tests/browser/state-services.spec.ts tests/browser/location-refresh.spec.ts --reporter=line`; focused rerun of `tests/browser/state-services.spec.ts`; scoped Prettier and `git diff --check`
 - Observed result: TypeScript, Vite, and prerender completed for 651 pages plus the draft/noindex 404. All 8 focused Chromium tests passed across desktop and mobile; the focused state suite passed again after adding the semantic regression assertion. California, New Hampshire, and Texas modal names matched `stateRentalHeadline(...)`; the modal title remained an `h2`, `/service-areas/` retained one `h1`, and state-guide links continued to point to dedicated state routes.
 - Pass/fail: Pass for the requested local modal behavior and regression boundaries
-- Remaining unverified boundary: No Vercel deployment was requested or performed, so `https://portable-food-bank-nine.vercel.app/service-areas/` remains unchanged and was not post-deployment tested. The pre-existing formatting warning in `src/main.tsx`, JSON import warning, and third-party Zod annotation warnings remain outside this task.
+- Remaining unverified boundary: No Vercel deployment was requested or performed, so `https://temporary-kitchen-rental-nine.vercel.app/service-areas/` remains unchanged and was not post-deployment tested. The pre-existing formatting warning in `src/main.tsx`, JSON import warning, and third-party Zod annotation warnings remain outside this task.
 - Evidence or artifact: `src/CoverageMap.tsx`; `src/StateGuideCards.tsx`; state-headline binding in `src/main.tsx`; `tests/browser/state-services.spec.ts`; `tests/browser/location-refresh.spec.ts`
 
 ### 2026-09-16 — Cross-workstream acceptance QA handoff
@@ -751,7 +771,7 @@ No earlier test result is being reconstructed as confirmed by this coordination 
 
 ### 2026-09-16 — Accessible carousel and commercial-image presentation refinement
 
-- Owner/task: Urgent PortableFoodBank imagery/presentation refinement
+- Owner/task: Urgent TemporaryKitchenRental imagery/presentation refinement
 - Environment and URL: Shared local worktree and static preview at `http://localhost:4173/`; no deployment
 - Change or requirement tested: Accessible auto-advance and persistent manual pause, reduced-motion behavior, interior/detail-before-exterior ordering, edge-to-edge hero media, approved homepage Shower imagery, truthful Restroom fallback, and visible-setting alt text
 - Commands/checks performed: `npx vitest run tests/ServiceHeroCarousel.test.tsx tests/serviceHeroImages.test.ts`; `npm run typecheck`; `npm run build`; `npx vite build --emptyOutDir false`; `npx playwright test tests/browser/service-hero-carousel.spec.ts`; direct visual inspection of the approved Shower, combination-unit, refrigerated-trailer, and warehouse-context assets
@@ -774,7 +794,7 @@ No earlier test result is being reconstructed as confirmed by this coordination 
 ### 2026-09-16 — SEO dashboard live-refresh recovery
 
 - Owner/task: Current task - live refresh defect
-- Environment and URL: Live read-only diagnosis at `https://portable-food-bank-nine.vercel.app/seo-dashboard/`; local production build and static preview at `http://127.0.0.1:4173/seo-dashboard/`; no deployment
+- Environment and URL: Live read-only diagnosis at `https://temporary-kitchen-rental-nine.vercel.app/seo-dashboard/`; local production build and static preview at `http://127.0.0.1:4173/seo-dashboard/`; no deployment
 - Change or requirement tested: Repair the orange `Running live production and preview checks...` status and disabled `Refreshing...` button that never settled
 - Commands/checks performed: Fetched the live dashboard HTML and `/api/seo-live`; ran `npx vitest run tests/seo-dashboard.test.tsx tests/seo-live.test.ts`; ran `npm run typecheck`; ran an isolated Vite production client build; ran `npm run build`; exercised the actual local prerendered dashboard in Chromium with both the real failure response and a controlled successful `/api/seo-live` response, then clicked `Refresh now` again
 - Observed result: The live dashboard returned HTTP 200 and contained the frozen running/disabled server state, while the live API independently returned HTTP 200 with 19,140 bytes. Source diagnosis confirmed the page was prerendered without React hydration. After the fix, the real local API failure produced `Live check failed... Showing stored evidence.` and re-enabled `Refresh now`; the successful response produced a `Live checked` timestamp, re-enabled the button, and a manual click issued a second request. No React hydration errors were observed. The full build generated 651 pages plus the draft/noindex 404.
@@ -786,7 +806,7 @@ No earlier test result is being reconstructed as confirmed by this coordination 
 
 - Owner/task: Current task - Drive asset gathering
 - Environment and URL: Local worktree; 25 supplied Google Drive folder links; no deployment
-- Change or requirement tested: Download the supplied PortableFoodBank equipment assets into one accessible project directory without changing existing website imagery or page code
+- Change or requirement tested: Download the supplied TemporaryKitchenRental equipment assets into one accessible project directory without changing existing website imagery or page code
 - Commands/checks performed: Google Drive folder metadata and direct-child inventory; raw Drive file downloads; exact downloaded-size comparison against Drive metadata; PowerShell recursive folder/file/byte reconciliation; Pillow `Image.verify()` across every PNG/JPEG; SHA-256 generation
 - Observed result: The links resolve to the `Equipments` parent plus 24 child folders. The parent also contains an omitted `20ft Laundry Container` child. The deduplicated local collection contains 25 equipment folders, 149 images, 149 manifest rows, and 323,702,572 image bytes. All downloads matched expected sizes; Pillow verified 149 images with zero corrupt files; 149 SHA-256 entries were generated.
 - Pass/fail: Pass for download completeness, local organization, byte-size integrity, and image decoding
@@ -795,7 +815,7 @@ No earlier test result is being reconstructed as confirmed by this coordination 
 
 ### 2026-09-16 — Sticky Project Desk and Emergency dispatch redesign
 
-- Owner/task: PortableFoodBank_BUILD — commercial dispatch redesign; independent QA by task `01a08152-5280-7802-83d5-35eb5844c05c`
+- Owner/task: TemporaryKitchenRental_BUILD — commercial dispatch redesign; independent QA by task `01a08152-5280-7802-83d5-35eb5844c05c`
 - Environment and URL: Shared local worktree; immutable production-build copy served at `http://127.0.0.1:4173/`; no production deployment
 - Change or requirement tested: Compact desktop Project Desk edge tab and maximum-400 px drawer; compact mobile safe-area controls; activity-gated Emergency expansion; 24-hour dismissal persistence; one visible Emergency control; Project Desk/Emergency mutual exclusion; truthful telephone and availability actions; keyboard, Escape, focus return, reduced motion, responsive containment, and preserved quote form
 - Commands/checks performed: `npm run typecheck`; `npm run build`; focused Playwright sticky-control selection; full `npx playwright test tests/browser/site.spec.ts` against an immutable preview; independent QA rerun of 11 focused Chromium checks; `npm test`; scoped Prettier check
@@ -810,9 +830,9 @@ Implemented locally: one usable photo is sufficient; 20ft container interior-onl
 
 ## 2026-09-16 — Existing Vercel Git source and live boss portal
 
-- Vercel project: `cc-devs/portable-food-bank`; Git settings initially showed `charlessslaranangsss-maker/Portable Food Bank`. After removing that connection, the GitHub namespace picker showed only `charlessslaranangsss-maker` plus `Add GitHub Scope`, not `Portable-Food-Bank`. The old repo was reconnected; Git settings displayed it as connected and showed a success toast.
-- Production overview after restoration: Ready, alias `https://portable-food-bank-nine.vercel.app/`, immutable deployment `EibCuYz25TKKPRLVzYvrbsNQE6FP`, source `923d3f4` on personal repo main. No new deployment or org-repo connection was verified.
-- Live portal `https://portable-food-bank-nine.vercel.app/seo-dashboard/` loaded and changed from running to `Live checked 9/16/2026, 5:23:59 PM` with an enabled Refresh button. Its diagnostics tab showed Awaiting first scheduled run and missing metrics for Firestore city health, Firebase Hosting 404s, location URL failures, incomplete rows, and GSC submissions. Its Google status tab showed 0 verified indexed, 0 verified not indexed, and 25 unknown, explicitly due to absent Search Console URL Inspection evidence. Preview homepage was marked not indexable. The page warned that it is a read-only preview without owner authentication.
+- Vercel project: `cc-devs/temporary-kitchen-rental`; Git settings initially showed `charlessslaranangsss-maker/Temporary Kitchen Rental`. After removing that connection, the GitHub namespace picker showed only `charlessslaranangsss-maker` plus `Add GitHub Scope`, not `Temporary-Kitchen-Rental`. The old repo was reconnected; Git settings displayed it as connected and showed a success toast.
+- Production overview after restoration: Ready, alias `https://temporary-kitchen-rental-nine.vercel.app/`, immutable deployment `EibCuYz25TKKPRLVzYvrbsNQE6FP`, source `923d3f4` on personal repo main. No new deployment or org-repo connection was verified.
+- Live portal `https://temporary-kitchen-rental-nine.vercel.app/seo-dashboard/` loaded and changed from running to `Live checked 9/16/2026, 5:23:59 PM` with an enabled Refresh button. Its diagnostics tab showed Awaiting first scheduled run and missing metrics for Firestore city health, Firebase Hosting 404s, location URL failures, incomplete rows, and GSC submissions. Its Google status tab showed 0 verified indexed, 0 verified not indexed, and 25 unknown, explicitly due to absent Search Console URL Inspection evidence. Preview homepage was marked not indexable. The page warned that it is a read-only preview without owner authentication.
 - Boundary: This is not proof of site-wide error-free behavior or Google indexing. Vercel overview showed 0% error rate for its displayed 6-hour window, but that metric does not cover all routes, content, external providers, or historical errors. No deployment, Git push, indexing request, or Firebase configuration change was made.
 
 ## 2026-09-16 — Batch D state route and modal alignment
@@ -836,7 +856,7 @@ Completed locally only, no deploy. 651 rendered pages and 100 logical map presen
 
 ## 2026-09-17 Panhandle lease terms — LIVE VERIFIED
 
-The Oklahoma Panhandle 30 ft laundry trailer and 20 ft laundry container captions now include rental or lease and weekly/monthly/yearly rental terms. Live alias portable-food-bank-nine.vercel.app verified on dpl_6ykocrDRHboUz1zNH2Em9b164U5Q. Both tabs and all four images decoded at desktop/mobile (eight image displays), zero content/browser/overflow failures. Preservation: 651 H1s/intros and 100 map presentations unchanged. Current tests: 209 targeted + 44 application pass; build 651 pages + 404. Preview noindex preserved. Separate primary staging was not promoted over the already-correct concurrent release. Evidence: work/qa/panhandle-lease-20260917/independent-final/REPORT.md. No further deployment is needed for this request.
+The Oklahoma Panhandle 30 ft laundry trailer and 20 ft laundry container captions now include rental or lease and weekly/monthly/yearly rental terms. Live alias temporary-kitchen-rental-nine.vercel.app verified on dpl_6ykocrDRHboUz1zNH2Em9b164U5Q. Both tabs and all four images decoded at desktop/mobile (eight image displays), zero content/browser/overflow failures. Preservation: 651 H1s/intros and 100 map presentations unchanged. Current tests: 209 targeted + 44 application pass; build 651 pages + 404. Preview noindex preserved. Separate primary staging was not promoted over the already-correct concurrent release. Evidence: work/qa/panhandle-lease-20260917/independent-final/REPORT.md. No further deployment is needed for this request.
 
 **All service-area gallery captions — 2026-09-17, local review:** Updated the shared gallery caption composer with verified details for 35 image models. Existing non-Panhandle/non-Olympic galleries now lead with location, commercial use, and actual equipment, discuss weekly/monthly/yearly rental and lease options, add product-specific planning information, and end with the published 24/7 phone-assistance CTA. Approved Panhandle and Olympic captions retain priority. All 548 service-area routes and 100 map presentations passed a source-rendered caption/alt audit (572 group appearances, 1,755 images, zero issues). Fifteen focused tests and typecheck passed. Browser Vite request timed out; build/browser verification is recorded separately below when completed. No commit, push, or deployment. Review remains subject to owner acceptance.
 Build finished: 651 pages + 404 prerendered. Static localhost preview at http://127.0.0.1:4315/service-areas/alabama/; 10 desktop/mobile browser checks across Alabama, Texas, Panhandle, and full/compact map presentations passed with zero image-load, caption-presence, or page-error failures. The earlier Vite dev server timed out, so review should use port 4315 while its local server runs.
@@ -864,9 +884,9 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - `npm run build`: **passed**; 651 pages plus the draft/noindex 404 prerendered.
 - Generated HTML scan for `PHOTO REVIEW IN PROGRESS`, `Exact equipment photography is pending verification`, `Verified photography coming soon`, and `Verified equipment photo pending`: **0 files failed / 652 generated pages checked**.
 - Targeted Playwright checks: **5/5 passed**. The checks opened every registered model/catalogue gallery and full-image view, exercised all Services/equipment-directory/homepage quick views and reset behavior, and verified the disclosed 26 ft bulk and ADA representative galleries.
-- Production deployment: commit `970a287` deployed from `main` to `https://portable-food-bank.com`.
+- Production deployment: commit `970a287` deployed from `main` to `https://temporary-kitchen-rental.com`.
 - Live HTML checks: `/services/`, the 26 ft bulk kitchen route, 12 ft refrigeration route, stair-rental route, dining-structure route and `/equipment-rental/` returned HTTP 200 with **0 pending-photo phrases**. Route-specific disclosure markers were present on the five directly rendered samples; the equipment-directory disclosure was verified after opening its modal.
-- Production Playwright checks: **5/5 passed** against `https://portable-food-bank.com`. They opened every registered model/catalogue gallery and full-image view, exercised all 27 Services/equipment-directory/homepage quick-view openings and reset behavior, and rechecked the 26 ft bulk and ADA representative galleries.
+- Production Playwright checks: **5/5 passed** against `https://temporary-kitchen-rental.com`. They opened every registered model/catalogue gallery and full-image view, exercised all 27 Services/equipment-directory/homepage quick-view openings and reset behavior, and rechecked the 26 ft bulk and ADA representative galleries.
 
 ## 2026-09-18 — Contact Us facility options
 
@@ -874,8 +894,8 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - `npx playwright test tests/browser/contact-facilities.spec.ts`: **1/1 passed**. Chromium opened the actual Contact Us drawer and selected Dishwashing, Refrigeration, Sleeper, Laundry, and Sink in turn.
 - `npm run typecheck`: **passed**.
 - `npm run build`: **passed**; 651 pages plus the draft/noindex 404 prerendered.
-- Production HTML: `https://portable-food-bank.com/contact-us/` returned HTTP 200 and contained all five new option values after commit `566b495` reached the Vercel alias.
-- Production browser: `PLAYWRIGHT_BASE_URL=https://portable-food-bank.com npx playwright test tests/browser/contact-facilities.spec.ts`: **1/1 passed**; Chromium opened the live drawer and selected all five choices.
+- Production HTML: `https://temporary-kitchen-rental.com/contact-us/` returned HTTP 200 and contained all five new option values after commit `566b495` reached the Vercel alias.
+- Production browser: `PLAYWRIGHT_BASE_URL=https://temporary-kitchen-rental.com npx playwright test tests/browser/contact-facilities.spec.ts`: **1/1 passed**; Chromium opened the live drawer and selected all five choices.
 - Boundary: no synthetic inquiry was submitted because the reported defect concerned option visibility and selection, not downstream message delivery.
 
 ## 2026-09-18 — Inventory Restroom/Laundry correction
@@ -888,8 +908,8 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - `npm run build`: **passed**; 651 pages plus the draft/noindex 404 prerendered.
 - Local Chromium audit at 1440x1000 and 390x844: **2/2 menu presentations**, **4/4 family-list checks**, **4/4 gallery presentations**, and **4/4 lead images** passed with zero console errors. Restroom contains four restroom-only routes; Laundry contains all four requested choices. Both new Laundry anchors resolve on the existing category URL.
 - Broader `tests/aprilPhotoPolicy.test.tsx` run: **6/7 passed**; its unrelated `Commercial Modular Kitchen` hold assertion expects zero images although the current registry returns seven. No modular-kitchen source was changed by this task.
-- Production: commit `29ecf4b` was pushed only to `Portable-Food-Bank/Portable-Food-Bank` main. Vercel deployment `dpl_Dop5EkVtcSjgRgoDqj7pXMXGdXkP` reached READY and the production project aliases updated.
-- Live Chromium on `https://portable-food-bank.com`: **2/2 desktop/mobile menu presentations**, **4/4 family-list checks**, **4/4 new Laundry gallery presentations**, and **4/4 decoded lead images** passed with zero console errors.
+- Production: commit `29ecf4b` was pushed only to `Temporary-Kitchen-Rental/Temporary-Kitchen-Rental` main. Vercel deployment `dpl_Dop5EkVtcSjgRgoDqj7pXMXGdXkP` reached READY and the production project aliases updated.
+- Live Chromium on `https://temporary-kitchen-rental.com`: **2/2 desktop/mobile menu presentations**, **4/4 family-list checks**, **4/4 new Laundry gallery presentations**, and **4/4 decoded lead images** passed with zero console errors.
 - Live post-release recheck of all 13 reported product routes: **26/26 desktop/mobile presentations passed**, with HTTP 200, one visible carousel, a decoded lead image, zero pending-photo panels and zero console errors.
 
 ## 2026-09-18 — Legacy backlink URL parity and controlled indexing release
@@ -905,15 +925,15 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - `npm run typecheck`: passed.
 - `npm run check:seo`: completed and confirmed **25 approved routes** with index/follow, self-canonicals, and sitemap entries. Its broader `launchReady:false` status remains because unrelated inherited migration-link and orphan-page findings are outside this backlink-parity repair.
 - Local `npx vercel build --yes --target production` retrieved Vercel settings and production environment metadata, then stopped with `spawn cmd.exe ENOENT`. The actual remote Vercel build completed successfully and produced READY deployment `dpl_CLEabVTivoctpYLbKg23TV39QURD` from commit `4df32c3`.
-- Repository boundary: the implementation revisions through `4df32c3` were pushed only to `https://github.com/Portable-Food-Bank/Portable-Food-Bank.git` on `main`.
+- Repository boundary: the implementation revisions through `4df32c3` were pushed only to `https://github.com/Temporary-Kitchen-Rental/Temporary-Kitchen-Rental.git` on `main`.
 - Live post-release crawl of all **153/153** supplied source URLs: **153 passed / 0 failed**, covering 105 unique paths and 23 unique final URLs. Every final response was HTTPS apex HTTP 200, every redirect hop was permanent, the longest chain was two hops, and no loop was found.
-- Live destination metadata: **23/23** emitted `index,follow`, an exact apex self-canonical, and membership in the production sitemap. `https://portable-food-bank.com/sitemap.xml` returned HTTP 200 with exactly **25 URLs**, and `robots.txt` returned HTTP 200 and declared that sitemap.
+- Live destination metadata: **23/23** emitted `index,follow`, an exact apex self-canonical, and membership in the production sitemap. `https://temporary-kitchen-rental.com/sitemap.xml` returned HTTP 200 with exactly **25 URLs**, and `robots.txt` returned HTTP 200 and declared that sitemap.
 - Indexing controls: non-batch `/contact-us/` remained `noindex,follow` without a canonical; the Vercel preview alias returned `X-Robots-Tag: noindex, follow`.
 - Boundary: these checks prove the production routing and indexability state observed at `2026-09-18T10:54:55Z`. They do not prove that Google has recrawled or indexed the URLs. The broader inherited migration-link and orphan-page findings reported by `check:seo` remain outside this scoped 153-URL repair.
 - Evidence: `audit/legacy-backlink-parity-2026-09-18/live-postchange.csv`, `live-postchange.json`, `live-summary.json`, and the generated indexing registries under `audit/`.
-- Final owner-requested redeployment: verified `HEAD` and `origin/main` at `57826de`, verified `origin` as `https://github.com/Portable-Food-Bank/Portable-Food-Bank.git`, and deployed to the already-linked Vercel project `cc-devs/portable-food-bank`. Deployment `dpl_5Ab6Vrj2byjT59y3iAKXqdy2PCTJ` reached READY and updated the production project aliases.
-- Custom-domain release check: `https://portable-food-bank.com/` returned HTTP 200 from Vercel and served the exact JavaScript and CSS asset hashes generated by that deployment. Representative repaired legacy URLs, `sitemap.xml`, and `robots.txt` also returned HTTP 200.
-- Final production Playwright: `tests/browser/contact-facilities.spec.ts` plus `tests/browser/equipment.spec.ts` passed **7/7** against `https://portable-food-bank.com`, covering all five requested Contact Us choices, all 25 equipment entries and legacy destinations, responsive catalogue images/search at four viewport widths, and mobile equipment-brief navigation.
+- Final owner-requested redeployment: verified `HEAD` and `origin/main` at `57826de`, verified `origin` as `https://github.com/Temporary-Kitchen-Rental/Temporary-Kitchen-Rental.git`, and deployed to the already-linked Vercel project `cc-devs/temporary-kitchen-rental`. Deployment `dpl_5Ab6Vrj2byjT59y3iAKXqdy2PCTJ` reached READY and updated the production project aliases.
+- Custom-domain release check: `https://temporary-kitchen-rental.com/` returned HTTP 200 from Vercel and served the exact JavaScript and CSS asset hashes generated by that deployment. Representative repaired legacy URLs, `sitemap.xml`, and `robots.txt` also returned HTTP 200.
+- Final production Playwright: `tests/browser/contact-facilities.spec.ts` plus `tests/browser/equipment.spec.ts` passed **7/7** against `https://temporary-kitchen-rental.com`, covering all five requested Contact Us choices, all 25 equipment entries and legacy destinations, responsive catalogue images/search at four viewport widths, and mobile equipment-brief navigation.
 
 ## 2026-09-18 — All registered service pages, placeholder and image QA
 
@@ -924,23 +944,23 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - Automated checks: 118/118 focused assertions passed; the wider application run passed 119/119; TypeScript passed.
 - Build: production prerender generated 655 pages plus 404, adding the four restroom detail pages.
 - Local browser audit: 60/60 presentations passed at 1440x1000 and 390x844. Results: zero placeholder occurrences, zero pending-photo elements, zero broken images and zero console errors.
-- Production: commit `9cbbb23` was pushed only to `Portable-Food-Bank/Portable-Food-Bank` main. Vercel deployment `dpl_6zdBW8NDmn74u7ednjnu9vSWSwgq` reached READY on the linked `cc-devs/portable-food-bank` project.
-- Final `https://portable-food-bank.com` browser repeat: 60/60 presentations passed at 1440x1000 and 390x844. All 30 routes returned HTTP 200 after navigation; zero placeholder occurrences, pending-photo elements, broken images or console errors were observed. The four repaired restroom pages each rendered the reviewed three-image set as one active image plus five carousel thumbnails.
+- Production: commit `9cbbb23` was pushed only to `Temporary-Kitchen-Rental/Temporary-Kitchen-Rental` main. Vercel deployment `dpl_6zdBW8NDmn74u7ednjnu9vSWSwgq` reached READY on the linked `cc-devs/temporary-kitchen-rental` project.
+- Final `https://temporary-kitchen-rental.com` browser repeat: 60/60 presentations passed at 1440x1000 and 390x844. All 30 routes returned HTTP 200 after navigation; zero placeholder occurrences, pending-photo elements, broken images or console errors were observed. The four repaired restroom pages each rendered the reviewed three-image set as one active image plus five carousel thumbnails.
 - Final wording follow-up: replaced the remaining 12 ft restroom `pending specification` planning bullet with a direct request to confirm the available unit's equipment list and floor plan. The focused suite passed **109/109**, TypeScript passed, and the production build generated **655 pages plus 404**.
-- Expanded final audits now reject `pending specification` in addition to the existing photo-placeholder phrases. Local static preview passed **60/60** desktop/mobile presentations. Production deployment `dpl_D26jRZbUsCLLp5nDGFjpPSZDG5st` reached READY from commit `0b59eac`; `https://portable-food-bank.com` then passed **60/60**, with **0** placeholder occurrences, **0** pending elements, **0** broken images and **0** console errors at `2026-09-18T12:21:22.909Z`.
+- Expanded final audits now reject `pending specification` in addition to the existing photo-placeholder phrases. Local static preview passed **60/60** desktop/mobile presentations. Production deployment `dpl_D26jRZbUsCLLp5nDGFjpPSZDG5st` reached READY from commit `0b59eac`; `https://temporary-kitchen-rental.com` then passed **60/60**, with **0** placeholder occurrences, **0** pending elements, **0** broken images and **0** console errors at `2026-09-18T12:21:22.909Z`.
 
 ## 2026-09-18 — Exact legacy backlink-path restoration, live verified
 
 - Scope: 153 backlink-export rows, 105 unique paths, 104 HTML paths and one legacy image asset path.
-- Restoration: all 104 HTML paths generate exact-path HTML; 90 were restored from redirects as useful planning pages and all 90 have a crawlable link from their related parent page. The image asset retains a permanent redirect to `https://portable-food-bank.com/food-services-2/`.
+- Restoration: all 104 HTML paths generate exact-path HTML; 90 were restored from redirects as useful planning pages and all 90 have a crawlable link from their related parent page. The image asset retains a permanent redirect to `https://temporary-kitchen-rental.com/food-services-2/`.
 - Indexing: 25 backlink-ranked HTML paths passed `index,follow`, exact self-canonical and sitemap checks. The other 79 exact HTML paths passed `noindex,follow`, absent-canonical and absent-sitemap checks for the controlled rollout.
 - Automated tests: `npm test` passed 49/49 across seven files, including exact same-path `www` to apex coverage for every HTML backlink path.
 - Build: `npm run build` passed and generated 745 pages plus 404. The existing mixed JSON import-attribute and Rollup annotation warnings remain non-fatal.
 - Generated-output audit: `python scripts/audit-legacy-url-restoration.py` passed all 153 source rows with `errors: []`.
 - Local mobile browser QA: three restored exact URLs returned HTTP 200 without redirect, displayed the expected H1, emitted the expected canonical and robots values, and had no horizontal overflow. The workforce parent page exposed 22 restored internal links including the Alaska URL.
-- Production deployment: commit `b0b1c01` was pushed only to `Portable-Food-Bank/Portable-Food-Bank` main. Vercel project `portable-food-bank-team/portable-food-bank` deployed it as READY production deployment `dpl_2miCSP8VjRzEegTukoQ99iTQDTu4` and aliased `portable-food-bank.com` plus `www.portable-food-bank.com`.
+- Production deployment: commit `b0b1c01` was pushed only to `Temporary-Kitchen-Rental/Temporary-Kitchen-Rental` main. Vercel project `temporary-kitchen-rental-team/temporary-kitchen-rental` deployed it as READY production deployment `dpl_2miCSP8VjRzEegTukoQ99iTQDTu4` and aliased `temporary-kitchen-rental.com` plus `www.temporary-kitchen-rental.com`.
 - Live URL audit: **153/153** source rows passed; **104/104** unique HTML paths returned the exact HTTPS apex path with HTTP 200; **25/25** pilot pages had `index,follow`, self-canonical and sitemap membership; **79/79** staged pages had `noindex,follow` with no canonical or sitemap entry; **1/1** legacy asset redirected permanently; and **90/90** related parent links were present. `errors: []`.
-- Host redirect evidence: `https://www.portable-food-bank.com/remote-workforce-housing-services-in-alaska/` returned HTTP **308** directly to the identical apex path.
+- Host redirect evidence: `https://www.temporary-kitchen-rental.com/remote-workforce-housing-services-in-alaska/` returned HTTP **308** directly to the identical apex path.
 - Production browser QA: four representative legacy routes at desktop 1440x900 and mobile 390x844 passed **8/8**. Every presentation returned HTTP 200 at its exact route, rendered a non-empty H1 and title, matched the expected robots/canonical policy, had no horizontal overflow, and emitted zero console or page errors.
 - Evidence: `audit/legacy-url-restoration-2026-09-18/migration-map.csv`, `build-verification.json`, `live-verification.json`, `live-results.csv`, and `browser-verification.json`.
 - Boundary: Google recrawl and index inclusion are external and were not claimed. The 79 later-batch pages intentionally remain `noindex,follow` until a separately approved controlled release.
@@ -953,19 +973,19 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - Prior live acceptance on deployment `dpl_9WBaMyKsM9n5iUBDz7Qm8rCq19mM`: Contact Us displayed the saved-success state and reset; the rental calculator produced the expected `$5,990` result without sending during calculation, then displayed saved-success after the explicit quote request. Production logs recorded HTTP 201 for both `/api/contact.json` requests with no `delivery_pending`; this proves provider acceptance, not recipient inbox receipt.
 - Durability issue found during acceptance: newer Vercel Git deployments from organization `main` omitted the uncommitted repair and overtook the verified deployment. This branch persists the repair in the organization repository so later automatic deployments retain it.
 - Automated verification on the clean branch: `npm test` passed **54/54** across eight files; `npm run build` passed TypeScript, Vite bundling and prerendering of **745 pages plus 404**.
-- Git-backed release: commit `d024a06` was pushed without force to `Portable-Food-Bank/Portable-Food-Bank` `main`. Vercel production deployment `dpl_sq1yeYPTj8zRwu6Sz7v7vQ1M11Zr` reached READY and owns `portable-food-bank.com` and `www.portable-food-bank.com`.
+- Git-backed release: commit `d024a06` was pushed without force to `Temporary-Kitchen-Rental/Temporary-Kitchen-Rental` `main`. Vercel production deployment `dpl_sq1yeYPTj8zRwu6Sz7v7vQ1M11Zr` reached READY and owns `temporary-kitchen-rental.com` and `www.temporary-kitchen-rental.com`.
 - Vercel build output contained both canonical and physical JSON functions, including `api/contact` and `api/contact.json`, confirming the repair is part of the authoritative source deployment rather than a temporary promotion.
-- Final live checks on `https://portable-food-bank.com`: `/api/public-config.json` returned HTTP 200 with all five required public values present; `/contact-us/` and `/rental-calculator/` returned HTTP 200; `/api/contact.json` returned 405 for HEAD and 403 for an unauthenticated POST, both with no redirect. The 403 is expected App Check enforcement and proves the POST reached the function.
+- Final live checks on `https://temporary-kitchen-rental.com`: `/api/public-config.json` returned HTTP 200 with all five required public values present; `/contact-us/` and `/rental-calculator/` returned HTTP 200; `/api/contact.json` returned 405 for HEAD and 403 for an unauthenticated POST, both with no redirect. The 403 is expected App Check enforcement and proves the POST reached the function.
 - Delivery boundary: the two earlier fictional QA submissions on the same code path returned saved-success and HTTP 201, and their server executions recorded no `delivery_pending`, demonstrating Resend provider acceptance. Recipient-mailbox receipt was not independently inspected.
 
 ## 2026-09-23 — Mobile Kitchen product-family copy regression
 
 - Changed the legacy `TargetLegacyPage` intro and project brief to use equipment-family copy instead of the shared kitchen-only paragraph.
-- Added `tests/portableFoodBankTargetCopy.test.tsx`: all 17 legacy product routes render exactly one unchanged H1; every non-kitchen route excludes meal-volume, cooking/preparation, and temporary food-service wording; the `/12ft-restroom/` intro and planning guidance identify restroom needs; `/24ft-mobile/` retains kitchen-specific copy. All assertions passed.
-- Focused test command: `node node_modules/vitest/vitest.mjs run tests/portableFoodBankTargetCopy.test.tsx tests/serviceHeroImages.test.ts` — PASS, 2 files / 13 tests.
+- Added `tests/temporaryKitchenRentalTargetCopy.test.tsx`: all 17 legacy product routes render exactly one unchanged H1; every non-kitchen route excludes meal-volume, cooking/preparation, and temporary food-service wording; the `/12ft-restroom/` intro and planning guidance identify restroom needs; `/24ft-mobile/` retains kitchen-specific copy. All assertions passed.
+- Focused test command: `node node_modules/vitest/vitest.mjs run tests/temporaryKitchenRentalTargetCopy.test.tsx tests/serviceHeroImages.test.ts` — PASS, 2 files / 13 tests.
 - `node node_modules/typescript/bin/tsc --noEmit` — PASS. `git diff --check` — PASS.
 - `pnpm build` ran the Vite production bundle successfully and prerendered route files, but exited with an `UNKNOWN` error while writing `audit/build-registry.json`. That file was already modified before this task and was preserved. Do not interpret this as a full build/prerender pass. Three generated restroom pages (`/12ft-restroom/`, `/14ft-restroom/`, `/20ft-restroom/`) were inspected and showed restroom-specific lead, planning guidance, and unchanged H1s.
-- Commit `bd7ca10` was pushed to `main` and `codex/homepage-mobile-kitchen-brand`. GitHub combined commit status reports Vercel pending (`https://vercel.com/jhomar0021s-projects/portable-food-bank-com/J4srpdNjTScGV52fGrCoiLLyP6yo`). Direct Vercel deployment lookup returned 403 for team `jhomar0021s-projects`; no live/preview browser visit was performed.
+- Commit `bd7ca10` was pushed to `main` and `codex/homepage-mobile-kitchen-brand`. GitHub combined commit status reports Vercel pending (`https://vercel.com/jhomar0021s-projects/temporary-kitchen-rental-com/J4srpdNjTScGV52fGrCoiLLyP6yo`). Direct Vercel deployment lookup returned 403 for team `jhomar0021s-projects`; no live/preview browser visit was performed.
 
 ## 2026-09-23 — Approved inventory-photo ZIP handoff and placeholder removal
 
@@ -978,53 +998,53 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 
 ## 2026-09-23 — Mobile Kitchen service-area H1 and caption alignment
 
-- Updated the `/service-areas/` hub to the specific H1 `Nationwide Commercial Mobile Kitchen Trailer Rental Locations` with a matching immediate intro. State-map H1s remain kitchen-specific. Region H1s now use one deterministic available Portable Food Bank equipment family plus location and rental intent; reviewed city H1s now match their assigned kitchen, dishwashing, shower/restroom-combination, or containerized sleeper topic. Regional city directories use the broad `Commercial Temporary Facility Rental Locations in [region]` H1 because they index multiple equipment families.
-- Replaced the service-area carousel's legacy Panhandle/Olympic copy overrides with the shared target caption path. Captions identify the displayed equipment, use Portable Food Bank and `+1 (888) 563-6507`, and no longer assert PortableFoodBank's `+1 (800) 443-5212` or unverified 24/7 support. Where there is no per-model prose entry, the location caption uses a truthful site/configuration planning fallback rather than omitting the caption.
+- Updated the `/service-areas/` hub to the specific H1 `Nationwide Commercial Mobile Kitchen Trailer Rental Locations` with a matching immediate intro. State-map H1s remain kitchen-specific. Region H1s now use one deterministic available Temporary Kitchen Rental equipment family plus location and rental intent; reviewed city H1s now match their assigned kitchen, dishwashing, shower/restroom-combination, or containerized sleeper topic. Regional city directories use the broad `Commercial Temporary Facility Rental Locations in [region]` H1 because they index multiple equipment families.
+- Replaced the service-area carousel's legacy Panhandle/Olympic copy overrides with the shared target caption path. Captions identify the displayed equipment, use Temporary Kitchen Rental and `+1 (888) 563-6507`, and no longer assert TemporaryKitchenRental's `+1 (800) 443-5212` or unverified 24/7 support. Where there is no per-model prose entry, the location caption uses a truthful site/configuration planning fallback rather than omitting the caption.
 - SSR regression command: `node ./node_modules/vitest/vitest.mjs run tests/serviceAreaHeadingCaptions.test.tsx tests/serviceAreaGalleryCopy.test.ts tests/h1-plan.test.ts` — PASS, 3 files / 18 tests. The SSR audit renders all state pages, region guides, reviewed city pages and regional city directories, checks one H1, headline/topic matching, and target-branded captions.
 - `pnpm typecheck` — PASS. `git diff --check` — PASS. A full production build and live browser/deployment verification were not run; no push/deployment was made. Existing uncommitted photo-import/audit work was left in place.
 
 ## 2026-09-24 — Mobile Kitchen service-area phrase-order and caption pass
 
 - Updated location-first service-area copy and titles for state, region, reviewed-city, city-directory, calculator-backed location, and map-modal presentations. Corrected the directory H1 order without changing any URL/slug.
-- Centralized gallery caption structure as location → topical equipment/service form → Rental or Lease → product-specific planning detail → Portable Food Bank 24/7 live-agent phone CTA.
+- Centralized gallery caption structure as location → topical equipment/service form → Rental or Lease → product-specific planning detail → Temporary Kitchen Rental 24/7 live-agent phone CTA.
 - `node ./node_modules/vitest/vitest.mjs run tests/serviceAreaGalleryCopy.test.ts tests/serviceAreaHeadingCaptions.test.tsx` — PASS, 2 files / 13 tests. SSR coverage checks all 50 state pages, all generated regional guides, every reviewed city and regional city directory; it also checks target calculator state/city pages, one H1, location-first leads, no common backwards rental/location wording, and one fully populated caption per service carousel.
 - `pnpm typecheck` — PASS.
 - `git diff --check` — PASS (Git emitted only existing LF-to-CRLF working-copy notices).
 - Included in commit `2b93025` pushed to `origin/main`; Vercel deployment status is unverified because no project/team connection is available to this task.
 
-## 2026-09-26 — Initial deployment to Portable Food Bank Vercel team
+## 2026-09-26 — Initial deployment to Temporary Kitchen Rental Vercel team
 
-- Vercel project: `portable-food-bank-com`, team `Portable Food Bank Pro` (`portable-food-bank-team`); Git repo `Portable-Food-Bank/portable-food-bank.com`, branch `main`.
+- Vercel project: `temporary-kitchen-rental-com`, team `Temporary Kitchen Rental Pro` (`temporary-kitchen-rental-team`); Git repo `Temporary-Kitchen-Rental/temporary-kitchen-rental.com`, branch `main`.
 - Production deployment `dpl_29ymkYhAqwJ8Ye7TRGYVr9EF2Epz`, commit `fb159299cca6f6b43c01ad46308a3d450c05141b`, reached **Ready** after 3m47s. Vercel build completed; its output included the existing Vite large-chunk-size warning.
-- Browser verification on `https://portable-food-bank-com-theta.vercel.app/`: homepage title and main content loaded; key navigation, inventory, calculator, and service-area map were present.
+- Browser verification on `https://temporary-kitchen-rental-com-theta.vercel.app/`: homepage title and main content loaded; key navigation, inventory, calculator, and service-area map were present.
 - Browser verification passed on `/modular-kitchen-facilities/` and `/equipment-rental/mobile-kitchen-trailers/`; both returned their intended page titles, H1/content, navigation and page body rather than a missing-page screen. Mobile-kitchen category carousel and approved gallery were present.
-- This is a new standalone Vercel project and generated Vercel domain. The existing `portable-food-bank.com` custom domain was not transferred or attached. Deployment dashboard shows production environment on `main`.
+- This is a new standalone Vercel project and generated Vercel domain. The existing `temporary-kitchen-rental.com` custom domain was not transferred or attached. Deployment dashboard shows production environment on `main`.
 
 ## 2026-09-29 — Whole-site audit and release candidate
 
-- Scope and baseline: audited the isolated `Portable-Food-Bank/portable-food-bank.com` checkout from baseline `f7d14aaaa9a0d3f5d091a801ed25141d9f2eb7eb`. The authorized release target is only Vercel team/project `portable-food-bank-team/portable-food-bank-com` (`prj_4Xktb9zJ8Y39Ezh391gKoVsIoY38`). The separate `Portable-Food-Bank/Portable-Food-Bank` repository, project, and domains were not touched.
+- Scope and baseline: audited the isolated `Temporary-Kitchen-Rental/temporary-kitchen-rental.com` checkout from baseline `f7d14aaaa9a0d3f5d091a801ed25141d9f2eb7eb`. The authorized release target is only Vercel team/project `temporary-kitchen-rental-team/temporary-kitchen-rental-com` (`prj_4Xktb9zJ8Y39Ezh391gKoVsIoY38`). The separate `Temporary-Kitchen-Rental/Temporary-Kitchen-Rental` repository, project, and domains were not touched.
 - Homepage acceptance: the H1 and primary actions lead with mobile-kitchen rentals; the opening copy names mobile showers, shower/restroom combinations, mobile kitchens, man camp/workforce housing, refrigeration/freezer, and dishwashing; the family cards sit directly below that copy. The rendered desktop portfolio uses a 1fr/3fr grid: one primary mobile-kitchen card occupies approximately 25% of the row and five supporting cards occupy approximately 75% collectively, while the primary card remains the largest individual card. The mobile layout stacks the same complete set for legibility. Desktop and 390 px mobile browser assertions passed.
 - Route/render inventory: the production build generated **664 public/static routes plus 404**. A generated-output audit inspected **665 HTML files, 85,330 links, 12,154 images, 664 structured-data payloads, and 670 forms** with **0 failures**. The sole warning is the intentional draft-only canonical on `/service-areas/oklahoma/panhandle/`; it remains `noindex` and outside the empty public sitemap.
-- SEO and migration safety: `npm run check:seo` passed **665 HTML files**, **77,041 local links**, **12,154 images**, and **665 unique titles/descriptions** with `problems: []`. `npm run check:links` passed **664 pages / 0 missing internal destinations / 0 capitalization issues**. `npm run check:cities` passed **19,702 Census places, 246 directories, and 5 reviewed city pages**. `npm run check:headlines` passed **548 location-page headlines**. Twenty-four non-root paths imported from PortableFoodBank authority evidence are deliberately excluded from Mobile Kitchen generation, indexing routes, internal links, and Search Console targets. The cross-domain register is retained only as clearly labeled, non-clickable historical evidence. Indexing remains deliberately disabled: generated pages stay `noindex,follow`, the public sitemap remains empty, and no Search Console, DNS, or indexing action was taken.
+- SEO and migration safety: `npm run check:seo` passed **665 HTML files**, **77,041 local links**, **12,154 images**, and **665 unique titles/descriptions** with `problems: []`. `npm run check:links` passed **664 pages / 0 missing internal destinations / 0 capitalization issues**. `npm run check:cities` passed **19,702 Census places, 246 directories, and 5 reviewed city pages**. `npm run check:headlines` passed **548 location-page headlines**. Twenty-four non-root paths imported from TemporaryKitchenRental authority evidence are deliberately excluded from Mobile Kitchen generation, indexing routes, internal links, and Search Console targets. The cross-domain register is retained only as clearly labeled, non-clickable historical evidence. Indexing remains deliberately disabled: generated pages stay `noindex,follow`, the public sitemap remains empty, and no Search Console, DNS, or indexing action was taken.
 - Application checks: `npm run typecheck` passed. `npm test` passed **13 files / 74 tests**. `npm run build` passed and generated the route inventory above. The build retains non-fatal warnings for mixed JSON import attributes, third-party Zod annotations, and a roughly 3.0 MB/785 KB gzip main chunk.
-- Vercel candidate build: linked the isolated checkout to `portable-food-bank-team/portable-food-bank-com` and verified `.vercel/project.json` reports exact project ID `prj_4Xktb9zJ8Y39Ezh391gKoVsIoY38`. `npx vercel build --prod --yes --scope portable-food-bank-team` completed successfully, including the 664-page-plus-404 prerender and serverless-function packaging. This proves the candidate can be packaged for the named project; it is not deployment or live proof.
+- Vercel candidate build: linked the isolated checkout to `temporary-kitchen-rental-team/temporary-kitchen-rental-com` and verified `.vercel/project.json` reports exact project ID `prj_4Xktb9zJ8Y39Ezh391gKoVsIoY38`. `npx vercel build --prod --yes --scope temporary-kitchen-rental-team` completed successfully, including the 664-page-plus-404 prerender and serverless-function packaging. This proves the candidate can be packaged for the named project; it is not deployment or live proof.
 - Browser checks: `PLAYWRIGHT_BASE_URL=http://127.0.0.1:4180 npx playwright test tests/browser/mobile-kitchen-release.spec.ts tests/browser/homepage-map-modal.spec.ts` passed **10/10**. Coverage includes desktop/mobile homepage acceptance, keyboard and focus behavior in the coverage map, all seven Texas region links, two separately hydrated quote-form islands, authored state/region/directory/industry/reviewed-city routes, 404 behavior, redirect query preservation, security headers, and the intentionally disabled inquiry flow. No inquiry was submitted. An unrelated stale server already listening on port 4173 initially produced five invalid failures; pinning the suite to the current build on port 4180 resolved all ten checks.
 - Source/security checks: `npm run check:secrets` scanned **1,061 files** with `findings: []`; `npm run check:release` passed the current noindex release scope. `npm run check:security` remains an expected blocker because its 2026-09-11 evidence ledger is stale/incomplete and 18 controls lack current in-directory or external proof. `npm audit --omit=dev --json` reports **2 moderate**, **0 high**, and **0 critical** production advisories through `gaxios@6.7.1 -> uuid@9.0.1`; the affected chain is transitive through Firebase Admin/Google Cloud Storage.
-- Broader test-debt boundary: the repository's ad hoc broad Vitest commands are not the supported test script. Excluding browser and Firebase-rules files still surfaced **14 failing files / 109 failing tests / 34 passing files / 488 passing tests / 7 skipped tests**, primarily historical assertions for removed PortableFoodBank menu/copy conventions, old H1 baselines, a missing ignored QA fixture, and two timeouts. These failures predate or contradict the current Mobile Kitchen source contract and were not suppressed; the designated `npm test` suite and the release-specific browser suite both pass.
+- Broader test-debt boundary: the repository's ad hoc broad Vitest commands are not the supported test script. Excluding browser and Firebase-rules files still surfaced **14 failing files / 109 failing tests / 34 passing files / 488 passing tests / 7 skipped tests**, primarily historical assertions for removed TemporaryKitchenRental menu/copy conventions, old H1 baselines, a missing ignored QA fixture, and two timeouts. These failures predate or contradict the current Mobile Kitchen source contract and were not suppressed; the designated `npm test` suite and the release-specific browser suite both pass.
 - Release state at this checkpoint: **implemented locally; not yet committed, pushed, deployed, or live-verified**. Production identity and post-deployment evidence will be appended only after direct verification.
 
 ## 2026-09-30 — State-directory label spacing live follow-up
 
-- Public GET checks returned HTTP 200 for `https://portable-food-bank-com-theta.vercel.app/` and `/locations/`; server-rendered directory HTML on both contains `Alabama 353 listed locations` with a separator.
+- Public GET checks returned HTTP 200 for `https://temporary-kitchen-rental-com-theta.vercel.app/` and `/locations/`; server-rendered directory HTML on both contains `Alabama 353 listed locations` with a separator.
 - Browser check initially found the already-open homepage tab still displayed an older client-rendered `353 city pages` label. Reloading that tab caused it to render the current homepage content and `353 listed locations`. The `/locations/` tab showed `353 listed locations` before and after reload.
 - Visually inspected homepage directory rows after refresh; state names and counts are separated, including `Georgia 405 listed locations`, `Illinois 778 listed locations`, and `Massachusetts 551 listed locations`. Accessibility-tree inspection confirmed the same on `/locations/`.
 - No application source change was needed during this follow-up. The Vercel deployment API rejected the available team scope with 403 and this checkout has no `.vercel/project.json` or installed `vercel` command; therefore the exact deployed commit identity was not verified.
 
-## 2026-09-30 — Portable Food Bank-style state directory interaction
+## 2026-09-30 — Temporary Kitchen Rental-style state directory interaction
 
-- Compared the live Portable Food Bank `/service-areas/` directory. Its state directory shows each state as a link and a separate native “Regions and cities in [State]” disclosure; expanding Alabama revealed its published region-guide links.
-- Updated the shared `MapLocationDirectory` used by homepage and `/locations/` to match that structure. The Portable Food Bank state links remain root-level; region disclosures link only to registered Portable Food Bank `/service-areas/{state}/{region}/` routes. Removed state-total copy because it is not present in the reference design. Kept target brand styling and used native details/summary behavior.
+- Compared the live Temporary Kitchen Rental `/service-areas/` directory. Its state directory shows each state as a link and a separate native “Regions and cities in [State]” disclosure; expanding Alabama revealed its published region-guide links.
+- Updated the shared `MapLocationDirectory` used by homepage and `/locations/` to match that structure. The Temporary Kitchen Rental state links remain root-level; region disclosures link only to registered Temporary Kitchen Rental `/service-areas/{state}/{region}/` routes. Removed state-total copy because it is not present in the reference design. Kept target brand styling and used native details/summary behavior.
 - `node ./node_modules/vitest/vitest.mjs run tests/mapLocationDirectory.test.tsx` — PASS, 1/1. Regression checks all 50 state links, 50 disclosure controls, and every region path from `stateGuides`.
 - `pnpm typecheck` — PASS. `pnpm build` — PASS, 664 static routes + 404. Existing warnings remain for JSON import attributes, third-party Zod annotations, and the large client bundle.
 - Generated HTML inspection: homepage and `/locations/` each contain all 50 state links and the Alabama North Alabama region target; `/locations/` has exactly 50 state `<details>`. Build output contains no old `listed locations` totals.
-- Source commit `43e92eb` was pushed to `origin/main`. Live browser verification on `https://portable-food-bank-com-theta.vercel.app/` and `/locations/` confirmed both pages render the directory and expanding Alabama reveals North Alabama, Central Alabama, Wiregrass, and Gulf Coast links. Exact Vercel deployment ID and commit metadata remain unverified because the available API scope returned 403.
+- Source commit `43e92eb` was pushed to `origin/main`. Live browser verification on `https://temporary-kitchen-rental-com-theta.vercel.app/` and `/locations/` confirmed both pages render the directory and expanding Alabama reveals North Alabama, Central Alabama, Wiregrass, and Gulf Coast links. Exact Vercel deployment ID and commit metadata remain unverified because the available API scope returned 403.

@@ -1,4 +1,4 @@
-/* Portable Food Bank visual system. The header is shared by every route. */
+/* Temporary Kitchen Rental visual system. The header is shared by every route. */
 .homepage {
   --mk-orange: #f47b20;
   --mk-orange-dark: #d95f08;
@@ -1112,7 +1112,7 @@
   }
 }
 
-/* Portable Food Bank homepage hero: editorial split layout with a framed
+/* Temporary Kitchen Rental homepage hero: editorial split layout with a framed
    equipment image. The content stays the same; only the presentation changes. */
 .pfb-hero {
   min-height: 720px;

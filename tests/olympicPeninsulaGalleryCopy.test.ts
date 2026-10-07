@@ -20,7 +20,7 @@ describe("Olympic Peninsula gallery review copy", () => {
         `Olympic Peninsula, Washington ${equipment} Rental or Lease`,
       );
       expect(caption).toMatch(/weekly rental, monthly rental, or yearly rental and lease options/);
-      expect(caption).toContain("Call Portable Food Bank now for 24/7 live-agent support: +1 (888) 563-6507.");
+      expect(caption).toContain("Call Temporary Kitchen Rental now for 24/7 live-agent support: +1 (888) 563-6507.");
     }
   });
 

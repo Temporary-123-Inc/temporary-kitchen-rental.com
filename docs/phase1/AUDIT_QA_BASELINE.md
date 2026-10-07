@@ -1,7 +1,7 @@
-# PortableFoodBank Phase 1 Independent Audit and QA Baseline
+# TemporaryKitchenRental Phase 1 Independent Audit and QA Baseline
 
 **Audit date:** 2026-09-15  
-**Candidate audited:** `https://portable-food-bank-nine.vercel.app/`  
+**Candidate audited:** `https://temporary-kitchen-rental-nine.vercel.app/`
 **Scope:** read-only pre-publication QA; no forms submitted, SEO controls changed, or deployment performed  
 **Evidence labels:** **Observed** = directly verified in this audit; **Inferred** = evidence-based interpretation; **Unknown** = requires data or access not available here; **Recommended** = proposed acceptance condition
 

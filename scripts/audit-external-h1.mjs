@@ -7,7 +7,7 @@ const inspect = async (requestedUrl) => {
     const response = await fetch(requestedUrl, {
       redirect: "follow",
       signal: AbortSignal.timeout(20_000),
-      headers: { "user-agent": "PortableFoodBank audit/1.0" },
+      headers: { "user-agent": "TemporaryKitchenRental audit/1.0" },
     });
     const html = await response.text();
     const $ = cheerio.load(html);

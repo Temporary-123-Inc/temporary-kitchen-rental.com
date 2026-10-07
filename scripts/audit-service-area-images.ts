@@ -375,7 +375,7 @@ for (const route of routes) {
   rows.push({
     kind: "page",
     url: route,
-    intendedProductionURL: "https://portable-food-bank.com" + route,
+    intendedProductionURL: "https://temporary-kitchen-rental.com" + route,
     exactTitle: h1,
     photographyApplicable,
     family: expected.family,

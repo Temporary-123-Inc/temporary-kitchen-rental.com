@@ -7,7 +7,7 @@ export type ServiceModelEditorial = {
 // Route-level edits to repeated service-detail sections. Equipment facts stay
 // in content/service-details.json; this layer adds model-specific planning
 // context without creating new capacity, price, or availability claims.
-export const portableFoodBankServiceEditorial: Record<string, ServiceModelEditorial> = {
+export const temporaryKitchenRentalServiceEditorial: Record<string, ServiceModelEditorial> = {
   "/services/mobile-kitchen-trailers/24ft/": {
     use: "For the 24 ft Mobile Kitchen Trailer, match the listed ovens, cooktops, grills, refrigerated storage, and preparation stations to the menu and work sequence. The published listing does not provide appliance quantities or production rate.",
     planning: [

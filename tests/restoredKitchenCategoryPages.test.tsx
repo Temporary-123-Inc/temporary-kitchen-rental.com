@@ -35,7 +35,7 @@ describe("restored kitchen category pages", () => {
     expect(mainText).toContain("building-based");
     expect(mainText).toContain("modular kitchen");
     expect(mainText).toContain("mobile kitchen trailer rental options");
-    expect(mainText).not.toMatch(/PAGE NOT FOUND|PortableFoodBank|verified photo missing/i);
+    expect(mainText).not.toMatch(/PAGE NOT FOUND|TemporaryKitchenRental|verified photo missing/i);
     expect($("main [data-location-gallery]")).toHaveLength(0);
     expect($('main a[href="/equipment-rental/mobile-kitchen-trailers/"]').length).toBeGreaterThan(0);
   });

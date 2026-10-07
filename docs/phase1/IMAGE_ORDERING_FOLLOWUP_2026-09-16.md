@@ -1,9 +1,9 @@
-# PortableFoodBank — gallery ordering follow-up / QA handoff
+# TemporaryKitchenRental — gallery ordering follow-up / QA handoff
 
 Status: source ordering safeguards and full local validation complete. Independent re-review pending. NO COMMIT, PUSH OR DEPLOYMENT.
 
 ## Corrected QA target
-- Repository: C:\Users\Charles\Documents\New project\Portable Food Bank
+- Repository: C:\Users\Charles\Documents\New project\Temporary Kitchen Rental
 - Branch: main; base HEAD: 8ad98dba33ef6d9b7b1e64028da3fc639bd7fd9a (image changes remain uncommitted).
 - NEW frozen build: .temp/image-order-followup-20260916/dist
 - NEW local URL: http://127.0.0.1:4203/service-areas/
@@ -56,6 +56,6 @@ All 113 distinct assigned full-image paths were visually checked. The broader sw
 - held-images.csv, summary.json, inventory.json, files-and-revision.json, browser-view-order-evidence.json.
 
 ## Release restriction
-No commit, push, deployment, Vercel project creation, live-acceptance claim or indexing change. The original 4201 snapshot is retained for comparison; re-review the new 4203 revision. Only an explicitly coordinated later release to the EXISTING portable-food-bank-nine project may proceed, with a separately verified immutable deployment URL/revision and independent live QA.
+No commit, push, deployment, Vercel project creation, live-acceptance claim or indexing change. The original 4201 snapshot is retained for comparison; re-review the new 4203 revision. Only an explicitly coordinated later release to the EXISTING temporary-kitchen-rental-nine project may proceed, with a separately verified immutable deployment URL/revision and independent live QA.
 
 Implementation logs: work/qa/image-order-followup-20260916/. Native iOS Safari and other browser engines remain untested. Existing photo-identity/specification caveats are not closed by this ordering audit.

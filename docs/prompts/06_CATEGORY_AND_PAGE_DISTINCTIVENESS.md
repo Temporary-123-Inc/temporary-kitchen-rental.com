@@ -21,7 +21,7 @@ For every route, record:
 - Existing links, page-specific copy, metadata, schema, and related products.
 - Missing/conflicting facts and any suspected aliases or duplicate model identities.
 
-Do not treat a route name, nominal size, image, inherited template, or PortableFoodBank source fact as proof of capacity, fixture count, configuration, technical specification, price, availability, local coverage, or business claim. Never infer a model difference from the H1 alone. Escalate conflicts; do not guess.
+Do not treat a route name, nominal size, image, inherited template, or TemporaryKitchenRental source fact as proof of capacity, fixture count, configuration, technical specification, price, availability, local coverage, or business claim. Never infer a model difference from the H1 alone. Escalate conflicts; do not guess.
 
 ### 2. Enforce family and image alignment
 

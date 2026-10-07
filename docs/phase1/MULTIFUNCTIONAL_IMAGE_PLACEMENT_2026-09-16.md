@@ -1,4 +1,4 @@
-# PortableFoodBank — multifunctional image placement
+# TemporaryKitchenRental — multifunctional image placement
 
 Implemented and verified locally. No commit, push or deployment.
 
@@ -24,9 +24,9 @@ The Service Areas hub remains map-focused. All 246 city directories remain witho
 
 ## Reproduction and evidence
 
-Repository: C:\Users\Charles\Documents\New project\Portable Food Bank
+Repository: C:\Users\Charles\Documents\New project\Temporary Kitchen Rental
 Branch: main; base HEAD: 8ad98dba33ef6d9b7b1e64028da3fc639bd7fd9a. Uncommitted changes are required; base HEAD alone does not contain this update.
-Frozen build: C:\Users\Charles\Documents\New project\Portable Food Bank\.temp\multifunctional-placement-20260916\dist
+Frozen build: C:\Users\Charles\Documents\New project\Temporary Kitchen Rental\.temp\multifunctional-placement-20260916\dist
 Local preview: http://127.0.0.1:4209/service-areas/texas/
 Source fingerprint: f25c4a3cd33efe24fdd8ebc44e0df4ff0b50a6b63dd35807d4cfeeeed8fd15ca
 Central selection: content/equipment-photo-policy.json delegatedSelection.contextGalleries.man-camp.

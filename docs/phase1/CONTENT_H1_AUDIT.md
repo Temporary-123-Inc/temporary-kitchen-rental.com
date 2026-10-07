@@ -1,21 +1,21 @@
-# PortableFoodBank Phase 1 Content and H1 Audit
+# TemporaryKitchenRental Phase 1 Content and H1 Audit
 
 Date: 2026-09-15
 
-Owner/task: PortableFoodBank Phase 1 — CONTENT + H1
+Owner/task: TemporaryKitchenRental Phase 1 — CONTENT + H1
 
 Scope: Audit and content planning only; no source, template, route, metadata, URL, indexing, production, or deployment changes.
 
 ## Executive summary
 
-The current candidate contains 650 prerendered HTML pages. Every page in the current `dist` snapshot has exactly one H1. Sixteen representative pages were also checked on `https://portable-food-bank-nine.vercel.app/`; all returned HTTP 200 and exactly one H1, and their live H1 text matched the local snapshot.
+The current candidate contains 650 prerendered HTML pages. Every page in the current `dist` snapshot has exactly one H1. Sixteen representative pages were also checked on `https://temporary-kitchen-rental-nine.vercel.app/`; all returned HTTP 200 and exactly one H1, and their live H1 text matched the local snapshot.
 
 The primary problem is therefore not H1 count. It is intent quality and consistency:
 
 1. Generated state and region pages use eight deterministic headings, but four patterns omit a clear topical service or equipment family. Those four weak patterns affect 23 of 50 state pages and 119 of 246 region pages.
 2. Several hub H1s are brand statements rather than search-intent headings.
 3. Some recovered pages are thin or use unsupported marketing claims. `/government/hospitals/` is the clearest content gap, with only about 36 words of main content in the current render.
-4. PortableFoodBank must remain a multi-family commercial base-camp and temporary-facility site. It must not be reframed as a mobile-kitchen-only website.
+4. TemporaryKitchenRental must remain a multi-family commercial base-camp and temporary-facility site. It must not be reframed as a mobile-kitchen-only website.
 5. The 22 ft shower-only trailer is consistently represented as a 10-stall model in the equipment and service data. The separate “three hand sinks” detail appears in calculator copy and the Port Angeles editorial draft, but not in the service-detail record; treat that specification as pending owner/equipment-sheet verification before repeating it sitewide.
 
 The recommended H1 structure is one natural, deterministic phrase per page:

@@ -336,7 +336,7 @@ def main() -> None:
     payload = {
         "version": 1,
         "reviewedAt": "2026-09-23",
-        "source": "Owner-provided product ZIPs attached in the 2026-09-23 PortableFoodBank image-import request.",
+        "source": "Owner-provided product ZIPs attached in the 2026-09-23 TemporaryKitchenRental image-import request.",
         "models": MODELS,
         "images": rows,
     }

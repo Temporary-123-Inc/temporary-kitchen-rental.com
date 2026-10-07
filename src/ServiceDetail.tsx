@@ -5,7 +5,7 @@ import site from "../site.json" with { type: "json" };
 import { rentalProductHeadline } from "./rentalHeadlines";
 import { ServiceHeroCarousel } from "./ServiceHeroCarousel";
 import { imagesForServicePath, servicePhotoCaption } from "./serviceHeroImages";
-import { portableFoodBankServiceEditorial } from "./portableFoodBankServiceEditorial";
+import { temporaryKitchenRentalServiceEditorial } from "./temporaryKitchenRentalServiceEditorial";
 import { equipmentGalleryCaption } from "./equipmentGalleryCaption";
 import { detectEquipmentFamily } from "./locationCarouselImages";
 import { catalogPhotoCoverage } from "./catalogImageCoverage";
@@ -19,7 +19,7 @@ export function ServiceDetail({
   catalogItem?: CatalogItem;
 }) {
   const item = details[path];
-  const editorial = portableFoodBankServiceEditorial[path];
+  const editorial = temporaryKitchenRentalServiceEditorial[path];
   const catalogPhoto = catalogItem ? catalogPhotoCoverage(catalogItem) : null;
   const verifiedImages =
     catalogPhoto?.images.length

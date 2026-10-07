@@ -5,8 +5,8 @@ export const publicOrigin = site.origin;
 export type IndexingScope =
   "full" | "homepage-and-service-areas" | "locations-and-priority-services";
 
-// No URL-level authority export for portable-food-bank.com is currently checked
-// in. Cross-domain PortableFoodBank evidence is retained only as historical audit
+// No URL-level authority export for temporary-kitchen-rental.com is currently checked
+// in. Cross-domain TemporaryKitchenRental evidence is retained only as historical audit
 // data and must never activate Mobile Kitchen routes or indexing.
 export const authorityReleaseRoutes = [] as const;
 

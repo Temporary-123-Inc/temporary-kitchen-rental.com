@@ -1,5 +1,5 @@
 /*
- * Portable Food Bank brand layer.
+ * Temporary Kitchen Rental brand layer.
  *
  * This file is intentionally loaded last. It changes the visual system only:
  * routes, functionality, copy, data, and image selections remain owned by
@@ -742,6 +742,53 @@ textarea:focus-visible {
 .wrap,
 .shell {
   min-width: 0;
+}
+
+/* Full-bleed section surfaces
+ *
+ * Some retained page templates put `wrap` directly on the section that owns
+ * the background. That makes the surface stop at the content edges. Keep the
+ * same readable content width through symmetric inline padding, while letting
+ * the semantic surface itself span the viewport. Nested `.wrap` elements are
+ * intentionally excluded so cards, map controls, carousel content, and other
+ * inner layouts keep their existing container behavior.
+ */
+:is(section.wrap, nav.wrap, footer.wrap) {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+}
+
+@media (max-width: 1023px) {
+  :is(section.wrap, nav.wrap, footer.wrap) {
+    padding-inline: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :is(section.wrap, nav.wrap, footer.wrap) {
+    padding-inline: max(80px, calc((100% - var(--pfb-container, 1200px)) / 2));
+  }
+}
+
+/* These two legacy callouts are block-level surfaces rather than semantic
+ * sections, but use the same direct-wrapper pattern. */
+:is(.wrap.city-directory-shell, .wrap.state-guide-call) {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+}
+
+@media (max-width: 1023px) {
+  :is(.wrap.city-directory-shell, .wrap.state-guide-call) {
+    padding-inline: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :is(.wrap.city-directory-shell, .wrap.state-guide-call) {
+    padding-inline: max(80px, calc((100% - var(--pfb-container, 1200px)) / 2));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

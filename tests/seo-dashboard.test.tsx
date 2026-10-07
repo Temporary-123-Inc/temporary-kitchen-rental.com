@@ -52,13 +52,13 @@ describe("owner-visible SEO dashboard evidence", () => {
     expect(html).toContain("LEGACY SOURCE AUTHORITY REGISTER");
     expect(html).toContain("Legacy source path register");
     expect(html).toContain(
-      "they are not Portable Food Bank authority evidence, generated routes, or Search Console query targets",
+      "they are not Temporary Kitchen Rental authority evidence, generated routes, or Search Console query targets",
     );
     expect(html).toContain("/houston-texas-mobile-kitchen-rental/");
-    expect(html).not.toMatch(/temporary\s*123|portable-food-bank-nine/i);
+    expect(html).not.toMatch(/temporary\s*123|temporary-kitchen-rental-nine/i);
     expect(html).toContain("Current-site protected URLs");
     expect(html).toContain(
-      "No Portable Food Bank URL-level Search Console cohort is configured",
+      "No Temporary Kitchen Rental URL-level Search Console cohort is configured",
     );
     expect(html).toContain("Priority URL indexing status");
     expect(html).toContain("PORTFOLIO / SITE-TYPE READINESS");

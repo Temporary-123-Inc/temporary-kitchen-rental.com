@@ -31,7 +31,7 @@ describe("evidence-based city consolidation", () => {
       );
       expect(source.id, row.path).toBe(row.sourceId);
       const html = renderSourceContent(source.html, {
-        origin: "https://portable-food-bank.com",
+        origin: "https://temporary-kitchen-rental.com",
         routes: new Set(),
         redirects: new Map(),
         media: {},
@@ -111,14 +111,14 @@ describe("migration indexing separation", () => {
     const rule = vercel.headers.find((rule) => "missing" in rule);
     expect(rule).toMatchObject({
       source: "/(.*)",
-      missing: [{ type: "host", value: "portable-food-bank\\.com" }],
+      missing: [{ type: "host", value: "temporary-kitchen-rental\\.com" }],
       headers: [{ key: "X-Robots-Tag", value: "noindex, follow" }],
     });
   });
   it("permanently consolidates www requests onto the canonical host", () => {
     expect(vercel.redirects[0]).toMatchObject({
       source: "/:path*",
-      has: [{ type: "host", value: "www.portable-food-bank.com" }],
+      has: [{ type: "host", value: "www.temporary-kitchen-rental.com" }],
       destination: `${site.origin}/:path*`,
       permanent: true,
     });
@@ -138,7 +138,7 @@ describe("migration indexing separation", () => {
     expect(xml).toMatch(
       /^<\?xml version="1\.0" encoding="UTF-8"\?>\n<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">\n/s,
     );
-    expect(xml).toContain("  <url>\n    <loc>https://portable-food-bank.com/gsa-schedule/</loc>");
+    expect(xml).toContain("  <url>\n    <loc>https://temporary-kitchen-rental.com/gsa-schedule/</loc>");
     expect(xml).toContain("<lastmod>2025-12-12</lastmod>");
     expect(xml).not.toContain("/video/");
     expect((xml.match(/<lastmod>/g) || []).length).toBe(1);
@@ -149,7 +149,7 @@ describe("migration indexing separation", () => {
 
 describe("preserve source meaning while repairing navigation", () => {
   const options = () => ({
-    origin: "https://portable-food-bank.com",
+    origin: "https://temporary-kitchen-rental.com",
     routes: new Set(["/service-areas/", "/equipment-rental/"]),
     redirects: new Map([["/shop/", "/equipment-rental/"]]),
     media: {},
@@ -171,7 +171,7 @@ describe("preserve source meaning while repairing navigation", () => {
   it("normalizes known destinations, preserves query strings and records unrecovered pages", () => {
     const settings = options();
     const result = renderSourceContent(
-      '<a href="https://www.portable-food-bank.com/shop/?type=long#rent">Equipment</a><a href="/testimonials/">Testimonials</a>',
+      '<a href="https://www.temporary-kitchen-rental.com/shop/?type=long#rent">Equipment</a><a href="/testimonials/">Testimonials</a>',
       settings,
     );
     expect(result).toContain("/equipment-rental/?type=long#rent");

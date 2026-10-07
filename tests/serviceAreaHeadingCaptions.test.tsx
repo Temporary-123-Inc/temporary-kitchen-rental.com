@@ -8,7 +8,7 @@ import { StateDetail } from "../src/StateDetail";
 import { Site } from "../src/Site";
 import { stateGuides } from "../src/stateGuides";
 import { reviewedCityPages } from "../src/cityDirectory";
-import { targetRouteByPath, targetRoutes } from "../src/portableFoodBankTarget";
+import { targetRouteByPath, targetRoutes } from "../src/temporaryKitchenRentalTarget";
 import {
   matchesLocationRentalHeadline,
   regionLocationLabel,
@@ -25,11 +25,11 @@ function inspectPage(markup: string) {
   );
   for (const caption of $("[data-carousel-caption]").toArray()) {
     const text = $(caption).text();
-    expect(text).toContain("Portable Food Bank");
+    expect(text).toContain("Temporary Kitchen Rental");
     expect(text).toContain("+1 (888) 563-6507");
-    expect(text).toContain("Call Portable Food Bank now for 24/7 live-agent support");
+    expect(text).toContain("Call Temporary Kitchen Rental now for 24/7 live-agent support");
     expect(text).toMatch(/Rental or Lease\./);
-    expect(text).not.toMatch(/PortableFoodBank|800-443-5212|delivery available 24\/7/i);
+    expect(text).not.toMatch(/TemporaryKitchenRental|800-443-5212|delivery available 24\/7/i);
   }
   expect($("[data-carousel-caption]").length).toBe($("[data-service-carousel]").length);
   return $;

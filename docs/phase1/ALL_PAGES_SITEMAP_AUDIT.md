@@ -1,14 +1,14 @@
-# PortableFoodBank Full Page Inventory and Sitemap Audit
+# TemporaryKitchenRental Full Page Inventory and Sitemap Audit
 
 Audited: 2026-09-15 (Asia/Manila)
 
 ## Result
 
-The current route registry contains **650 public page routes**. Every registered route has a generated local HTML file, and every corresponding URL on `https://portable-food-bank-nine.vercel.app` returned HTTP 200 during this audit.
+The current route registry contains **650 public page routes**. Every registered route has a generated local HTML file, and every corresponding URL on `https://temporary-kitchen-rental-nine.vercel.app` returned HTTP 200 during this audit.
 
 The complete page-by-page list is in `audit/all-pages-sitemap.csv`. It records each route, page family, live preview URL, HTTP status, robots directive, canonical, and live sitemap membership.
 
-The live preview sitemap at `https://portable-food-bank-nine.vercel.app/sitemap.xml` is valid but intentionally contains **zero URLs**. All 650 preview pages currently render `noindex,follow` and no canonical because the configured canonical origin is `https://portable-food-bank.com` and `domainRoutingReady` is false. Adding these preview URLs to the sitemap would conflict with their noindex state and would expose the Vercel preview host as if it were the preferred production origin.
+The live preview sitemap at `https://temporary-kitchen-rental-nine.vercel.app/sitemap.xml` is valid but intentionally contains **zero URLs**. All 650 preview pages currently render `noindex,follow` and no canonical because the configured canonical origin is `https://temporary-kitchen-rental.com` and `domainRoutingReady` is false. Adding these preview URLs to the sitemap would conflict with their noindex state and would expose the Vercel preview host as if it were the preferred production origin.
 
 ## Reconciled inventory
 
@@ -45,7 +45,7 @@ The generated `404.html` is an error document, not a public content route, and i
 1. is approved for the current controlled indexing batch;
 2. returns HTTP 200 on the canonical production domain;
 3. is indexable (`index,follow`);
-4. has a self-referencing canonical on `https://portable-food-bank.com`;
+4. has a self-referencing canonical on `https://temporary-kitchen-rental.com`;
 5. contains reviewed, useful, non-duplicative content;
 6. is internally linked and belongs to the intended indexing scope; and
 7. has passed the URL, metadata, schema, mobile, and content checks for that batch.
@@ -57,9 +57,9 @@ The current configuration already specifies a 25-URL first batch, but it deliber
 - Complete page list: `audit/all-pages-sitemap.csv`
 - Machine-readable audit summary: `audit/all-pages-sitemap-summary.json`
 - Current build registry: `audit/build-registry.json`
-- Live sitemap checked: `https://portable-food-bank-nine.vercel.app/sitemap.xml`
-- Live robots file checked: `https://portable-food-bank-nine.vercel.app/robots.txt`
+- Live sitemap checked: `https://temporary-kitchen-rental-nine.vercel.app/sitemap.xml`
+- Live robots file checked: `https://temporary-kitchen-rental-nine.vercel.app/robots.txt`
 
 ## Validation boundary
 
-This audit verifies the generated inventory and live Vercel preview behavior as observed on 2026-09-15. It does not claim that the canonical `portable-food-bank.com` domain is routed to this build, that Google has indexed any page, or that all 650 routes have passed production content approval. No sitemap-generation, routing, indexing, deployment, or Search Console change was made by this audit.
+This audit verifies the generated inventory and live Vercel preview behavior as observed on 2026-09-15. It does not claim that the canonical `temporary-kitchen-rental.com` domain is routed to this build, that Google has indexed any page, or that all 650 routes have passed production content approval. No sitemap-generation, routing, indexing, deployment, or Search Console change was made by this audit.

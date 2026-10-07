@@ -86,7 +86,7 @@ export function renderSourceContent(html: string, options: Options) {
   );
   const $ = load(normalizedHtml, undefined, false);
   // Archived source pages are retained for URL continuity. Their prose must
-  // never leak the former portfolio brand into the Portable Food Bank site.
+  // never leak the former portfolio brand into the Temporary Kitchen Rental site.
   // Link migration is handled independently below, so both spaced and compact
   // former-brand spellings can be removed safely from customer-facing prose.
   $("*")
@@ -100,7 +100,7 @@ export function renderSourceContent(html: string, options: Options) {
         return;
       node.data = node.data.replace(
         /\btemporary\s*123\b/gi,
-        "Portable Food Bank",
+        "Temporary Kitchen Rental",
       );
     });
   if (options.removeLeadParagraph) {
@@ -173,8 +173,8 @@ export function renderSourceContent(html: string, options: Options) {
     if (
       ![
         new URL(options.origin).hostname,
-        "portable-food-bank.com",
-        "www.portable-food-bank.com",
+        "temporary-kitchen-rental.com",
+        "www.temporary-kitchen-rental.com",
       ].includes(
         url.hostname,
       )

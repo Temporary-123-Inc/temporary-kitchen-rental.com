@@ -3,7 +3,7 @@ import { equipmentGalleryCaption } from "./equipmentGalleryCaption";
 const olympicPeninsulaHeadline =
   "Olympic Peninsula, Washington Remote Operations Man Camp Temporary Facilities Rental";
 
-/** Review sample: one accurate Portable Food Bank caption per verified group. */
+/** Review sample: one accurate Temporary Kitchen Rental caption per verified group. */
 export function olympicPeninsulaGalleryCaption(
   headline: string,
   modelId: string | null,

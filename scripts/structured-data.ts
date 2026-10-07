@@ -21,7 +21,7 @@ export function pageSchema(input: {
       name: site.brand,
       url: `${origin}/`,
       telephone: site.phoneE164,
-      logo: `${origin}/images/portable-food-bank-legacy-logo.webp`,
+      logo: `${origin}/images/temporary-kitchen-rental-mark.svg`,
       areaServed: { "@type": "Country", name: "United States" },
       contactPoint: {
         "@type": "ContactPoint",

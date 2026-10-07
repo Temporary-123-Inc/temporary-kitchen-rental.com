@@ -74,7 +74,7 @@ describe("inventory navigation image coverage", () => {
       expect(caption).toContain(reference.shownSize);
       expect(caption).toContain(reference.differentModel);
       expect(caption).toContain("do not establish");
-      expect(caption).not.toMatch(/portable-food-bank/i);
+      expect(caption).not.toMatch(/temporary-kitchen-rental/i);
     }
 
     const refrigeratedPath = "/refrigeration-container-40ft-rental-5/";

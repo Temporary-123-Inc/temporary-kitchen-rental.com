@@ -156,7 +156,7 @@ export const stateRentalHeadline = (state: string) =>
   buildLocationRentalHeadline(state, stateRentalOption(state));
 
 /**
- * The interactive nationwide map is a Portable Food Bank sales surface, not
+ * The interactive nationwide map is a Temporary Kitchen Rental sales surface, not
  * a catch-all temporary-facilities catalogue. Keep its gallery title specific
  * enough for the verified kitchen-photo resolver to select one real model.
  */

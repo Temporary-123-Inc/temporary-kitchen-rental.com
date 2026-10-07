@@ -1,4 +1,4 @@
-# PortableFoodBank Collaboration Rules
+# TemporaryKitchenRental Collaboration Rules
 
 These rules apply to every Codex task and developer working in this repository.
 

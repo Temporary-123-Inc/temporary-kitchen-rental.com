@@ -1,6 +1,6 @@
 # Project skill references
 
-The contents of `portable-food-bank-rebuild-skill/` were imported from
+The contents of `temporary-kitchen-rental-rebuild-skill/` were imported from
 `LOCAL SKILL CHARLES_IMPORTANT 3.zip` on 2026-09-22 for project reference.
 
 These files are reference material, not repository-level instructions or

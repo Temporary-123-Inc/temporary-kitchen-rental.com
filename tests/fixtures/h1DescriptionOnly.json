@@ -751,8 +751,8 @@
   "exactOverrides": [
     {
       "url": "/equipment-rental/",
-      "before": "Compare PortableFoodBank equipment by its named product type and configuration. The directory separates kitchen trailers, cold storage, hygiene facilities, accommodation and site-support equipment. Review the photograph or labelled layout for each entry, then confirm the actual available unit, utilities and delivery requirements.",
-      "after": "Compare PortableFoodBank equipment rental options by its named product type and configuration. The directory separates kitchen trailers, cold storage, hygiene facilities, accommodation and site-support equipment. Review the photograph or labelled layout for each entry, then confirm the actual available unit, utilities and delivery requirements."
+      "before": "Compare TemporaryKitchenRental equipment by its named product type and configuration. The directory separates kitchen trailers, cold storage, hygiene facilities, accommodation and site-support equipment. Review the photograph or labelled layout for each entry, then confirm the actual available unit, utilities and delivery requirements.",
+      "after": "Compare TemporaryKitchenRental equipment rental options by its named product type and configuration. The directory separates kitchen trailers, cold storage, hygiene facilities, accommodation and site-support equipment. Review the photograph or labelled layout for each entry, then confirm the actual available unit, utilities and delivery requirements."
     },
     {
       "url": "/equipment-rental/fencing-barricades-trash-receptacles/",

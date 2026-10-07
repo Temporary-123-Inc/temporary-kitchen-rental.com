@@ -8,7 +8,7 @@ All 34 model destinations have original descriptions, equipment details, applica
 
 Published reference pages do not provide machine counts, output ratings or utility loads consistently. These are identified as items to confirm. The 12ft restroom reference has a 14ft body description: this inconsistency is disclosed rather than treated as a verified specification. Model photography is labeled representative. No search-volume data was available, so there is no claim that terms are the highest-volume Google queries.
 
-The blurry handwashing asset was replaced with the original 1900 by 950 drawing from Portable Food Bank, resized to 480 and 960 pixel WebP assets. This is a technical drawing, not a generated photograph.
+The blurry handwashing asset was replaced with the original 1900 by 950 drawing from Temporary Kitchen Rental, resized to 480 and 960 pixel WebP assets. This is a technical drawing, not a generated photograph.
 
 Coverage uses geographic state boundaries from us-atlas 3 (U.S. Census Bureau), an extruded SVG appearance, all 50 full state names and an enlarged scrollable map. The old tile layout and inline positioning were removed. A separate link opens Google Maps. The embedded graphic is a custom geographic map, not Google's 3D rendering engine. The projection places Alaska and Hawaii in insets.
 
@@ -20,7 +20,7 @@ The Contact Us tab and navbar phone button have a gentle repeating outline glow,
 - [W3C fly-out menu guidance](https://www.w3.org/WAI/tutorials/menus/flyout/): usable pointer and keyboard interactions.
 - [Google helpful-content guidance](https://developers.google.com/search/docs/fundamentals/creating-helpful-content): useful original content and clear sourcing.
 - [us-atlas source and projection](https://github.com/topojson/us-atlas): Census state boundaries. License retained in us-atlas-LICENSE.txt.
-- Individual equipment references are recorded in content/service-details.json and linked from the model pages. Both Fire Damage Kitchen Contractor and Portable Food Bank were used.
+- Individual equipment references are recorded in content/service-details.json and linked from the model pages. Both Fire Damage Kitchen Contractor and Temporary Kitchen Rental were used.
 
 ## Verification
 

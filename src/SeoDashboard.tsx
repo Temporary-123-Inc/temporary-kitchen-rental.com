@@ -986,7 +986,7 @@ export function SeoDashboard() {
           </div>
           <p className="seo-section-intro">
             These imported paths are retained only as historical migration
-            context; they are not Portable Food Bank authority evidence,
+            context; they are not Temporary Kitchen Rental authority evidence,
             generated routes, or Search Console query targets.
           </p>
           <div className="seo-table-wrap authority-register">
@@ -1159,7 +1159,7 @@ export function SeoDashboard() {
                 {currentSiteAuthorityUrls.length === 0 && (
                   <tr>
                     <td colSpan={6}>
-                      No Portable Food Bank URL-level Search Console cohort is
+                      No Temporary Kitchen Rental URL-level Search Console cohort is
                       configured. Import current-domain evidence before running
                       URL Inspection checks.
                     </td>

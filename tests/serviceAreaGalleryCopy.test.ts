@@ -49,8 +49,8 @@ describe("service-area gallery captions", () => {
       "20 ft Shower Trailer",
       "model-21",
     );
-    expect(caption).toContain("Call Portable Food Bank now for 24/7 live-agent support: +1 (888) 563-6507");
-    expect(caption).not.toMatch(/delivery available 24\/7|800-443-5212|PortableFoodBank/i);
+    expect(caption).toContain("Call Temporary Kitchen Rental now for 24/7 live-agent support: +1 (888) 563-6507");
+    expect(caption).not.toMatch(/delivery available 24\/7|800-443-5212|TemporaryKitchenRental/i);
     expect(caption).not.toContain("These equipment reference photos can help plan your site");
   });
 
@@ -62,10 +62,10 @@ describe("service-area gallery captions", () => {
     )).toMatch(/^Ozarks, Arkansas Commercial Project and Base Camp 24 ft Mobile Kitchen Trailer Rental or Lease\./);
   });
 
-  it("writes Portable Food Bank captions for service-area H1 families", () => {
+  it("writes Temporary Kitchen Rental captions for service-area H1 families", () => {
     const h1 = "Seattle, Washington Commercial Dishwashing Trailer Rental";
     const caption = serviceAreaGalleryCaption(h1, h1, "model-01");
     expect(caption).toMatch(/^Seattle, Washington Commercial Project and Base Camp Dishwashing Trailer Rental or Lease\./);
-    expect(caption).toContain("Call Portable Food Bank now for 24/7 live-agent support: +1 (888) 563-6507");
+    expect(caption).toContain("Call Temporary Kitchen Rental now for 24/7 live-agent support: +1 (888) 563-6507");
   });
 });

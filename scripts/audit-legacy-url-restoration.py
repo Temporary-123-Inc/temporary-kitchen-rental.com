@@ -37,20 +37,20 @@ for path in html_paths:
         errors.append(f"missing HTML {path}")
         continue
     html = file.read_text(encoding="utf-8")
-    canonical = f'<link rel="canonical" href="https://portable-food-bank.com{path}">'
+    canonical = f'<link rel="canonical" href="https://temporary-kitchen-rental.com{path}">'
     if path in pilot:
         if canonical not in html:
             errors.append(f"missing self canonical {path}")
         if not re.search(r'<meta name="robots" content="index,follow"\s*/?>', html):
             errors.append(f"bad pilot robots {path}")
-        if f"<loc>https://portable-food-bank.com{path}</loc>" not in sitemap:
+        if f"<loc>https://temporary-kitchen-rental.com{path}</loc>" not in sitemap:
             errors.append(f"pilot absent from sitemap {path}")
     else:
         if canonical in html:
             errors.append(f"staged canonical {path}")
         if not re.search(r'<meta name="robots" content="noindex,follow"\s*/?>', html):
             errors.append(f"bad staged robots {path}")
-        if f"<loc>https://portable-food-bank.com{path}</loc>" in sitemap:
+        if f"<loc>https://temporary-kitchen-rental.com{path}</loc>" in sitemap:
             errors.append(f"staged path in sitemap {path}")
 
 for record in records:

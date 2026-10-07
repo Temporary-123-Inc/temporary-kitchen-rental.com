@@ -10,7 +10,7 @@ import type { LocationPhoto } from "../src/locationPhotos";
 import { regionPages, relatedRegionPages } from "../src/regionGuides";
 import { serviceCategories } from "../src/serviceMenu";
 import { stateGuides } from "../src/stateGuides";
-import { targetRouteByPath } from "../src/portableFoodBankTarget";
+import { targetRouteByPath } from "../src/temporaryKitchenRentalTarget";
 
 const words = (value: string) =>
   value.trim().split(/\s+/).filter(Boolean).length;
@@ -141,7 +141,7 @@ describe("state and regional planning content", () => {
         guide.path,
       ).toBe(guide.cityLinks.length);
       for (const [index, link] of guide.cityLinks.entries()) {
-        const url = new URL(link.href, "https://portable-food-bank.test");
+        const url = new URL(link.href, "https://temporary-kitchen-rental.test");
         if (url.pathname.startsWith(guide.path)) {
           expect(url.pathname.endsWith("/"), link.href).toBe(true);
           expect(url.search, link.href).toBe("");
@@ -216,7 +216,7 @@ describe("location media and shower inventory", () => {
     }
   });
 
-  it("publishes the verified Portable Food Bank shower inventory", () => {
+  it("publishes the verified Temporary Kitchen Rental shower inventory", () => {
     const shower = serviceCategories.find(
       (category) => category.name === "Shower Trailers",
     );

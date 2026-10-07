@@ -1,16 +1,16 @@
 ---
-name: portable-food-bank-portfolio-rebuild
-description: Rebuild an approved PortableFoodBank-portfolio website from the actual PortableFoodBank master while preserving target identity, URLs, verified equipment claims, maps, calculators, dashboard, and contact behavior. Use for a specifically assigned portfolio-site rebuild or its scoped module work; not for unrelated websites.
+name: temporary-kitchen-rental-portfolio-rebuild
+description: Rebuild an approved TemporaryKitchenRental-portfolio website from the actual TemporaryKitchenRental master while preserving target identity, URLs, verified equipment claims, maps, calculators, dashboard, and contact behavior. Use for a specifically assigned portfolio-site rebuild or its scoped module work; not for unrelated websites.
 ---
 
-# PortableFoodBank portfolio rebuild
+# TemporaryKitchenRental portfolio rebuild
 
 Use [MASTER_PROMPT.md](MASTER_PROMPT.md) as the execution contract. It is a specification, not authorization to edit, deploy, submit indexing requests, connect accounts, or publish outside the assigned scope. The current user request and repository `AGENTS.md` control permissions and coordination. If no target URL, repository, assigned files/pages, or approval state is supplied, perform discovery and produce a proposed mapping; do not mutate production.
 
 ## Required start
 
 1. Read `AGENTS.md`, `PROJECT_STATUS.md`, `docs/BOSS_REQUIREMENTS.md`, and `docs/PAGE_ASSIGNMENTS.md` where present; inspect Git status and existing edits. Claim the exact work area before editing; do not overwrite another active task.
-2. Inspect the user-designated working repository `https://github.com/charlessslaranangsss-maker/Portable Food Bank` and approved `https://portable-food-bank-nine.vercel.app/` preview, plus the target's current site/repository. Verify local Git remote, branch, commit rights, and preview deployment linkage before claiming this is the deployment source or committing. Record the source revision and target baseline. The preview may change; the packaged prompts do not prove any feature is currently working.
+2. Inspect the user-designated working repository `https://github.com/charlessslaranangsss-maker/Temporary Kitchen Rental` and approved `https://temporary-kitchen-rental-nine.vercel.app/` preview, plus the target's current site/repository. Verify local Git remote, branch, commit rights, and preview deployment linkage before claiming this is the deployment source or committing. Record the source revision and target baseline. The preview may change; the packaged prompts do not prove any feature is currently working.
 3. Create the target-specific evidence register and feature-applicability matrix from MASTER_PROMPT sections 14–15. Preserve URL/page inventory, branding, contacts, assets, and service truth. Mark unverified or missing dependencies BLOCKED, not PASS.
 4. Show and get the required approval for URL/page mapping and release boundaries before bulk implementation, push, deployment, or indexing changes. Then implement only the assigned scope, test affected behavior, update coordination records, and report evidence.
 

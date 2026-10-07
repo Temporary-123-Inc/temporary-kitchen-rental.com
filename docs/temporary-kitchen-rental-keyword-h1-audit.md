@@ -1,4 +1,4 @@
-# PortableFoodBank family keyword and H1 audit
+# TemporaryKitchenRental family keyword and H1 audit
 
 Status: audit and proposal only. No H1, content, URL, canonical, robots, redirect, Git remote, or deployment change is authorized by this document.
 
@@ -12,20 +12,20 @@ For each relevant non-homepage landing page, use one natural, page-supported phr
 
 Location pages may add `in City, State` after the complete phrase. "Mix 1-8" means distribute the eight topical service families across appropriate pages; it does not mean placing all eight services in one H1. Selection must be deterministic for a stable URL, but deterministic selection is still constrained by page intent and visible supporting copy.
 
-Homepage H1s remain unchanged pending separate approval. Navigation/directory, legal, utility, and other non-service pages are excluded from this rotation. Existing valuable refrigeration, dishwashing, restroom, and handwashing pages on the main PortableFoodBank build are held rather than retargeted because those topics are outside the supplied eight-family PortableFoodBank list.
+Homepage H1s remain unchanged pending separate approval. Navigation/directory, legal, utility, and other non-service pages are excluded from this rotation. Existing valuable refrigeration, dishwashing, restroom, and handwashing pages on the main TemporaryKitchenRental build are held rather than retargeted because those topics are outside the supplied eight-family TemporaryKitchenRental list.
 
 ## Properties and evidence sampled
 
 | Property | Environment | Evidence | Current finding |
 | --- | --- | --- | --- |
-| `portable-food-bank-nine.vercel.app` | Candidate Vercel build represented by this repository | Current local source, generated `dist`, HTTP headers, Vercel/Git metadata | Local generated snapshot has 649 HTML pages. Homepage H1 is `Temporary Facilities and Trailer Rental / Rent or Lease Nationwide`. Alias sends `X-Robots-Tag: noindex, follow`. Generated canonicals are gated off while `domainRoutingReady` is false. |
-| `portable-food-bank.com` | Public WordPress production | Live fetch | Canonical is the public root and robots allow indexing. The sampled homepage has one H1, `NEWS/BLOG`, so it is not the same homepage implementation as the candidate build. Do not silently treat these as one page. |
+| `temporary-kitchen-rental-nine.vercel.app` | Candidate Vercel build represented by this repository | Current local source, generated `dist`, HTTP headers, Vercel/Git metadata | Local generated snapshot has 649 HTML pages. Homepage H1 is `Temporary Facilities and Trailer Rental / Rent or Lease Nationwide`. Alias sends `X-Robots-Tag: noindex, follow`. Generated canonicals are gated off while `domainRoutingReady` is false. |
+| `temporary-kitchen-rental.com` | Public WordPress production | Live fetch | Canonical is the public root and robots allow indexing. The sampled homepage has one H1, `NEWS/BLOG`, so it is not the same homepage implementation as the candidate build. Do not silently treat these as one page. |
 | `temporarykitchens123.com` | Public kitchen site | Live crawl/fetch of homepage and representative routes | Homepage H1 is `Temporary Commercial Kitchen Rentals Nationwide`. The homepage already contains an `Industries We Serve` section for healthcare, education, correctional facilities, and government/military. Sampled child markup showed duplicate H1s on several landing pages. |
 | `icefoxequipment.com` | Public refrigeration site | Live fetch | Homepage has two H1s; its existing primary H1 is a long refrigeration rental phrase. `/prefabricated-models/refrigeration/` has one broad H1, `Refrigeration`. |
 | `icefoxleasing.com` | Public related leasing site | Live fetch | Homepage has one H1, `Ice Fox Leasing`; exact inclusion in this project needs owner confirmation. |
 | `mobile-dishwashing-trailer-facility-rental.com` | Probable public dishwashing site | Live crawl/fetch | Sampled homepage has two H1s: `Mobile Dishwashing Trailer` and `Welcome to Mobile Dishwashing Trailer Facility Rental USA`. Confirm this is the boss's intended dishwashing property before mapping child pages. |
 
-The repository is connected to GitHub at `charlessslaranangsss-maker/Portable Food Bank` (`origin`) with `markravencanete50-source/Portable Food Bank` as fetch-only `upstream`. The current branch is `main`. There were already unrelated working-tree edits before this audit, so this proposal does not modify production templates.
+The repository is connected to GitHub at `charlessslaranangsss-maker/Temporary Kitchen Rental` (`origin`) with `markravencanete50-source/Temporary Kitchen Rental` as fetch-only `upstream`. The current branch is `main`. There were already unrelated working-tree edits before this audit, so this proposal does not modify production templates.
 
 ## Candidate build inventory
 
@@ -41,7 +41,7 @@ Each sampled generated page has one H1, but that does not make every H1 complian
 
 ## Separate approved vocabulary maps
 
-### Main PortableFoodBank
+### Main TemporaryKitchenRental
 
 - Topical families: shower; shower/restroom or bathroom combination; ADA shower/restroom combination; laundry; kitchen; commercial kitchen; sleeper bunk-bed facilities; remote man camp/life-support services.
 - Group 1: trailer; facility; modular building; temporary facility/facilities; emergency trailer.
@@ -97,7 +97,7 @@ The detailed export is `audit/h1-proposed-mapping-2026-09-15.csv`. Status meanin
 
 Approval is still needed for:
 
-1. which public homepage (`portable-food-bank.com` WordPress or the Vercel candidate) the homepage-freeze instruction refers to;
+1. which public homepage (`temporary-kitchen-rental.com` WordPress or the Vercel candidate) the homepage-freeze instruction refers to;
 2. the topical focus for broad state/region pages and Seattle/Sequim;
 3. whether main-site refrigeration, dishwashing, restroom, and handwashing pages are exempt or receive additional allowed families;
 4. where leasing, short-term, long-term, emergency rental, modular-building, and sales claims are factually available;

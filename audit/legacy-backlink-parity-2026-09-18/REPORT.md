@@ -25,7 +25,7 @@ Permanent mappings were added for:
 - `/emergency-modular-shelters-contained-for-rental/` to `/man-camps-for-rent/`
 - `/greensboro-north-carolina-usa-temporary-restroom-building-rental/` to `/equipment-rental/restroom-trailers/`
 
-`www.portable-food-bank.com` requests are permanently consolidated onto `portable-food-bank.com` while preserving the requested path. The 23 canonical destinations receiving the supplied legacy links lead the controlled 25-page indexing batch. The remaining two pages are `/services/` and `/service-areas/`.
+`www.temporary-kitchen-rental.com` requests are permanently consolidated onto `temporary-kitchen-rental.com` while preserving the requested path. The 23 canonical destinations receiving the supplied legacy links lead the controlled 25-page indexing batch. The remaining two pages are `/services/` and `/service-areas/`.
 
 ## Local acceptance
 
@@ -41,7 +41,7 @@ Per-row evidence is in `results.csv`. Aggregate counts are in `summary.json`. `l
 
 ## Production acceptance
 
-- Repository: `Portable-Food-Bank/Portable-Food-Bank`, branch `main`
+- Repository: `Temporary-Kitchen-Rental/Temporary-Kitchen-Rental`, branch `main`
 - Deployed commit: `4df32c3`
 - READY Vercel deployment: `dpl_CLEabVTivoctpYLbKg23TV39QURD`
 - Audit timestamp: `2026-09-18T10:54:55Z`
@@ -61,7 +61,7 @@ Per-row evidence is in `results.csv`. Aggregate counts are in `summary.json`. `l
 
 The complete response chains and metadata are recorded in `live-postchange.csv` and `live-postchange.json`; aggregate production assertions are in `live-summary.json`.
 
-After the audit evidence was committed, the owner requested an explicit final production deployment. Revision `57826de` was deployed to the existing Vercel `cc-devs/portable-food-bank` project as READY deployment `dpl_5Ab6Vrj2byjT59y3iAKXqdy2PCTJ`. The custom domain returned the deployment's generated production asset hashes, representative legacy routes plus the sitemap and robots file returned HTTP 200, and the final Contact Us/equipment production browser suite passed 7/7.
+After the audit evidence was committed, the owner requested an explicit final production deployment. Revision `57826de` was deployed to the existing Vercel `cc-devs/temporary-kitchen-rental` project as READY deployment `dpl_5Ab6Vrj2byjT59y3iAKXqdy2PCTJ`. The custom domain returned the deployment's generated production asset hashes, representative legacy routes plus the sitemap and robots file returned HTTP 200, and the final Contact Us/equipment production browser suite passed 7/7.
 
 ## Validation boundary
 

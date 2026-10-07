@@ -30,7 +30,7 @@
       "missing": [
         {
           "type": "host",
-          "value": "portable-food-bank\\.com"
+          "value": "temporary-kitchen-rental\\.com"
         }
       ],
       "headers": [
@@ -47,10 +47,10 @@
       "has": [
         {
           "type": "host",
-          "value": "www.portable-food-bank.com"
+          "value": "www.temporary-kitchen-rental.com"
         }
       ],
-      "destination": "https://portable-food-bank.com/:path*",
+      "destination": "https://temporary-kitchen-rental.com/:path*",
       "permanent": true
     },
     {

@@ -1,6 +1,6 @@
 {
   "at": "2026-09-16T10:44:15.824Z",
-  "repo": "C:\\Users\\Charles\\Documents\\New project\\Portable Food Bank",
+  "repo": "C:\\Users\\Charles\\Documents\\New project\\Temporary Kitchen Rental",
   "branch": "main",
   "baseCommit": "8ad98dba33ef6d9b7b1e64028da3fc639bd7fd9a",
   "newCommitCreated": false,
@@ -39,7 +39,7 @@
   "protectedFileDrift": [
     "src/rentalHeadlines.ts"
   ],
-  "buildDirectory": "C:\\Users\\Charles\\Documents\\New project\\Portable Food Bank\\.temp\\new-equipment-photos-20260916\\dist",
+  "buildDirectory": "C:\\Users\\Charles\\Documents\\New project\\Temporary Kitchen Rental\\.temp\\new-equipment-photos-20260916\\dist",
   "mappingManifest": "content/verified-equipment-images.json",
   "additionsRegistry": "content/equipment-photo-additions.json",
   "manifestSha256": "3d520c6bf327e3f6bfb6f96bc03665cfddac0b9953dea4e0d472a22f885ba567",

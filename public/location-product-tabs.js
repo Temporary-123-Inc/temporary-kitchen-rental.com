@@ -1,7 +1,7 @@
 /* Progressive enhancement: no-JS visitors see all separate product galleries. */
 (() => {
   "use strict";
-  const key = "__portableFoodBankProductTabs";
+  const key = "__temporaryKitchenRentalProductTabs";
   if (window[key]) {
     window[key].scan(document);
     return;
@@ -36,7 +36,7 @@
           tabs[i].tabIndex = i === selected ? 0 : -1;
         });
         root.dataset.selectedProduct = String(selected);
-        window.__portableFoodBankServiceGalleries?.scan(groups[selected]);
+        window.__temporaryKitchenRentalServiceGalleries?.scan(groups[selected]);
         if (interacting) eventFor(groups[selected], "service-carousel:pause");
         if (focus) tabs[selected].focus({ preventScroll: true });
       };

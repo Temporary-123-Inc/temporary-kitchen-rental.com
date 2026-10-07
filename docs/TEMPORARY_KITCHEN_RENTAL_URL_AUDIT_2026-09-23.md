@@ -1,14 +1,14 @@
-# Portable Food Bank URL and backlink audit — 2026-09-23
+# Temporary Kitchen Rental URL and backlink audit — 2026-09-23
 
 ## Evidence sources
 
 - Original public homepage, inspected in browser on 2026-09-23. Its rendered navigation exposed 33 non-fragment public paths plus the homepage.
-- Rebuild production route registry and `https://portable-food-bank-com.vercel.app/` browser checks.
-- Supplied `portable-food-bank.com-backlinks-subdomains_2026-09-23_00-09-43.csv` file.
+- Rebuild production route registry and `https://temporary-kitchen-rental-com.vercel.app/` browser checks.
+- Supplied `temporary-kitchen-rental.com-backlinks-subdomains_2026-09-23_00-09-43.csv` file.
 
 ## Backlink export finding
 
-The supplied tab-delimited file contains 670 referring-page rows, but only one target path: `/`. It has three homepage target variants: 662 `https://portable-food-bank.com/`, 7 `http://portable-food-bank.com/`, and 1 `https://www.portable-food-bank.com/`. It provides no page-level evidence for product, location, or informational slugs and must not be treated as a complete original-site URL inventory.
+The supplied tab-delimited file contains 670 referring-page rows, but only one target path: `/`. It has three homepage target variants: 662 `https://temporary-kitchen-rental.com/`, 7 `http://temporary-kitchen-rental.com/`, and 1 `https://www.temporary-kitchen-rental.com/`. It provides no page-level evidence for product, location, or informational slugs and must not be treated as a complete original-site URL inventory.
 
 ## Original homepage route comparison
 

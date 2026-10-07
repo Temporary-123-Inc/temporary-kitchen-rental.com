@@ -1,4 +1,4 @@
-# PortableFoodBank — current image update: independent QA handoff
+# TemporaryKitchenRental — current image update: independent QA handoff
 
 Prepared: 2026-09-16T08:52:06.818Z
 
@@ -6,11 +6,11 @@ Prepared: 2026-09-16T08:52:06.818Z
 
 ## Exact revision and environment
 
-- Repository: C:\Users\Charles\Documents\New project\Portable Food Bank
+- Repository: C:\Users\Charles\Documents\New project\Temporary Kitchen Rental
 - Branch: main
 - Current base HEAD: 8ad98dba33ef6d9b7b1e64028da3fc639bd7fd9a
 - The image changes are uncommitted. The base commit alone does NOT contain this update. Unrelated working-tree changes were not reset, committed, or published.
-- Frozen tested build: C:\Users\Charles\Documents\New project\Portable Food Bank\.temp\owner-image-rollout-20260916\dist
+- Frozen tested build: C:\Users\Charles\Documents\New project\Temporary Kitchen Rental\.temp\owner-image-rollout-20260916\dist
 - Local URL: http://127.0.0.1:4201/service-areas/ . Old ports 4197 and 4199 are older snapshots.
 - Image-source snapshot SHA-256: f4e2edf9462d7e9969a4ca2f142e8db0b8947fafbfe910dbde83b7f55496e2a7
 - Verified-image manifest SHA-256: b2dd5c5c6b5bd2d6194421d9d583a8bdddeac914a512d80eda8dc72331fdcd57
@@ -20,7 +20,7 @@ Prepared: 2026-09-16T08:52:06.818Z
 ## Deployment status — do not use the wrong version for QA
 
 No Vercel deployment was performed by this update/handoff task. No immutable deployment URL or deployment revision is established for this update.
-At 2026-09-16T08:43:36.108Z, all 10 sampled URLs on https://portable-food-bank-nine.vercel.app returned HTTP 200, but 10 did not match this snapshot's image presentation. The alias still showed the earlier implementation in this comparison. Request-trace headers are not deployment IDs.
+At 2026-09-16T08:43:36.108Z, all 10 sampled URLs on https://temporary-kitchen-rental-nine.vercel.app returned HTTP 200, but 10 did not match this snapshot's image presentation. The alias still showed the earlier implementation in this comparison. Request-trace headers are not deployment IDs.
 Evidence: audit/image-update-qa-handoff-2026-09-16/live-comparison.json . These were HTTP comparisons, not live browser acceptance. Independent live QA is pending a coordinated deployment of the reviewed revision.
 
 ## Complete affected inventory

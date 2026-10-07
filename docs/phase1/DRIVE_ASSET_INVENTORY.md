@@ -1,4 +1,4 @@
-# PortableFoodBank Google Drive Asset Inventory
+# TemporaryKitchenRental Google Drive Asset Inventory
 
 **Audit date:** 2026-09-15  
 **Scope:** Asset inventory and classification only. No website source, public assets, routes, components, deployment, or production behavior were changed.

@@ -1,5 +1,5 @@
 /* Final brand layer: loaded after legacy layout sheets so all retained modules
-   share the Portable Food Bank orange, red, charcoal, cream and white system. */
+   share the Temporary Kitchen Rental orange, red, charcoal, cream and white system. */
 :root {
   --mk-orange: #f47b20;
   --mk-orange-dark: #d95f08;

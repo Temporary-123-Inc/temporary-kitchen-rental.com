@@ -9,7 +9,7 @@ const outputDirectory = path.join(root, "public", "location-media");
 const manifestPath = path.join(root, "src", "locationPhotos.json");
 const auditPath = path.join(root, "audit", "location-photo-sources.json");
 const userAgent =
-  "PortableFoodBank-site-builder/1.0 (licensed website media selection)";
+  "TemporaryKitchenRental-site-builder/1.0 (licensed website media selection)";
 const usedPageIds = new Set();
 let lastSearchAt = 0;
 const sleep = (milliseconds) =>

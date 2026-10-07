@@ -29,6 +29,6 @@ The filename-only heuristic initially flagged possible order defects, but this w
 
 ## Release boundary
 
-This is **not** a sign-off for `portable-food-bank-nine.vercel.app`. The updater confirmed no deployment of this revision and no immutable Vercel deployment ID/URL. Its 10-URL comparison found the public alias still showing the older image presentation. Also, the independent browser interaction and visual pass sampled representative routes; it did not manually click every slide on every route. The 26 other shared-carousel routes were outside this exhaustive Service Areas mapping audit and require normal release-regression checks.
+This is **not** a sign-off for `temporary-kitchen-rental-nine.vercel.app`. The updater confirmed no deployment of this revision and no immutable Vercel deployment ID/URL. Its 10-URL comparison found the public alias still showing the older image presentation. Also, the independent browser interaction and visual pass sampled representative routes; it did not manually click every slide on every route. The 26 other shared-carousel routes were outside this exhaustive Service Areas mapping audit and require normal release-regression checks.
 
 Next: coordinate an exact revision and deploy to the **existing** Vercel project, then rerun the mapping and representative desktop/phone interaction checks against its immutable URL and the public alias. Do not represent held photographs or unverified equipment specifications as complete.

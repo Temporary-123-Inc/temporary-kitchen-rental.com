@@ -1,4 +1,4 @@
-name: Verify Portable Food Bank
+name: Verify Temporary Kitchen Rental
 on: [push, pull_request]
 permissions:
   contents: read

@@ -65,21 +65,21 @@ def apex_host_configured(
     source_host: str, source_path: str, path_hops: int, redirects: list[dict]
 ) -> bool:
     """Confirm www URLs cannot finish on the duplicate hostname."""
-    if source_host.lower() != "www.portable-food-bank.com":
+    if source_host.lower() != "www.temporary-kitchen-rental.com":
         return True
     if path_hops:
         for rule in redirects:
             if rule.get("has") or rule.get("missing"):
                 continue
             if route_pattern(rule["source"]).match(source_path):
-                return urlparse(rule["destination"]).hostname == "portable-food-bank.com"
+                return urlparse(rule["destination"]).hostname == "temporary-kitchen-rental.com"
         return False
     return any(
-        rule.get("destination", "").startswith("https://portable-food-bank.com/")
+        rule.get("destination", "").startswith("https://temporary-kitchen-rental.com/")
         and rule.get("source") == source_path
         and any(
             condition.get("type") == "host"
-            and condition.get("value") == "www.portable-food-bank.com"
+            and condition.get("value") == "www.temporary-kitchen-rental.com"
             for condition in rule.get("has", [])
         )
         for rule in redirects
@@ -132,7 +132,7 @@ def main() -> int:
         exists = page_file.is_file()
         html = page_file.read_text(encoding="utf-8") if exists else ""
         canonical = canonical_value(html)
-        expected = f"https://portable-food-bank.com{final_path}"
+        expected = f"https://temporary-kitchen-rental.com{final_path}"
         robots = meta_value(html, "robots")
         sitemap_member = f"<loc>{expected}</loc>" in sitemap
         host_configured = apex_host_configured(
