@@ -1,5 +1,13 @@
 # TemporaryKitchenRental Test Results
 
+## 2026-10-08 — New GitHub repository
+
+- `gh repo view Temporary-123-Inc/temporary-kitchen-rental.com` — PASS: repository exists, is public, uses `main`, and reports the new repository URL.
+- `git remote -v` — PASS: this checkout's only configured remote is `https://github.com/Temporary-123-Inc/temporary-kitchen-rental.com.git`.
+- `git push -u origin main` — PASS: commit `f476285f807646c0974e1308e7fec3508fb67f26` pushed to `refs/heads/main`.
+- `git status --short` — PASS: clean working tree after the push.
+- Boundary: no deployment, Vercel project, domain, or former source repository was changed.
+
 ## 2026-10-07 — Sitewide full-bleed background containment
 
 - `pnpm exec tsc --noEmit` — PASS.

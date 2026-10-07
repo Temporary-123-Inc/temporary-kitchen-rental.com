@@ -1,5 +1,11 @@
 # TemporaryKitchenRental Decision Log
 
+## 2026-10-08 — Use a new public repository for the decoupled site
+
+- Store the standalone project at `Temporary-123-Inc/temporary-kitchen-rental.com`, named after the current site identity.
+- Keep this checkout's `origin` pointed only to the new repository; do not reconnect it to the former source repository.
+- Match the former source repository's public visibility because this project was requested as a public GitHub site repository. Deployment and domain configuration remain separate and unchanged.
+
 ## 2026-10-07 — Let semantic section surfaces own full-width backgrounds
 
 - Treat a direct `section.wrap`, `nav.wrap`, or `footer.wrap` as a full-viewport surface with symmetric inline padding, not as a constrained painted box.
