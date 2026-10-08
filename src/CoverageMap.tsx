@@ -240,9 +240,20 @@ export function CoverageMap({
                 Your State Commercial Mobile Kitchen Trailer Rental
               </span>
             </h2>
-            <p id="state-services-intro">
-              Confirm rental availability for your project location.
-            </p>
+            <div className="state-modal-description">
+              <p id="state-services-intro" data-state-description>
+                Confirm rental availability for your project location.
+              </p>
+              <button
+                type="button"
+                className="state-description-toggle"
+                data-state-description-toggle
+                aria-expanded="false"
+                hidden
+              >
+                View more
+              </button>
+            </div>
             <div data-state-gallery-host />
             <nav
               className="state-modal-regions"
@@ -289,12 +300,23 @@ export function CoverageMap({
                       Your State Commercial Mobile Kitchen Trailer Rental
                     </span>
                   </h2>
-                  <p id="state-services-intro">
-                    Temporary Kitchen Rental supports commercial kitchen projects in
-                    <span data-state-name>your state</span> and across the
-                    United States. Confirm the equipment, site utilities, and
-                    delivery timing with our rental team.
-                  </p>
+                  <div className="state-modal-description">
+                    <p id="state-services-intro" data-state-description>
+                      Temporary Kitchen Rental supports commercial kitchen projects in
+                      <span data-state-name>your state</span> and across the
+                      United States. Confirm the equipment, site utilities, and
+                      delivery timing with our rental team.
+                    </p>
+                    <button
+                      type="button"
+                      className="state-description-toggle"
+                      data-state-description-toggle
+                      aria-expanded="false"
+                      hidden
+                    >
+                      View more
+                    </button>
+                  </div>
                   <p className="state-service-summary" data-state-services-copy>
                     Choose commercial mobile kitchens, dishwashing trailers, and
                     refrigeration support for food-service continuity.

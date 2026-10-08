@@ -1,5 +1,22 @@
 # TemporaryKitchenRental Test Results
 
+## 2026-10-08 — State-description modal production deployment
+
+- Vercel target inspection — PASS: project `temporary-kitchen-rental.com` under team `temporary-124` was the intended target.
+- Production deployment — PASS: `dpl_FawVBrM2xR6A5A5KdciVPDaPkzzx`, `READY`, production alias `https://temporary-kitchen-rentalcom.vercel.app`, preview URL `https://temporary-kitchen-rental-4bz1xln17-temporary-124.vercel.app`.
+- Authenticated Vercel response for `/service-areas/` — PASS: generated HTML contains `data-state-description`, `data-state-description-toggle`, and the nationwide service-area title.
+- `vercel logs dpl_FawVBrM2xR6A5A5KdciVPDaPkzzx --level error --since 1h` — PASS: no error-log entries returned for the deployment.
+- Deployment boundary — deployed from the local uncommitted checkout; no GitHub push or repository mutation was performed. Existing Vercel Authentication protection remains enabled.
+
+## 2026-10-08 — State descriptions in service-map modals
+
+- `pnpm exec vitest run tests/coverageMapAccessibility.test.tsx tests/homepagePortfolio.test.tsx tests/routes.test.ts` — PASS: 3 files / 14 tests, including state-description data handoff, modal description markup, and accessibility controls.
+- `pnpm exec tsc --noEmit` — PASS.
+- `git diff --check` — PASS.
+- `pnpm run build` — PASS: Vite build and prerender generated 664 pages plus 404; existing JSON import-attribute, annotation, and large-client-chunk warnings remain.
+- Built-preview browser verification at `http://127.0.0.1:4175/service-areas/` — PASS: selecting Alabama opens the state modal with the state-page description, the description is visibly limited to five lines with `View more`, the control expands to the full text and changes to `View less`, and the modal closes normally.
+- Scope boundary — state selection, map dialog behavior, regional links, carousel, routes, content, images, remote repository, and deployment were not changed beyond the requested description handoff and toggle UI; no push or deployment was performed.
+
 ## 2026-10-08 — New GitHub repository
 
 - `gh repo view Temporary-123-Inc/temporary-kitchen-rental.com` — PASS: repository exists, is public, uses `main`, and reports the new repository URL.

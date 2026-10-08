@@ -3,6 +3,7 @@ import { stateGuides, stateAnchor } from "./stateGuides";
 import { statePath } from "./statePaths";
 import { regionPath } from "./regionGuides";
 import { stateRentalHeadline } from "./rentalHeadlines";
+import { stateServiceAreaFor } from "./regionalSiteData";
 import calculatorCities from "./calculatorCities.json" with { type: "json" };
 
 export function StateGuideCards({
@@ -26,6 +27,10 @@ export function StateGuideCards({
           data-state-motion={guide.motion}
           data-state-demand-code={guide.seasonal.code}
           data-state-demand-label={guide.seasonal.label}
+          data-state-description={
+            stateServiceAreaFor(name)?.description ||
+            alignedLocationIntro(stateRentalHeadline(name), name)
+          }
           key={name}
         >
           <summary>

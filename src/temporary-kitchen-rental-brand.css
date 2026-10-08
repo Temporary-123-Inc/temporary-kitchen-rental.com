@@ -753,20 +753,23 @@ textarea:focus-visible {
  * intentionally excluded so cards, map controls, carousel content, and other
  * inner layouts keep their existing container behavior.
  */
-:is(section.wrap, nav.wrap, footer.wrap) {
+:is(section.wrap, nav.wrap, footer.wrap),
+.homepage :is(section.wrap, nav.wrap, footer.wrap) {
   width: 100%;
   max-width: none;
   margin-inline: 0;
 }
 
 @media (max-width: 1023px) {
-  :is(section.wrap, nav.wrap, footer.wrap) {
+  :is(section.wrap, nav.wrap, footer.wrap),
+  .homepage :is(section.wrap, nav.wrap, footer.wrap) {
     padding-inline: 16px;
   }
 }
 
 @media (min-width: 1024px) {
-  :is(section.wrap, nav.wrap, footer.wrap) {
+  :is(section.wrap, nav.wrap, footer.wrap),
+  .homepage :is(section.wrap, nav.wrap, footer.wrap) {
     padding-inline: max(80px, calc((100% - var(--pfb-container, 1200px)) / 2));
   }
 }
@@ -789,6 +792,59 @@ textarea:focus-visible {
   :is(.wrap.city-directory-shell, .wrap.state-guide-call) {
     padding-inline: max(80px, calc((100% - var(--pfb-container, 1200px)) / 2));
   }
+}
+
+/* The location directory is a painted surface nested inside a full-bleed
+ * section. Break the surface out to the viewport edges, then restore the
+ * shared content gutter inside it so links and text stay aligned and clear of
+ * the borders. */
+.map-location-directory {
+  box-sizing: border-box;
+  --pfb-surface-gutter: 16px;
+  width: calc(100% + var(--pfb-surface-gutter) + var(--pfb-surface-gutter));
+  margin-inline: calc(0px - var(--pfb-surface-gutter));
+  padding-inline: var(--pfb-surface-gutter);
+}
+
+@media (min-width: 1024px) {
+  .map-location-directory {
+    --pfb-surface-gutter: max(80px, calc((100% - var(--pfb-container, 1200px)) / 2));
+  }
+}
+
+/* Regional map modal descriptions use the exact state-page description while
+ * keeping the modal scan-friendly. The button is revealed by the DOM script
+ * only when the five-line preview actually overflows. */
+.coverage-map .state-modal-description {
+  margin-bottom: 1.5rem;
+}
+
+.coverage-map .state-modal-description > [data-state-description] {
+  display: -webkit-box;
+  margin-bottom: 0.45rem;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.coverage-map
+  .state-modal-description
+  > [data-state-description].is-expanded {
+  display: block;
+  overflow: visible;
+}
+
+.coverage-map .state-description-toggle {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--pfb-teal-dark);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: reduce) {

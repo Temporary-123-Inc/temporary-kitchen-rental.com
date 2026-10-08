@@ -24,6 +24,7 @@ import {
 import { appCheckToken } from "./appCheck";
 import { targetRouteByPath } from "./temporaryKitchenRentalTarget";
 import { stateMapRentalHeadline } from "./rentalHeadlines";
+import { stateServiceAreaFor } from "./regionalSiteData";
 
 const requestedTargetRoute = targetRouteByPath[location.pathname];
 const root = document.getElementById("root");
@@ -949,6 +950,38 @@ const stateDialog = document.querySelector<HTMLDialogElement>(
   "#state-services-dialog",
 );
 let stateTrigger: HTMLElement | SVGElement | null = null;
+const stateDescriptionToggle = stateDialog?.querySelector<HTMLButtonElement>(
+  "[data-state-description-toggle]",
+);
+stateDescriptionToggle?.addEventListener("click", () => {
+  const description = stateDialog?.querySelector<HTMLElement>(
+    "[data-state-description]",
+  );
+  if (!description) return;
+  const expanded = description.classList.toggle("is-expanded");
+  stateDescriptionToggle.setAttribute("aria-expanded", String(expanded));
+  stateDescriptionToggle.textContent = expanded ? "View less" : "View more";
+});
+const syncStateDescriptionToggle = () => {
+  if (!stateDialog) return;
+  const description = stateDialog.querySelector<HTMLElement>(
+    "[data-state-description]",
+  );
+  const toggle = stateDialog.querySelector<HTMLButtonElement>(
+    "[data-state-description-toggle]",
+  );
+  if (!description || !toggle) return;
+
+  description.classList.remove("is-expanded");
+  const styles = getComputedStyle(description);
+  const lineHeight =
+    Number.parseFloat(styles.lineHeight) ||
+    Number.parseFloat(styles.fontSize) * 1.55;
+  const isLong = description.scrollHeight > lineHeight * 5 + 1;
+  toggle.hidden = !isLong;
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.textContent = "View more";
+};
 const openState = (name: string, trigger: HTMLElement | SVGElement) => {
   if (!stateDialog) return;
   stateTrigger = trigger;
@@ -983,6 +1016,10 @@ const openState = (name: string, trigger: HTMLElement | SVGElement) => {
   stateDialog.dataset.stateSignature = String(Math.max(stateIndex, 0) + 1);
   const intro = stateDialog.querySelector("#state-services-intro");
   const question = stateDialog.querySelector("[data-state-question]");
+  const stateDescription =
+    stateServiceAreaFor(name)?.description ||
+    guide?.dataset.stateDescription ||
+    `${name}: Plan a commercial mobile kitchen trailer rental. Confirm equipment, utilities, availability, and delivery timing with Temporary Kitchen Rental.`;
   const focus = `${name} Commercial Mobile Kitchen Trailer Rental Planning`;
   stateDialog
     .querySelectorAll<HTMLElement>("[data-state-focus]")
@@ -1020,8 +1057,7 @@ const openState = (name: string, trigger: HTMLElement | SVGElement) => {
   );
   if (initials)
     initials.textContent = guide?.dataset.stateAbbreviation || name.slice(0, 2);
-  if (intro)
-    intro.textContent = `${name}: Plan a commercial mobile kitchen trailer rental. Confirm equipment, utilities, availability, and delivery timing with Temporary Kitchen Rental.`;
+  if (intro) intro.textContent = stateDescription;
   if (question) question.textContent = "";
   const statePage =
     stateDialog.querySelector<HTMLAnchorElement>("[data-state-page]");
@@ -1123,6 +1159,7 @@ const openState = (name: string, trigger: HTMLElement | SVGElement) => {
       });
   }
   stateDialog.showModal();
+  requestAnimationFrame(syncStateDescriptionToggle);
   galleryHost?.dispatchEvent(
     new Event("service-carousel:mount", { bubbles: true }),
   );

@@ -1,5 +1,17 @@
 # TemporaryKitchenRental Decision Log
 
+## 2026-10-08 — Deploy the verified local modal update without pushing GitHub
+
+- Deploy the owner-requested state-description modal update directly from the verified local checkout to the existing `temporary-kitchen-rental.com` Vercel project under `temporary-124`.
+- Keep GitHub separate for this release: the deployment may contain the local uncommitted changes, but no repository push or remote history mutation is authorized by this deployment request.
+- Preserve existing Vercel deployment protection and verify the production response through authenticated Vercel access.
+
+## 2026-10-08 — Reuse state-page descriptions in map dialogs
+
+- Treat `stateServiceAreaFor(name)?.description` as the source of truth for both a state location page and its service-map modal; the hidden `StateGuideCards` template carries the same value as a fallback for the DOM enhancement path.
+- Keep the complete description in the modal DOM and use a CSS five-line clamp for the initial view. Reveal the compact accessible toggle only when the rendered text actually overflows, and use `aria-expanded` plus `View more` / `View less` to expose the state clearly.
+- Keep this enhancement isolated to regional map/state rendering. Preserve the modal's existing state selection, dialog close behavior, regional links, carousel, routes, content, and images.
+
 ## 2026-10-08 — Use a new public repository for the decoupled site
 
 - Store the standalone project at `Temporary-123-Inc/temporary-kitchen-rental.com`, named after the current site identity.
