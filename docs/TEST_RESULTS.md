@@ -1,5 +1,19 @@
 # TemporaryKitchenRental Test Results
 
+## 2026-10-08 — Sitewide full-width backgrounds and production release
+
+- `pnpm exec vitest run tests/coverageMapAccessibility.test.tsx tests/homepagePortfolio.test.tsx tests/routes.test.ts` — PASS: 3 files / 14 tests.
+- `pnpm exec tsc --noEmit` — PASS.
+- `git diff --check` — PASS.
+- `pnpm run build` — PASS: Vite build and prerender generated 664 pages plus 404; existing JSON import-attribute, Zod annotation, and large-client-chunk warnings remain.
+- Built-preview browser geometry at `http://127.0.0.1:5175/` — PASS: the homepage calculator surface and nested location-directory surface both measure from the viewport's left edge to its right edge, with 80px desktop inner gutters; `scrollWidth` does not exceed the viewport and preview console errors are empty.
+- Built-preview browser geometry at `/service-areas/` — PASS: the location hero, nested directory surface, and footer span the viewport; the inner gutter remains present.
+- GitHub — PASS: commit `e828f68` pushed to `https://github.com/Temporary-123-Inc/temporary-kitchen-rental.com` `main`.
+- Vercel — PASS: production deployment `dpl_Dzm81rwf5o2fnT9jr4fkYZ2eccfn` reached `READY` under team `temporary-124` and was aliased to `https://temporary-kitchen-rentalcom.vercel.app`.
+- Authenticated live HTML — PASS: `/service-areas/` contains the state description, `View more` toggle markup, service-area title, and updated stylesheet marker.
+- `vercel logs dpl_Dzm81rwf5o2fnT9jr4fkYZ2eccfn --level error --since 1h` — PASS: no error-log entries returned.
+- Scope boundary — only shared surface CSS and coordination records changed; routes, content, images, map, carousel, forms, and modal behavior were preserved. Deployment protection remains enabled.
+
 ## 2026-10-08 — State-description modal production deployment
 
 - Vercel target inspection — PASS: project `temporary-kitchen-rental.com` under team `temporary-124` was the intended target.

@@ -1,5 +1,11 @@
 # TemporaryKitchenRental Decision Log
 
+## 2026-10-08 — Paint viewport-level backgrounds while constraining inner content
+
+- Treat an element that owns a section-level background as a viewport surface, even when a retained template puts a `.wrap` class on it or nests the surface inside another constrained wrapper.
+- Give the surface full viewport width and restore the established desktop rail gutter/mobile padding inside it. Do not broaden this rule to cards, map controls, carousel frames, forms, or other intentional content panels.
+- Keep the correction in the final brand layer so it applies consistently without changing route markup, copy, imagery, or interactive behavior.
+
 ## 2026-10-08 — Deploy the verified local modal update without pushing GitHub
 
 - Deploy the owner-requested state-description modal update directly from the verified local checkout to the existing `temporary-kitchen-rental.com` Vercel project under `temporary-124`.
